@@ -5,24 +5,46 @@ using UnityEngine.AI;
 
 public class MoveRandom : MonoBehaviour {
 
-    NavMeshAgent navMeshAgent;
+    NavMeshAgent agent;
     NavMeshPath path;
-    public float timeForNewPath;
-    bool inCoRoutine;
-    Vector3 target;
-    bool validPath;
+    Animator animator;
+    public GameObject gb;
+    bool inNavigation;
+    public int waitTimeBeforeNextDest;
 
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
+        animator = gb.GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (!inCoRoutine) {
-            StartCoroutine(doSomething());
+        if (!inNavigation)
+        {
+            inNavigation = true;
+            animator.SetBool("isWalking", true);
+            Vector3 randomDirection = Random.insideUnitSphere * 25;
+            randomDirection += transform.position;
+            NavMeshHit hit;
+            NavMesh.SamplePosition(randomDirection, out hit, 25, 1);
+            Vector3 finalPosition = hit.position;
+            agent.SetDestination(finalPosition);
         }
+        else {
+            if (Vector3.Distance(transform.position, agent.destination) <= 1f)
+            {
+                StartCoroutine(finishNavigation());
+            }
+        }
+    }
+
+    IEnumerator finishNavigation()
+    {
+        animator.SetBool("isWalking", false);
+        yield return new WaitForSeconds(waitTimeBeforeNextDest);
+        inNavigation = false;
     }
 
     Vector3 getNewRandomPosition()
@@ -33,30 +55,4 @@ public class MoveRandom : MonoBehaviour {
         Vector3 pos = new Vector3(x, 0, z);
         return pos;
     }
-
-    IEnumerator doSomething()
-    {
-        inCoRoutine = true;
-        yield return new WaitForSeconds(timeForNewPath);
-        getNewPath();
-        validPath = navMeshAgent.CalculatePath(target, path);
-        if (!validPath) {
-            Debug.Log("found an invalid path");
-        }
-
-        while (!validPath)
-        {
-            yield return new WaitForSeconds(0.01f);
-            getNewPath();
-            validPath = navMeshAgent.CalculatePath(target, path);
-        }
-        inCoRoutine = false;
-    }
-
-    void getNewPath()
-    {
-        target = getNewRandomPosition();
-        navMeshAgent.SetDestination(getNewRandomPosition());
-    }
-
 }
