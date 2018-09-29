@@ -44,6 +44,7 @@ public class BooleanMinigame : MonoBehaviour {
 		} else {
 			disableButtons();
 			tryAgainPanel.gameObject.SetActive(true);
+			// cannot lose money from minigame
 			if (moneyEarned >= 20) {
 				moneyEarned -= 20;
 			}
