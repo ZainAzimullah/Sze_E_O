@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ElevatorController : MonoBehaviour {
 
+
+    public GameObject PopupPanel;
+
+
 	// Use this for initialization
 	void Start () {
-		
+        PopupPanel.SetActive(false);
 	}
 
 	public void GroundButton() {
@@ -17,8 +21,28 @@ public class ElevatorController : MonoBehaviour {
 
     public void LevelOne()
     {
+   
         Debug.Log("LEVEL ONE BUTTON IS WORKING");
         SceneManager.LoadScene("Level1");
+        
+    }
+
+    public void LevelTwo()
+    {
+        if (1 == 1)
+        {
+            PopupPanel.SetActive(true);
+        }
+        else
+        {
+            // Debug.Log("LEVEL TWO BUTTON IS WORKING");
+            // SceneManager.LoadScene("Level2");
+        }
+    }
+
+    public void HidePopup()
+    {
+        PopupPanel.SetActive(false);
     }
 
 }
