@@ -10,10 +10,13 @@ public class BooleanMinigame : MonoBehaviour {
 	public Dropdown variable1;
 	public Dropdown variable2;
 	public Dropdown variable3;
+	public Button quitButton;
+	public Button exitButton;
 	public Button runButton;
 	public GameObject correctPanel;
 	public GameObject gamePanel;
 	public GameObject tryAgainPanel;
+	public GameObject areYouSurePanel;
 	public Text earnedText;
 
 	// game money and experience variables
@@ -24,6 +27,7 @@ public class BooleanMinigame : MonoBehaviour {
 	void Start() {
 		correctPanel.SetActive(false);
 		tryAgainPanel.SetActive(false);
+		areYouSurePanel.SetActive(false);
 	}
 
 	public void checkCode() {
@@ -52,6 +56,8 @@ public class BooleanMinigame : MonoBehaviour {
 	}
 
 	public void disableButtons() {
+		quitButton.enabled = false;
+		exitButton.enabled = false;
 		runButton.enabled = false;
 		variable1.enabled = false;
 		variable2.enabled = false;
@@ -59,13 +65,17 @@ public class BooleanMinigame : MonoBehaviour {
 	}
 
 	public void enableButtons() {
+		quitButton.enabled = true;
+		exitButton.enabled = true;
 		runButton.enabled = true;
 		variable1.enabled = true;
 		variable2.enabled = true;
 		variable3.enabled = true;
 	}
 
+	//this method is also used for when user presses no on the exit prompt
 	public void tryAgain() {
+		areYouSurePanel.gameObject.SetActive(false);
 		tryAgainPanel.gameObject.SetActive(false);
 		enableButtons();
 	}
@@ -74,4 +84,15 @@ public class BooleanMinigame : MonoBehaviour {
 		// TODO NEED TO SET TO PREVIOS SCREEN TO CONTINUE THE DIALOG
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 	}
+
+	public void exitGame() {
+		disableButtons();
+		areYouSurePanel.SetActive(true);
+	}
+
+	public void exitYes() {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+	}
+
+
 }
