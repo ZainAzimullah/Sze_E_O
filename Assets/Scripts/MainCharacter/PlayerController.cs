@@ -85,10 +85,13 @@ public class PlayerController : MonoBehaviour {
         collision.impulse.Set(0, 0, 0);
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            SceneTransitionManager sceneTransitionManager = SceneTransitionManager.GetInstance();
             if (collision.gameObject.tag == "Dialog")
             {
-                Debug.Log("Dialog");
-                SceneManager.LoadScene("Gameplay");
+                /*Debug.Log("Dialog");
+                SceneManager.LoadScene("Gameplay");*/
+                sceneTransitionManager.currentScene = SceneEnum.DIALOGUE;
+                sceneTransitionManager.LoadScene();
             }
         }
             
@@ -112,22 +115,31 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            SceneTransitionManager sceneTransitionManager = SceneTransitionManager.GetInstance();
             if (collision.gameObject.tag == "Elevator")
             {
-                Debug.Log("Elevator");
-                SceneManager.LoadScene("Gameplay");
+                /*Debug.Log("Elevator");
+                SceneManager.LoadScene("Gameplay");*/
+                sceneTransitionManager.currentScene = SceneEnum.ELEVATOR;
+                sceneTransitionManager.LoadScene();
 
             }
             if (collision.gameObject.tag == "Dialog")
             {
-                Debug.Log("Dialog");
-                SceneManager.LoadScene("Gameplay");
+                /*Debug.Log("Dialog");
+                SceneManager.LoadScene("Gameplay");*/
+                sceneTransitionManager.currentScene = SceneEnum.DIALOGUE;
+                sceneTransitionManager.LoadScene();
             }              
             if (collision.gameObject.tag == "Computer")
             {
-                Debug.Log("Computer");
-                SceneManager.LoadScene("Gameplay");
+                /*Debug.Log("Computer");
+                SceneManager.LoadScene("Gameplay");*/
+
+                
+                sceneTransitionManager.currentScene = SceneEnum.BOOLEAN_GAME;
+                sceneTransitionManager.LoadScene();
+
             }
 
                 

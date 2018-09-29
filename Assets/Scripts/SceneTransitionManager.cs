@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitionManager : MonoBehaviour {
 
-    private SceneTransitionManager manager;
+    private static SceneTransitionManager manager;
 
-    public SceneEnum CurrentScene
+    public SceneEnum currentScene
     {
         get; set;
     }
@@ -26,7 +26,7 @@ public class SceneTransitionManager : MonoBehaviour {
 		
 	}
 
-    public SceneTransitionManager GetInstance()
+    public static SceneTransitionManager  GetInstance()
     {
         if (manager == null)
         {
@@ -37,7 +37,7 @@ public class SceneTransitionManager : MonoBehaviour {
 
     public void LoadScene()
     {
-        string scene = MapScene(CurrentScene);
+        string scene = MapScene(currentScene);
         SceneManager.LoadScene(scene);
     }
 
@@ -70,4 +70,18 @@ public class SceneTransitionManager : MonoBehaviour {
         }
         return sceneName;
     }
+}
+
+
+/**
+ A group of enums representing the name of the scene
+ */
+public enum SceneEnum
+{
+    MAIN_MENU,
+    LEVEL1,
+    OPTIONS,
+    ELEVATOR,
+    DIALOGUE,
+    BOOLEAN_GAME
 }

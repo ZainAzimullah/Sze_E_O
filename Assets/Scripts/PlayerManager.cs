@@ -1,4 +1,5 @@
-﻿public class PlayerManager {
+﻿
+public class PlayerManager {
 
     private static PlayerManager _this_;
     public BadgeType badge;
