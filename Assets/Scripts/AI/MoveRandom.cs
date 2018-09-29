@@ -33,7 +33,7 @@ public class MoveRandom : MonoBehaviour {
             agent.SetDestination(finalPosition);
         }
         else {
-            if (Vector3.Distance(transform.position, agent.destination) <= 0.1f)
+            if (Vector3.Distance(transform.position, agent.destination) <= 1f)
             {
                 StartCoroutine(finishNavigation());
             }
