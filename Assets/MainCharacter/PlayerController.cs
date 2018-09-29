@@ -116,6 +116,7 @@ public class PlayerController : MonoBehaviour {
             if (collision.gameObject.tag == "Elevator")
             {
                 Debug.Log("Elevator");
+                SceneManager.LoadScene("Gameplay");
 
             }
             if (collision.gameObject.tag == "Dialog")
