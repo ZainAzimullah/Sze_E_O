@@ -237,16 +237,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114827822827088554, guid: 28cb0068aa46c8e478deb67f96bf46e2,
-        type: 2}
-      propertyPath: velocity
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 54265059968876004, guid: 28cb0068aa46c8e478deb67f96bf46e2,
-        type: 2}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28cb0068aa46c8e478deb67f96bf46e2, type: 2}
   m_IsPrefabAsset: 0
@@ -422,7 +412,7 @@ GameObject:
   - component: {fileID: 1914927003}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: InteractableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

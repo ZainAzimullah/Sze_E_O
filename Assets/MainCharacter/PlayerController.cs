@@ -76,4 +76,14 @@ public class PlayerController : MonoBehaviour {
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(collision.gameObject.tag=="InteractableItem")
+                Destroy(collision.gameObject);
+
+        }
+    }
 }
