@@ -180,6 +180,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: d483c2143a69ccc4f841042eb9a72cb5,
     type: 3}
   m_PrefabInternal: {fileID: 44028361}
+--- !u!1 &53849404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53849405}
+  - component: {fileID: 53849406}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Computer
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &53849405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53849404}
+  m_LocalRotation: {x: -0.000000021073424, y: -0.707107, z: -0.000000021073424, w: 0.70710665}
+  m_LocalPosition: {x: -1.007, y: 0.34600008, z: -0.183}
+  m_LocalScale: {x: 0.39490047, y: 0.3949006, z: 0.39490193}
+  m_Children: []
+  m_Father: {fileID: 1160640934}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &53849406
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53849404}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5, z: 1.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &58732680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,6 +2840,10 @@ Prefab:
       propertyPath: m_Name
       value: NPC1
       objectReference: {fileID: 0}
+    - target: {fileID: 129800, guid: 1d3b1a1513de66247974634911345b98, type: 2}
+      propertyPath: m_TagString
+      value: Dialog
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d3b1a1513de66247974634911345b98, type: 2}
   m_IsPrefabAsset: 0
@@ -2819,7 +2864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gb: {fileID: 927642053}
-  waitTimeBeforeNextDest: 5
+  waitTimeBeforeNextDest: 50
 --- !u!195 &927642055
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2841,6 +2886,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &927642058
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 927642053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &982566874
 Prefab:
   m_ObjectHideFlags: 0

@@ -83,7 +83,15 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionStay(Collision collision)
     {
         collision.impulse.Set(0, 0, 0);
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (collision.gameObject.tag == "Dialog")
+            {
+                Debug.Log("Dialog");
+                SceneManager.LoadScene("Gameplay");
+            }
+        }
+            
         /*if (Input.GetKeyDown(KeyCode.Space))
         {
             
@@ -111,7 +119,10 @@ public class PlayerController : MonoBehaviour {
 
             }
             if (collision.gameObject.tag == "Dialog")
+            {
                 Debug.Log("Dialog");
+                SceneManager.LoadScene("Gameplay");
+            }              
             if (collision.gameObject.tag == "Computer")
             {
                 Debug.Log("Computer");
