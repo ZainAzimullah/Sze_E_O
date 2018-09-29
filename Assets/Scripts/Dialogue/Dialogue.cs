@@ -8,11 +8,20 @@ public class Dialogue : MonoBehaviour {
     public string[] sentences;
     private int index;
     public float typingSpeed;
+    public GameObject continueButton;
 
     void Start()
     {
         textDisplay.text = "";
         StartCoroutine(Type());
+    }
+
+    void Update()
+    {
+        if (textDisplay.text == sentences[index])
+        {
+            continueButton.SetActive(true);
+        }
     }
 
     IEnumerator Type()
@@ -26,6 +35,7 @@ public class Dialogue : MonoBehaviour {
 
     public void NextSentence()
     {
+        continueButton.SetActive(false);
         if (index < sentences.Length - 1)
         {
             index++;

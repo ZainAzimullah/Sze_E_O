@@ -379,6 +379,7 @@ MonoBehaviour:
   - My name is Zain
   - What is your name?
   typingSpeed: 0.02
+  continueButton: {fileID: 1413401916}
 --- !u!1 &664962929
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,12 +548,12 @@ GameObject:
   - component: {fileID: 1413401918}
   - component: {fileID: 1413401920}
   m_Layer: 0
-  m_Name: TextMeshPro Text
+  m_Name: Continue Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1413401917
 RectTransform:
   m_ObjectHideFlags: 0
