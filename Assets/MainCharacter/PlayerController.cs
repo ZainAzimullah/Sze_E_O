@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour {
     }
     void OnCollisionEnter(Collision collision)
     {
+        collision.impulse.Set(0, 0, 0);
         Rigidbody rb = gb.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
@@ -80,8 +82,9 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionStay(Collision collision)
     {
+        collision.impulse.Set(0, 0, 0);
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             
             if (collision.gameObject.tag == "Elevator")
@@ -93,6 +96,29 @@ public class PlayerController : MonoBehaviour {
                 Debug.Log("Dialog");
             if (collision.gameObject.tag == "Computer")
                 Debug.Log("Computer");
+
+        }*/
+    }
+
+    private void OnTriggerStay(Collider collision)
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+            if (collision.gameObject.tag == "Elevator")
+            {
+                Debug.Log("Elevator");
+
+            }
+            if (collision.gameObject.tag == "Dialog")
+                Debug.Log("Dialog");
+            if (collision.gameObject.tag == "Computer")
+            {
+                Debug.Log("Computer");
+                SceneManager.LoadScene("Gameplay");
+            }
+
+                
 
         }
     }
