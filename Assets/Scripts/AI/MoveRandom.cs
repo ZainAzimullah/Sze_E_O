@@ -5,9 +5,10 @@ using UnityEngine.AI;
 
 public class MoveRandom : MonoBehaviour {
 
+    public NavMeshAgent agent;
     NavMeshAgent navMeshAgent;
     NavMeshPath path;
-    public float timeForNewPath;
+    public float idleTime;
     bool inCoRoutine;
     Vector3 target;
     bool validPath;
@@ -23,8 +24,24 @@ public class MoveRandom : MonoBehaviour {
 
     void Update()
     {
-        if (!inCoRoutine) {
-            StartCoroutine(newLocation());
+        if (!inCoRoutine)
+        {
+            inCoRoutine = true;
+            animator.SetBool("isWalking", true);
+            Vector3 randomDirection = Random.insideUnitSphere * 100;
+            randomDirection += transform.position;
+            NavMeshHit hit;
+            NavMesh.SamplePosition(randomDirection, out hit, 100, 1);
+            Vector3 finalPosition = hit.position;
+            agent.SetDestination(finalPosition);
+        }
+        else {
+            Debug.Log(Vector3.Distance(transform.position, agent.destination));
+            if (Vector3.Distance(transform.position, agent.destination) <= 0.5f)
+            {
+                animator.SetBool("isWalking", false);
+                inCoRoutine = false;
+            }
         }
     }
 
@@ -37,32 +54,9 @@ public class MoveRandom : MonoBehaviour {
         return pos;
     }
 
-    IEnumerator newLocation()
-    {
-        inCoRoutine = true;
-        animator.SetBool("isWalking", true);
-        yield return new WaitForSeconds(timeForNewPath);
-        getNewPath();
-        validPath = navMeshAgent.CalculatePath(target, path);
-        if (!validPath) {
-            Debug.Log("found an invalid path");
-        }
-
-        while (!validPath)
-        {
-            yield return new WaitForSeconds(0.01f);
-            getNewPath();
-            validPath = navMeshAgent.CalculatePath(target, path);
-        }
-
-        animator.SetBool("isWalking", false);
-        inCoRoutine = false;
-    }
-
     void getNewPath()
     {
         target = getNewRandomPosition();
-        navMeshAgent.SetDestination(getNewRandomPosition());
     }
 
 }
