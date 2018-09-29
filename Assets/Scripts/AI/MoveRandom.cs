@@ -11,17 +11,20 @@ public class MoveRandom : MonoBehaviour {
     bool inCoRoutine;
     Vector3 target;
     bool validPath;
+    public GameObject gb;
+    Animator animator;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
+        animator = gb.GetComponent<Animator>();
     }
 
     void Update()
     {
         if (!inCoRoutine) {
-            StartCoroutine(doSomething());
+            StartCoroutine(newLocation());
         }
     }
 
@@ -34,9 +37,10 @@ public class MoveRandom : MonoBehaviour {
         return pos;
     }
 
-    IEnumerator doSomething()
+    IEnumerator newLocation()
     {
         inCoRoutine = true;
+        animator.SetBool("isWalking", true);
         yield return new WaitForSeconds(timeForNewPath);
         getNewPath();
         validPath = navMeshAgent.CalculatePath(target, path);
@@ -50,6 +54,8 @@ public class MoveRandom : MonoBehaviour {
             getNewPath();
             validPath = navMeshAgent.CalculatePath(target, path);
         }
+
+        animator.SetBool("isWalking", false);
         inCoRoutine = false;
     }
 
