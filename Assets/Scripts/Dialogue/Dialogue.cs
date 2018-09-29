@@ -7,7 +7,7 @@ public class Dialogue : MonoBehaviour {
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
     private int index;
-    private bool wantInput = false;
+    private bool skip = false;
     public float typingSpeed;
     public GameObject continueButton;
 
@@ -25,11 +25,6 @@ public class Dialogue : MonoBehaviour {
 
     void Update()
     {
-        if ((textDisplay.text == sentences[index]) && (index != sentences.Length - 1))
-        {
-            continueButton.SetActive(true);
-        }
-
         if ((textDisplay.text == sentences[index]) && (index == sentences.Length -1))
         {
             // print whqyurname
@@ -47,16 +42,32 @@ public class Dialogue : MonoBehaviour {
         foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            if (!skip)
+            {
+                yield return new WaitForSeconds(typingSpeed);
+            }
+            
         }
+        skip = false;
     }
 
     public void NextSentence()
     {
-        continueButton.SetActive(false);
+        if ((textDisplay.text != sentences[index]))
+        {
+            skip = true;
+            return;
+        }
+
         if (index < sentences.Length - 1)
         {
             index++;
+
+            if ((index == sentences.Length - 1) && (textDisplay.text == sentences[index]))
+            {
+                continueButton.SetActive(false);
+            }
+
             textDisplay.text = "";
             StartCoroutine(Type());
         }
