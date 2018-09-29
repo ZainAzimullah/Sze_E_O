@@ -12,7 +12,7 @@ public class MainMenuController : MonoBehaviour {
 
 	public void StartGame() {
 		Debug.Log("START BUTTON IS WORKING");
-		SceneManager.LoadScene("Gameplay");
+		SceneManager.LoadScene("BooleanGame");
 	}
 
 	public void ResumeGame() {
