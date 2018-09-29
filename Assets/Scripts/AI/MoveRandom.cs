@@ -5,44 +5,46 @@ using UnityEngine.AI;
 
 public class MoveRandom : MonoBehaviour {
 
-    public NavMeshAgent agent;
-    NavMeshAgent navMeshAgent;
+    NavMeshAgent agent;
     NavMeshPath path;
-    public float idleTime;
-    bool inCoRoutine;
-    Vector3 target;
-    bool validPath;
-    public GameObject gb;
     Animator animator;
+    public GameObject gb;
+    bool inNavigation;
+    public int waitTimeBeforeNextDest;
 
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
         animator = gb.GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (!inCoRoutine)
+        if (!inNavigation)
         {
-            inCoRoutine = true;
+            inNavigation = true;
             animator.SetBool("isWalking", true);
-            Vector3 randomDirection = Random.insideUnitSphere * 100;
+            Vector3 randomDirection = Random.insideUnitSphere * 25;
             randomDirection += transform.position;
             NavMeshHit hit;
-            NavMesh.SamplePosition(randomDirection, out hit, 100, 1);
+            NavMesh.SamplePosition(randomDirection, out hit, 25, 1);
             Vector3 finalPosition = hit.position;
             agent.SetDestination(finalPosition);
         }
         else {
-            Debug.Log(Vector3.Distance(transform.position, agent.destination));
-            if (Vector3.Distance(transform.position, agent.destination) <= 0.5f)
+            if (Vector3.Distance(transform.position, agent.destination) <= 0.1f)
             {
-                animator.SetBool("isWalking", false);
-                inCoRoutine = false;
+                StartCoroutine(finishNavigation());
             }
         }
+    }
+
+    IEnumerator finishNavigation()
+    {
+        animator.SetBool("isWalking", false);
+        yield return new WaitForSeconds(waitTimeBeforeNextDest);
+        inNavigation = false;
     }
 
     Vector3 getNewRandomPosition()
@@ -53,10 +55,4 @@ public class MoveRandom : MonoBehaviour {
         Vector3 pos = new Vector3(x, 0, z);
         return pos;
     }
-
-    void getNewPath()
-    {
-        target = getNewRandomPosition();
-    }
-
 }

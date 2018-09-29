@@ -2730,9 +2730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909f0e0dc1c2f6044b0c8abda828a7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 927642055}
-  idleTime: 5
   gb: {fileID: 927642053}
+  waitTimeBeforeNextDest: 15
 --- !u!1001 &982566874
 Prefab:
   m_ObjectHideFlags: 0
