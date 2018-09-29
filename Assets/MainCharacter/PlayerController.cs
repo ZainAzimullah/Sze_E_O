@@ -74,15 +74,25 @@ public class PlayerController : MonoBehaviour {
         Rigidbody rb = gb.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        
 
     }
 
     private void OnCollisionStay(Collision collision)
     {
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(collision.gameObject.tag=="InteractableItem")
-                Destroy(collision.gameObject);
+            
+            if (collision.gameObject.tag == "Elevator")
+            {
+                Debug.Log("Elevator");
+                
+            }
+            if (collision.gameObject.tag == "Dialog")
+                Debug.Log("Dialog");
+            if (collision.gameObject.tag == "Computer")
+                Debug.Log("Computer");
 
         }
     }
