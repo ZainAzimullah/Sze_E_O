@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour {
     public float typingSpeed;
     public GameObject continueButton;
 
+    public GameObject prompt;
     public GameObject buttonA;
     public GameObject buttonB;
     public GameObject buttonC;
@@ -32,6 +33,7 @@ public class Dialogue : MonoBehaviour {
         if ((textDisplay.text == sentences[index]) && (index == sentences.Length -1))
         {
             // print whqyurname
+            prompt.SetActive(true);
             buttonA.SetActive(true);
             buttonB.SetActive(true);
             buttonC.SetActive(true);
