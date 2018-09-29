@@ -6,6 +6,7 @@ using TMPro;
 public class Dialogue : MonoBehaviour {
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
+    public string[] colleagueReactions;
     private int index;
     private bool skip = false;
     public float typingSpeed;
@@ -17,17 +18,18 @@ public class Dialogue : MonoBehaviour {
     public GameObject buttonC;
     public GameObject buttonD;
 
+    private int answer = 0;
+
     void Start()
     {
         textDisplay.text = "";
-        StartCoroutine(Type());
+        StartCoroutine(Type(sentences));
     }
 
     void Update()
     {
         if ((textDisplay.text == sentences[index]) && (index == sentences.Length -1))
         {
-            // print whqyurname
             prompt.SetActive(true);
             buttonA.SetActive(true);
             buttonB.SetActive(true);
@@ -37,9 +39,9 @@ public class Dialogue : MonoBehaviour {
         }
     }
 
-    IEnumerator Type()
+    IEnumerator Type(string[] conversation)
     {
-        foreach (char letter in sentences[index].ToCharArray())
+        foreach (char letter in conversation[index].ToCharArray())
         {
             textDisplay.text += letter;
             if (!skip)
@@ -69,9 +71,42 @@ public class Dialogue : MonoBehaviour {
             }
 
             textDisplay.text = "";
-            StartCoroutine(Type());
+            StartCoroutine(Type(sentences));
         }
     }
 
+    public void ButtonA()
+    {
+        answer = 1;
+        CarryOn();
+    }
+    public void ButtonB()
+    {
+        answer = 2;
+        CarryOn();
+    }
+    public void ButtonC()
+    {
+        answer = 3;
+        CarryOn();
+    }
+    public void ButtonD()
+    {
+        answer = 4;
+        CarryOn();
+    }
 
+    private void CarryOn()
+    {
+        Debug.Log("yo");
+        textDisplay.text = "";
+        prompt.SetActive(false);
+        buttonA.SetActive(false);
+        buttonB.SetActive(false);
+        buttonC.SetActive(false);
+        buttonD.SetActive(false);
+        index = 0;
+        StartCoroutine(Type(new string[] { colleagueReactions[answer] }));
+
+    }
 }
