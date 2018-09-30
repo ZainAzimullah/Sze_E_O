@@ -7,10 +7,10 @@ public class SceneTransitionManager : MonoBehaviour {
 
     private static SceneTransitionManager manager;
 
-    public SceneEnum currentScene
+    /*public SceneEnum currentScene
     {
         get; set;
-    }
+    }*/
 
     private SceneTransitionManager() {
 
@@ -35,7 +35,7 @@ public class SceneTransitionManager : MonoBehaviour {
         return manager;
     }
 
-    public void LoadScene()
+    public void LoadScene(SceneEnum currentScene)
     {
         string scene = MapScene(currentScene);
         SceneManager.LoadScene(scene);

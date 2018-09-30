@@ -92,7 +92,8 @@ public class BooleanMinigame : MonoBehaviour {
 	}
 
 	public void exitYes() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneTransitionManager.GetInstance().LoadScene(SceneEnum.LEVEL1);
 	}
 
 

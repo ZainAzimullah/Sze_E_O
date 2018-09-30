@@ -90,8 +90,8 @@ public class PlayerController : MonoBehaviour {
             {
                 /*Debug.Log("Dialog");
                 SceneManager.LoadScene("Gameplay");*/
-                sceneTransitionManager.currentScene = SceneEnum.DIALOGUE;
-                sceneTransitionManager.LoadScene();
+                
+                sceneTransitionManager.LoadScene(SceneEnum.DIALOGUE);
             }
         }
             
@@ -120,16 +120,16 @@ public class PlayerController : MonoBehaviour {
             {
                 /*Debug.Log("Elevator");
                 SceneManager.LoadScene("Gameplay");*/
-                sceneTransitionManager.currentScene = SceneEnum.ELEVATOR;
-                sceneTransitionManager.LoadScene();
+                
+                sceneTransitionManager.LoadScene(SceneEnum.ELEVATOR);
 
             }
             if (collision.gameObject.tag == "Dialog")
             {
                 /*Debug.Log("Dialog");
                 SceneManager.LoadScene("Gameplay");*/
-                sceneTransitionManager.currentScene = SceneEnum.DIALOGUE;
-                sceneTransitionManager.LoadScene();
+               
+                sceneTransitionManager.LoadScene(SceneEnum.DIALOGUE);
             }              
             if (collision.gameObject.tag == "Computer")
             {
@@ -137,8 +137,8 @@ public class PlayerController : MonoBehaviour {
                 SceneManager.LoadScene("Gameplay");*/
 
                 
-                sceneTransitionManager.currentScene = SceneEnum.BOOLEAN_GAME;
-                sceneTransitionManager.LoadScene();
+                
+                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
 
             }
 
