@@ -7,10 +7,16 @@ public class SceneTransitionManager : MonoBehaviour {
 
     private static SceneTransitionManager manager;
 
-    /*public SceneEnum currentScene
+    //a property to indicate what the previous scene
+    public SceneEnum previousScene
     {
         get; set;
-    }*/
+    }
+    //a property to indicate what the current scene
+    public SceneEnum currentScene
+    {
+        get; set;
+    }
 
     private SceneTransitionManager() {
 
@@ -35,12 +41,19 @@ public class SceneTransitionManager : MonoBehaviour {
         return manager;
     }
 
+    /**
+     * A method to load the scene;
+     * @param currentScene A enum to inidicate which scene is to be loaded
+     */
     public void LoadScene(SceneEnum currentScene)
     {
         string scene = MapScene(currentScene);
         SceneManager.LoadScene(scene);
     }
 
+    /**
+     * A helper method to map between Enum and String
+     */
     private string MapScene(SceneEnum scene)
     {
         string sceneName="";
@@ -74,7 +87,7 @@ public class SceneTransitionManager : MonoBehaviour {
 
 
 /**
- A group of enums representing the name of the scene
+ * A group of enums to represent the name of the scene
  */
 public enum SceneEnum
 {
