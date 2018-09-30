@@ -758,7 +758,7 @@ MonoBehaviour:
   - Ignoring me?  How rude.  Go and fix the last bug.
   - Oh yeah, sorry I shouldn't have said that.  Gender doesn't matter. That's very
     courageous of you to speak up on that.  Let's promote you to the next level!
-  - Wow that's not true!Go and fix the bug.
+  - Wow that's not true! Go and fix the bug.
   typingSpeed: 0.02
   continueButton: {fileID: 1413401916}
   prompt: {fileID: 1954038483}
