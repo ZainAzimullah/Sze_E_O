@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour {
     Transform cam;
 
 
-
     // Use this for initialization
     void Start () {
         animator = gb.GetComponent<Animator>();

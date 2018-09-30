@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitionManager : MonoBehaviour {
 
+    public GameObject gb;
+
     private static SceneTransitionManager manager;
 
     //a property to indicate what the previous scene
@@ -21,9 +23,12 @@ public class SceneTransitionManager : MonoBehaviour {
     private SceneTransitionManager() {
 
     }
-
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        DontDestroyOnLoad(gb);
+    }
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
