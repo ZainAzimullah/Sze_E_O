@@ -3,38 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Dialogue : MonoBehaviour {
-    // Text
-    public TextMeshProUGUI textDisplay;
-    public float typingSpeed;
+public class Dialogue : SimpleDialogue {
 
-    // Data
-    public string[] sentences;
+    // Q&A info
     public string[] colleagueReactions;
-    private int index;
+    private int answer = -1;
     private bool answered;
-    private bool skip = false;
 
     // Buttons
-    public GameObject continueButton;
     public GameObject prompt;
     public GameObject buttonA;
     public GameObject buttonB;
     public GameObject buttonC;
     public GameObject buttonD;
-
-    // Shaders
-    public GameObject szeShader;
-    public GameObject otherShader;
-
-    private int answer = -1;
-
-    void Start()
-    {
-        // Clear text and start typing
-        ClearText();
-        StartCoroutine(Type());
-    }
 
     void Update()
     {
@@ -42,55 +23,6 @@ public class Dialogue : MonoBehaviour {
         {
             BrightenMainCharacter();
             ShowReplyOptions();
-        }
-    }
-
-    IEnumerator Type()
-    {
-        if (sentences[index].Contains("Sze"))
-        {
-            BrightenMainCharacter();
-        } else
-        {
-            BrightenOtherCharacter();
-        }
-
-        foreach (char letter in sentences[index].ToCharArray())
-        {
-            textDisplay.text += letter;
-            if (!skip)
-            {
-                yield return new WaitForSeconds(typingSpeed);
-            }
-            
-        }
-        skip = false;
-
-        if (!IsFinished() && IsLastSentence())
-        {
-            BrightenMainCharacter();
-            ShowReplyOptions();
-        }
-    }
-
-    public void NextSentence()
-    {
-        if (IsFinished())
-        {
-            Finish();
-        } else
-        {
-            if (!IsTypedOut())
-            {
-                skip = true;
-                return;
-            }
-            if (!IsLastSentence())
-            {
-                index++;
-                ClearText();
-                StartCoroutine(Type());
-            }
         }
     }
 
@@ -125,23 +57,6 @@ public class Dialogue : MonoBehaviour {
         StartCoroutine(Type());
     }
 
-    public void Finish()
-    {
-        // THIS METHOD IS CALLED WHEN THE DIALOGUE IS FINISHED
-    }
-
-    private void BrightenMainCharacter()
-    {
-        szeShader.SetActive(false);
-        otherShader.SetActive(true);
-    }
-
-    private void BrightenOtherCharacter()
-    {
-        szeShader.SetActive(true);
-        otherShader.SetActive(false);
-    }
-
     private void ShowReplyOptions()
     {
         continueButton.SetActive(false);
@@ -162,23 +77,13 @@ public class Dialogue : MonoBehaviour {
         buttonD.SetActive(false);
     }
 
-    private void ClearText()
-    {
-        textDisplay.text = "";
-    }
-
-    private bool IsTypedOut()
-    {
-        return textDisplay.text == sentences[index];
-    }
-
-    private bool IsLastSentence()
-    {
-        return index == sentences.Length - 1;
-    }
-
-    private bool IsFinished()
+    public override bool IsFinished()
     {
         return answered && IsLastSentence() && IsTypedOut();
+    }
+
+    public override void Finish()
+    {
+        base.Finish();
     }
 }
