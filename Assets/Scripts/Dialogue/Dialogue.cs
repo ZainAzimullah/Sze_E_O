@@ -18,7 +18,11 @@ public class Dialogue : MonoBehaviour {
     public GameObject buttonC;
     public GameObject buttonD;
 
+    public GameObject szeShader;
+    public GameObject otherShader;
+
     private int answer = 0;
+    private bool finished = false;
 
     void Start()
     {
@@ -30,6 +34,8 @@ public class Dialogue : MonoBehaviour {
     {
         if ((textDisplay.text == sentences[index]) && (index == sentences.Length -1))
         {
+            szeShader.SetActive(false);
+            otherShader.SetActive(true);
             prompt.SetActive(true);
             buttonA.SetActive(true);
             buttonB.SetActive(true);
@@ -41,6 +47,16 @@ public class Dialogue : MonoBehaviour {
 
     IEnumerator Type(string[] conversation)
     {
+        if (index % 2 == 0)
+        {
+            szeShader.SetActive(true);
+            otherShader.SetActive(false);
+        } else
+        {
+            szeShader.SetActive(false);
+            otherShader.SetActive(true);
+        }
+
         foreach (char letter in conversation[index].ToCharArray())
         {
             textDisplay.text += letter;
@@ -55,23 +71,29 @@ public class Dialogue : MonoBehaviour {
 
     public void NextSentence()
     {
-        if ((textDisplay.text != sentences[index]))
+        if (finished)
         {
-            skip = true;
-            return;
-        }
-
-        if (index < sentences.Length - 1)
+            Finish();
+        } else
         {
-            index++;
-
-            if ((index == sentences.Length - 1) && (textDisplay.text == sentences[index]))
+            if ((textDisplay.text != sentences[index]))
             {
-                continueButton.SetActive(false);
+                skip = true;
+                return;
             }
 
-            textDisplay.text = "";
-            StartCoroutine(Type(sentences));
+            if (index < sentences.Length - 1)
+            {
+                index++;
+
+                if ((index == sentences.Length - 1) && (textDisplay.text == sentences[index]))
+                {
+                    continueButton.SetActive(false);
+                }
+
+                textDisplay.text = "";
+                StartCoroutine(Type(sentences));
+            }
         }
     }
 
@@ -98,7 +120,6 @@ public class Dialogue : MonoBehaviour {
 
     private void CarryOn()
     {
-        Debug.Log("yo");
         textDisplay.text = "";
         prompt.SetActive(false);
         buttonA.SetActive(false);
@@ -107,6 +128,11 @@ public class Dialogue : MonoBehaviour {
         buttonD.SetActive(false);
         index = 0;
         StartCoroutine(Type(new string[] { colleagueReactions[answer] }));
+        finished = true;
+    }
 
+    public void Finish()
+    {
+        // THIS METHOD IS CALLED WHEN THE DIALOGUE IS FINISHED
     }
 }

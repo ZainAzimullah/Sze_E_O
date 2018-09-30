@@ -766,6 +766,8 @@ MonoBehaviour:
   buttonB: {fileID: 186479301}
   buttonC: {fileID: 933610985}
   buttonD: {fileID: 172415289}
+  szeShader: {fileID: 1137215561}
+  otherShader: {fileID: 1995170511}
 --- !u!1 &664962929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.3137255}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.69803923}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1894,7 +1896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.3137255}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.69803923}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
