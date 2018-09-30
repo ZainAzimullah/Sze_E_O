@@ -29,7 +29,7 @@ public class SimpleDialogue : MonoBehaviour {
 
     public IEnumerator Type()
     {
-        if (sentences[index].Contains("Sze"))
+        if (sentences[index].Contains("Sze:"))
         {
             BrightenMainCharacter();
         }
