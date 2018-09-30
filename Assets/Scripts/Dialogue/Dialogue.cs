@@ -77,22 +77,22 @@ public class Dialogue : MonoBehaviour {
 
     public void ButtonA()
     {
-        answer = 1;
+        answer = 0;
         CarryOn();
     }
     public void ButtonB()
     {
-        answer = 2;
+        answer = 1;
         CarryOn();
     }
     public void ButtonC()
     {
-        answer = 3;
+        answer = 2;
         CarryOn();
     }
     public void ButtonD()
     {
-        answer = 4;
+        answer = 3;
         CarryOn();
     }
 
