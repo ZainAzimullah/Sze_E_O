@@ -37,13 +37,18 @@ public class BooleanMinigame : MonoBehaviour {
 		var answer1 = variable1.options[var1Val].text;
 		var answer2 = variable2.options[var2Val].text;
 		var answer3 = variable3.options[var3Val].text;
+		// check for the correct answer
 		if (answer1.Equals("A") & answer2.Equals("Not B") & answer3.Equals("Not C")) {
 			disableButtons();
 			correctPanel.gameObject.SetActive(true);
+			PlayerManager manager = PlayerManager.instance();
+			manager.updateExperience(experienceEarned);
+			manager.updateMoney(moneyEarned);
 			earnedText.text = "You earned $"+ moneyEarned + " and " + experienceEarned +" experience";
 		} else {
 			disableButtons();
 			tryAgainPanel.gameObject.SetActive(true);
+			// if incorrect the rewards will be decreased
 			// cannot lose money from minigame
 			if (moneyEarned >= 20) {
 				moneyEarned -= 20;
@@ -83,6 +88,8 @@ public class BooleanMinigame : MonoBehaviour {
 
 	public void progress() {
 		// TODO NEED TO SET TO PREVIOS SCREEN TO CONTINUE THE DIALOG
+		PlayerManager manager = PlayerManager.instance();
+		Debug.Log("CURRENT MONEY : " + manager.getMoney() + " ,CURRENT EXPERIENCE : " + manager.getExperience());
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 	}
 
