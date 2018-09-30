@@ -22,7 +22,7 @@ public class Stat
         }
         set 
         {
-            this.currentVal = value; 
+            this.currentVal = Mathf.Clamp(value, 0, MaxVal); 
             bar.Value = currentVal;
         }
     }
@@ -35,7 +35,7 @@ public class Stat
         }
         set
         {
-            this.maxVal = 100f;
+            this.maxVal = value;
             bar.MaxValue = maxVal;
         }
     }

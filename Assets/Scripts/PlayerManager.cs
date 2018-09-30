@@ -5,7 +5,6 @@ public class PlayerManager:MonoBehaviour
 
     private static PlayerManager _this_;
     public BadgeType badge;
-    public int experience;
     public int money;
 
     [SerializeField]
@@ -16,15 +15,16 @@ public class PlayerManager:MonoBehaviour
     private void Awake()
     {
         exp.Initialize();
+        exp.MaxVal = 100;
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.R))
         {
             exp.CurrentVal -= 5;
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.T))
         {
             exp.CurrentVal += 5;
         }
