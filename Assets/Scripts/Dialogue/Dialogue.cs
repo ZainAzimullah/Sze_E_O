@@ -4,60 +4,58 @@ using UnityEngine;
 using TMPro;
 
 public class Dialogue : MonoBehaviour {
+    // Text
     public TextMeshProUGUI textDisplay;
+    public float typingSpeed;
+
+    // Data
     public string[] sentences;
     public string[] colleagueReactions;
     private int index;
+    private bool answered;
     private bool skip = false;
-    public float typingSpeed;
-    public GameObject continueButton;
 
+    // Buttons
+    public GameObject continueButton;
     public GameObject prompt;
     public GameObject buttonA;
     public GameObject buttonB;
     public GameObject buttonC;
     public GameObject buttonD;
 
+    // Shaders
     public GameObject szeShader;
     public GameObject otherShader;
 
-    private int answer = 0;
-    private bool finished = false;
+    private int answer = -1;
 
     void Start()
     {
-        textDisplay.text = "";
-        StartCoroutine(Type(sentences));
+        // Clear text and start typing
+        ClearText();
+        StartCoroutine(Type());
     }
 
     void Update()
     {
-        if ((textDisplay.text == sentences[index]) && (index == sentences.Length -1))
+        if (IsTypedOut() && IsLastSentence() && !IsFinished())
         {
-            szeShader.SetActive(false);
-            otherShader.SetActive(true);
-            prompt.SetActive(true);
-            buttonA.SetActive(true);
-            buttonB.SetActive(true);
-            buttonC.SetActive(true);
-            buttonD.SetActive(true);
-
+            BrightenMainCharacter();
+            ShowReplyOptions();
         }
     }
 
-    IEnumerator Type(string[] conversation)
+    IEnumerator Type()
     {
-        if (index % 2 == 0)
+        if (sentences[index].Contains("Sze"))
         {
-            szeShader.SetActive(true);
-            otherShader.SetActive(false);
+            BrightenMainCharacter();
         } else
         {
-            szeShader.SetActive(false);
-            otherShader.SetActive(true);
+            BrightenOtherCharacter();
         }
 
-        foreach (char letter in conversation[index].ToCharArray())
+        foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
             if (!skip)
@@ -67,32 +65,31 @@ public class Dialogue : MonoBehaviour {
             
         }
         skip = false;
+
+        if (!IsFinished() && IsLastSentence())
+        {
+            BrightenMainCharacter();
+            ShowReplyOptions();
+        }
     }
 
     public void NextSentence()
     {
-        if (finished)
+        if (IsFinished())
         {
             Finish();
         } else
         {
-            if ((textDisplay.text != sentences[index]))
+            if (!IsTypedOut())
             {
                 skip = true;
                 return;
             }
-
-            if (index < sentences.Length - 1)
+            if (!IsLastSentence())
             {
                 index++;
-
-                if ((index == sentences.Length - 1) && (textDisplay.text == sentences[index]))
-                {
-                    continueButton.SetActive(false);
-                }
-
-                textDisplay.text = "";
-                StartCoroutine(Type(sentences));
+                ClearText();
+                StartCoroutine(Type());
             }
         }
     }
@@ -100,39 +97,88 @@ public class Dialogue : MonoBehaviour {
     public void ButtonA()
     {
         answer = 0;
-        CarryOn();
+        Resume();
     }
     public void ButtonB()
     {
         answer = 1;
-        CarryOn();
+        Resume();
     }
     public void ButtonC()
     {
         answer = 2;
-        CarryOn();
+        Resume();
     }
     public void ButtonD()
     {
         answer = 3;
-        CarryOn();
+        Resume();
     }
 
-    private void CarryOn()
+    private void Resume()
     {
-        textDisplay.text = "";
-        prompt.SetActive(false);
-        buttonA.SetActive(false);
-        buttonB.SetActive(false);
-        buttonC.SetActive(false);
-        buttonD.SetActive(false);
+        ClearText();
+        HideReplyOptions();
         index = 0;
-        StartCoroutine(Type(new string[] { colleagueReactions[answer] }));
-        finished = true;
+        answered = true;
+        sentences = new string[] { colleagueReactions[answer] };
+        StartCoroutine(Type());
     }
 
     public void Finish()
     {
         // THIS METHOD IS CALLED WHEN THE DIALOGUE IS FINISHED
+    }
+
+    private void BrightenMainCharacter()
+    {
+        szeShader.SetActive(false);
+        otherShader.SetActive(true);
+    }
+
+    private void BrightenOtherCharacter()
+    {
+        szeShader.SetActive(true);
+        otherShader.SetActive(false);
+    }
+
+    private void ShowReplyOptions()
+    {
+        continueButton.SetActive(false);
+        prompt.SetActive(true);
+        buttonA.SetActive(true);
+        buttonB.SetActive(true);
+        buttonC.SetActive(true);
+        buttonD.SetActive(true);
+    }
+
+    private void HideReplyOptions()
+    {
+        continueButton.SetActive(true);
+        prompt.SetActive(false);
+        buttonA.SetActive(false);
+        buttonB.SetActive(false);
+        buttonC.SetActive(false);
+        buttonD.SetActive(false);
+    }
+
+    private void ClearText()
+    {
+        textDisplay.text = "";
+    }
+
+    private bool IsTypedOut()
+    {
+        return textDisplay.text == sentences[index];
+    }
+
+    private bool IsLastSentence()
+    {
+        return index == sentences.Length - 1;
+    }
+
+    private bool IsFinished()
+    {
+        return answered && IsLastSentence() && IsTypedOut();
     }
 }

@@ -744,6 +744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 159653163}
+  typingSpeed: 0.02
   sentences:
   - "Greg: I see you\u2019ve been doing some bug-fixing."
   - "Sze: Yeah, I\u2019ve successfully managed to fix bugs in 3 pieces of code."
@@ -754,12 +755,11 @@ MonoBehaviour:
   - 'Greg: Normally, only the guys pick up that stuff that fast.  You''re pretty good
     at coding for a girl!'
   colleagueReactions:
-  - However, one computer is still broken.  Go and fix the last bug.
-  - Ignoring me?  How rude.  Go and fix the last bug.
-  - Oh yeah, sorry I shouldn't have said that.  Gender doesn't matter. That's very
-    courageous of you to speak up on that.  Let's promote you to the next level!
-  - Wow that's not true! Go and fix the bug.
-  typingSpeed: 0.02
+  - 'Greg: However, one computer is still broken.  Go and fix the last bug.'
+  - 'Greg: Ignoring me?  How rude.  Go and fix the last bug.'
+  - 'Greg: Oh yeah, sorry I shouldn''t have said that.  Gender doesn''t matter. That''s
+    very courageous of you to speak up on that.  Let''s promote you to the next level!'
+  - 'Greg: Wow that''s not true! Go and fix the bug.'
   continueButton: {fileID: 1413401916}
   prompt: {fileID: 1954038483}
   buttonA: {fileID: 197581281}
