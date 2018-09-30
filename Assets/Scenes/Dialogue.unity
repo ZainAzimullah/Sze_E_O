@@ -754,20 +754,28 @@ MonoBehaviour:
   - 'Sze: Why?'
   - 'Greg: Normally, only the guys pick up that stuff that fast.  You''re pretty good
     at coding for a girl!'
+  szeShader: {fileID: 1137215561}
+  otherShader: {fileID: 1995170511}
+  continueButton: {fileID: 1413401916}
   colleagueReactions:
   - 'Greg: However, one computer is still broken.  Go and fix the last bug.'
   - 'Greg: Ignoring me?  How rude.  Go and fix the last bug.'
   - 'Greg: Oh yeah, sorry I shouldn''t have said that.  Gender doesn''t matter. That''s
     very courageous of you to speak up on that.  Let''s promote you to the next level!'
   - 'Greg: Wow that''s not true! Go and fix the bug.'
-  continueButton: {fileID: 1413401916}
+  mentorAdvice:
+  - 'Sue: Being too agreeable can make it easy for you to get pushed around and cause
+    you to get paid less.  Don''t let people condescend you for being a girl.'
+  - 'Sue: I know that what he said was offensive earlier, but remember that ignoring
+    these kinds of remarks doesn''t make the problem go away.'
+  - 'Sue: Good job!'
+  - 'Sue: Remember that all genders should be treated equally in the workforce, and
+    there is not one which is better than another.'
   prompt: {fileID: 1954038483}
   buttonA: {fileID: 197581281}
   buttonB: {fileID: 186479301}
   buttonC: {fileID: 933610985}
   buttonD: {fileID: 172415289}
-  szeShader: {fileID: 1137215561}
-  otherShader: {fileID: 1995170511}
 --- !u!1 &664962929
 GameObject:
   m_ObjectHideFlags: 0
