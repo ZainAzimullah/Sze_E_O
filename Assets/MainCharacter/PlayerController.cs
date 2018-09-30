@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour {
     Quaternion targetRotation;
     Transform cam;
 
-
-
     // Use this for initialization
     void Start () {
         animator = gb.GetComponent<Animator>();

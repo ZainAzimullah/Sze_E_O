@@ -1,13 +1,36 @@
-﻿public class PlayerManager {
+﻿using UnityEngine;
+
+public class PlayerManager:MonoBehaviour
+{
 
     private static PlayerManager _this_;
     public BadgeType badge;
     public int experience;
-	public int money;
+    public int money;
+
+    [SerializeField]
+    private Stat exp;
 
     private PlayerManager() { }
 
-    public static PlayerManager instance() {
+    private void Awake()
+    {
+        exp.Initialize();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            exp.CurrentVal -= 5;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            exp.CurrentVal += 5;
+        }
+    }
+
+    public static PlayerManager Instance() {
         if (_this_ == null) {
             _this_ = new PlayerManager();
         }
@@ -15,19 +38,19 @@
         return _this_;
     }
 
-	public int getExperience() {
-		return experience;
+	public int GetExperience() {
+        return (int) exp.CurrentVal;
 	}
 
-	public void updateExperience(int gainedExperience) {
-		experience += gainedExperience;
+	public void UpdateExperience(int gainedExperience) {
+        exp.CurrentVal += gainedExperience;
 	}
 
-	public int getMoney() {
+	public int GetMoney() {
 		return money;
 	}
 
-	public void updateMoney(int moneyEarned) {
+	public void UpdateMoney(int moneyEarned) {
 		money += moneyEarned;
 	}
 

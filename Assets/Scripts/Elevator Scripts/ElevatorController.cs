@@ -29,7 +29,7 @@ public class ElevatorController : MonoBehaviour {
 
     public void LevelTwo()
     {
-        if (PlayerManager.instance().badge < BadgeType.TEAM_LEAD)
+        if (PlayerManager.Instance().badge < BadgeType.TEAM_LEAD)
         {
             PopupPanel.SetActive(true);
         }
