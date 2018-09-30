@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneTransitionManager : MonoBehaviour {
+public class SceneTransitionManager : Singleton<SceneTransitionManager> {
 
     public GameObject gb;
-
-    private static SceneTransitionManager manager;
 
     //a property to indicate what the previous scene
     public SceneEnum previousScene
@@ -20,9 +18,7 @@ public class SceneTransitionManager : MonoBehaviour {
         get; set;
     }
 
-    private SceneTransitionManager() {
 
-    }
     private void Awake()
     {
         DontDestroyOnLoad(gb);
@@ -30,7 +26,7 @@ public class SceneTransitionManager : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        Debug.Log("SceneTran");
+        
 	}
 	
 	// Update is called once per frame
@@ -38,14 +34,7 @@ public class SceneTransitionManager : MonoBehaviour {
 		
 	}
 
-    public static SceneTransitionManager  GetInstance()
-    {
-        if (manager == null)
-        {
-            manager = new SceneTransitionManager();
-        }
-        return manager;
-    }
+
 
     /**
      * A method to load the scene;

@@ -25,14 +25,14 @@ public class PlayerController : MonoBehaviour {
         cam = Camera.main.transform;
         PlayerManager playerManager=PlayerManager.Instance;
         
-        if (playerManager.getPlayer() == Vector3.zero)
+        if (playerManager.playerPosition == Vector3.zero)
         {
             
-            playerManager.setPlayer((Vector3)gb.transform.position);
+            playerManager.playerPosition=(Vector3)gb.transform.position;
         }
         else
         {
-            gb.transform.position = playerManager.getPlayer();
+            gb.transform.position = playerManager.playerPosition;
         }
 
         if (playerManager.faceTo == Vector3.zero)
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour {
         collision.impulse.Set(0, 0, 0);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneTransitionManager sceneTransitionManager = SceneTransitionManager.GetInstance();
+            SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
             if (collision.gameObject.tag == "Dialog")
             {
                 sceneTransitionManager.LoadScene(SceneEnum.DIALOGUE);
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour {
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneTransitionManager sceneTransitionManager = SceneTransitionManager.GetInstance();
+            SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
             if (collision.gameObject.tag == "Elevator")
             {               
                 sceneTransitionManager.LoadScene(SceneEnum.ELEVATOR);
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour {
             }              
             if (collision.gameObject.tag == "Computer")
             {
-                PlayerManager.Instance.setPlayer(gb.transform.position);
+                PlayerManager.Instance.playerPosition=gb.transform.position;
                 PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
             }
