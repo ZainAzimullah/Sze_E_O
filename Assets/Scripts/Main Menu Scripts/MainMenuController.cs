@@ -7,7 +7,7 @@ public class MainMenuController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        PlayerManager.instance().badge = BadgeType.GRADUATE;
+        PlayerManager.Instance.badge = BadgeType.GRADUATE;
 	}
 
 	public void StartGame() {

@@ -1,25 +1,26 @@
 ﻿
 using UnityEngine;
 
-public class PlayerManager :MonoBehaviour{
+public class PlayerManager:Singleton<PlayerManager> {
     public GameObject gb;
-    private static PlayerManager _this_;
+    //private static PlayerManager _this_;
     public BadgeType badge;
     public int experience;
+    
 
     public Transform playerPosition
     {
         get;set;
+
     }
 
-    private PlayerManager() { }
+    //private PlayerManager() { }
 
     private void Awake()
     {
-        instance();
         DontDestroyOnLoad(gb);
     }
-    public static PlayerManager instance()
+    /*public static PlayerManager instance()
     {
         if (_this_ == null)
         {
@@ -27,7 +28,7 @@ public class PlayerManager :MonoBehaviour{
         }
 
         return _this_;
-    }
+    }-=*/
 
 
 

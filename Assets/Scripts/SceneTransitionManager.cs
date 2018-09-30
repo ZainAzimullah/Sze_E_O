@@ -30,7 +30,7 @@ public class SceneTransitionManager : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-		
+        Debug.Log("SceneTran");
 	}
 	
 	// Update is called once per frame
