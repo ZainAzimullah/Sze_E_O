@@ -7,6 +7,10 @@ public class PlayerManager:Singleton<PlayerManager> {
     public BadgeType badge;
     public int experience;
     public Vector3 player;
+    public Vector3 faceTo
+    {
+        get;set;
+    }
 
     public void setPlayer(Vector3 t)
     {
@@ -17,6 +21,8 @@ public class PlayerManager:Singleton<PlayerManager> {
     {
         return player;
     }
+
+    
     /*public Transform playerPosition
     {
         get;set;

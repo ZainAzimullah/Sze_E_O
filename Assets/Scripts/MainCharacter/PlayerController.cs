@@ -39,6 +39,15 @@ public class PlayerController : MonoBehaviour {
         {
             gb.transform.position = playerManager.getPlayer();
         }
+
+        if (playerManager.faceTo == Vector3.zero)
+        {
+            playerManager.faceTo = gb.transform.eulerAngles;
+        }
+        else
+        {
+            gb.transform.eulerAngles = playerManager.faceTo;
+        }
         
         /*gb.transform.position = playerManager.playerPosition.position;
         gb.transform.rotation = playerManager.playerPosition.rotation;*/
@@ -158,7 +167,7 @@ public class PlayerController : MonoBehaviour {
 
                 //PlayerManager.Instance.playerPosition = gb.transform;
                 PlayerManager.Instance.setPlayer(gb.transform.position);
-                PlayerManager.Instance.UpdateExperience(100);
+                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
                 //Debug.Log(PlayerManager.Instance.playerPosition.position);
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
 
