@@ -16,6 +16,7 @@ public class PlayerManager :MonoBehaviour{
 
     private void Awake()
     {
+        instance();
         DontDestroyOnLoad(gb);
     }
     public static PlayerManager instance()

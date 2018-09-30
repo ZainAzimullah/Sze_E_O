@@ -17,14 +17,18 @@ public class PlayerController : MonoBehaviour {
 
     Quaternion targetRotation;
     Transform cam;
-
+    private void Awake()
+    {
+        PlayerManager playerManager = PlayerManager.instance();
+        Debug.Log(playerManager == null);
+    }
 
     // Use this for initialization
     void Start () {
         animator = gb.GetComponent<Animator>();
         cam = Camera.main.transform;
         PlayerManager playerManager=PlayerManager.instance();
-        Debug.Log(playerManager==null);
+        //Debug.Log(playerManager==null);
         if (playerManager.playerPosition == null)
         {
             PlayerManager.instance().playerPosition = gb.transform;
