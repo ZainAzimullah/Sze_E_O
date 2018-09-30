@@ -6,14 +6,26 @@ public class PlayerManager:Singleton<PlayerManager> {
     //private static PlayerManager _this_;
     public BadgeType badge;
     public int experience;
-    
+    public Vector3 player;
 
-    public Transform playerPosition
+    public void setPlayer(Vector3 t)
+    {
+        player = t;
+    }
+
+    public Vector3 getPlayer()
+    {
+        return player;
+    }
+    /*public Transform playerPosition
     {
         get;set;
 
+    }*/
+    public void UpdateExperience(int experience1)
+    {
+        experience += experience1;
     }
-
     //private PlayerManager() { }
 
     private void Awake()
