@@ -140,6 +140,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerStay(Collider collision)
     {
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneTransitionManager sceneTransitionManager = SceneTransitionManager.GetInstance();
