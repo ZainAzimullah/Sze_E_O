@@ -26,6 +26,7 @@ public class SceneTransitionManager : MonoBehaviour {
     private void Awake()
     {
         DontDestroyOnLoad(gb);
+        
     }
     // Use this for initialization
     void Start () {

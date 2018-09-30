@@ -23,7 +23,15 @@ public class PlayerController : MonoBehaviour {
     void Start () {
         animator = gb.GetComponent<Animator>();
         cam = Camera.main.transform;
-	}
+        PlayerManager playerManager=PlayerManager.instance();
+        Debug.Log(playerManager==null);
+        if (playerManager.playerPosition == null)
+        {
+            PlayerManager.instance().playerPosition = gb.transform;
+        }
+        gb.transform.position = PlayerManager.instance().playerPosition.position;
+        gb.transform.rotation = PlayerManager.instance().playerPosition.rotation;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -89,7 +97,7 @@ public class PlayerController : MonoBehaviour {
             {
                 /*Debug.Log("Dialog");
                 SceneManager.LoadScene("Gameplay");*/
-                
+                PlayerManager.instance().playerPosition = gb.transform;
                 sceneTransitionManager.LoadScene(SceneEnum.DIALOGUE);
             }
         }
@@ -119,7 +127,7 @@ public class PlayerController : MonoBehaviour {
             {
                 /*Debug.Log("Elevator");
                 SceneManager.LoadScene("Gameplay");*/
-                
+                PlayerManager.instance().playerPosition = gb.transform;
                 sceneTransitionManager.LoadScene(SceneEnum.ELEVATOR);
 
             }
@@ -127,7 +135,7 @@ public class PlayerController : MonoBehaviour {
             {
                 /*Debug.Log("Dialog");
                 SceneManager.LoadScene("Gameplay");*/
-               
+                PlayerManager.instance().playerPosition = gb.transform;
                 sceneTransitionManager.LoadScene(SceneEnum.DIALOGUE);
             }              
             if (collision.gameObject.tag == "Computer")
@@ -135,8 +143,8 @@ public class PlayerController : MonoBehaviour {
                 /*Debug.Log("Computer");
                 SceneManager.LoadScene("Gameplay");*/
 
-                
-                
+
+                PlayerManager.instance().playerPosition = gb.transform;
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
 
             }

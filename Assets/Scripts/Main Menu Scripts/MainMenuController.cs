@@ -12,13 +12,15 @@ public class MainMenuController : MonoBehaviour {
 
 	public void StartGame() {
 		Debug.Log("START BUTTON IS WORKING");
-		SceneManager.LoadScene("Gameplay");
-	}
+        //SceneManager.LoadScene("Gameplay");
+        SceneTransitionManager.GetInstance().LoadScene(SceneEnum.LEVEL1);
+    }
 
 	public void ResumeGame() {
 
 		Debug.Log("RESUME BUTTON IS WORKING");
-		SceneManager.LoadScene("Gameplay");
+        //SceneManager.LoadScene("Gameplay");
+        SceneTransitionManager.GetInstance().LoadScene(SceneEnum.LEVEL1);
 	}
 
 	public void Options() {
