@@ -87,6 +87,6 @@ public class Dialogue : SimpleDialogue {
     public override void Finish()
     {
         base.Finish();
-        Debug.Log(MentorManager.Instance().advice);
+        //Debug.Log(MentorManager.Instance.advice);
     }
 }
