@@ -107,7 +107,9 @@ public class PlayerController : MonoBehaviour {
             SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
             if (collision.gameObject.tag == "Dialog")
             {
-                sceneTransitionManager.LoadScene(SceneEnum.DIALOGUE);
+                PlayerManager.Instance.playerPosition = gb.transform.position;
+                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }
         }
             
@@ -126,7 +128,9 @@ public class PlayerController : MonoBehaviour {
             }
             if (collision.gameObject.tag == "Dialog")
             {
-                sceneTransitionManager.LoadScene(SceneEnum.DIALOGUE);
+                PlayerManager.Instance.playerPosition = gb.transform.position;
+                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }              
             if (collision.gameObject.tag == "Computer")
             {

@@ -42,7 +42,18 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
      */
     public void LoadScene(SceneEnum currentScene)
     {
+        previousScene = this.currentScene;
+        this.currentScene = currentScene;
         string scene = MapScene(currentScene);
+        SceneManager.LoadScene(scene);
+    }
+
+    /**
+     *A method to load the previous scene
+     */
+    public void LoadPreviousScene()
+    {
+        string scene = MapScene(previousScene);
         SceneManager.LoadScene(scene);
     }
 
@@ -68,9 +79,13 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         {
             sceneName = "Elevator";
         }
-        if (scene == SceneEnum.DIALOGUE)
+        if (scene == SceneEnum.GREG_DIALOGUE_AFTER_MINIGAME)
         {
-            sceneName = "Dialogue";
+            sceneName = "GregDialogueAfterMinigame";
+        }
+        if (scene == SceneEnum.CONSULT_GREG_DIALOGUE)
+        {
+            sceneName = "ConsultGregDialog";
         }
         if (scene == SceneEnum.BOOLEAN_GAME)
         {
@@ -90,6 +105,7 @@ public enum SceneEnum
     LEVEL1,
     OPTIONS,
     ELEVATOR,
-    DIALOGUE,
+    CONSULT_GREG_DIALOGUE,
+    GREG_DIALOGUE_AFTER_MINIGAME,
     BOOLEAN_GAME
 }
