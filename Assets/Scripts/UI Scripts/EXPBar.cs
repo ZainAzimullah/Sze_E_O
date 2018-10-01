@@ -28,16 +28,13 @@ public class EXPBar : MonoBehaviour
 	
 	void Update () 
 	{
-		HandleBar();
-	}
+        Value = PlayerManager.Instance.GetExperience();
 
-	private void HandleBar ()
-    {
-        if (fillAmount != content.fillAmount) 
+        if (fillAmount != content.fillAmount)
         {
-            content.fillAmount = fillAmount;        
+            content.fillAmount = fillAmount;
         }
-	}
+    }
 
 	private float Map (float value, float inputMin, float inputMax, float outputMin, float outputMax) 
 	{

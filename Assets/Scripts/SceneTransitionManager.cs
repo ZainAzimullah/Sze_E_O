@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitionManager : Singleton<SceneTransitionManager> {
 
-    public GameObject gb;
-
     //a property to indicate what the previous scene
     public SceneEnum previousScene
     {
@@ -21,7 +19,6 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
 
     private void Awake()
     {
-        DontDestroyOnLoad(gb);
         
     }
     // Use this for initialization

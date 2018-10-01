@@ -4,10 +4,6 @@ using UnityEngine;
 [Serializable]
 public class Stat 
 {
-
-    [SerializeField]
-    private EXPBar bar;
-
     [SerializeField]
     private float maxVal;
 
@@ -23,7 +19,6 @@ public class Stat
         set 
         {
             this.currentVal = Mathf.Clamp(value, 0, MaxVal); 
-            bar.Value = currentVal;
         }
     }
 
@@ -36,7 +31,6 @@ public class Stat
         set
         {
             this.maxVal = value;
-            bar.MaxValue = maxVal;
         }
     }
 

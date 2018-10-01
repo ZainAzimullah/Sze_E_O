@@ -1,7 +1,6 @@
 using UnityEngine;
 
 public class PlayerManager:Singleton<PlayerManager> {
-    public GameObject gb;
     public BadgeType badge;
     
     public Vector3 faceTo
@@ -16,7 +15,6 @@ public class PlayerManager:Singleton<PlayerManager> {
 
     private void Awake()
     {
-        DontDestroyOnLoad(gb);
         exp = new Stat();
         exp.Initialize();
         exp.MaxVal = 100;
@@ -24,13 +22,14 @@ public class PlayerManager:Singleton<PlayerManager> {
 
     private void Update()
     {
+            Debug.Log("yo");
         if (Input.GetKey(KeyCode.R))
         {
-            exp.CurrentVal -= 5;
+            UpdateExperience(-5);
         }
         if (Input.GetKey(KeyCode.T))
         {
-            exp.CurrentVal += 5;
+            UpdateExperience(5);
         }
     }
 
