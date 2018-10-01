@@ -54,7 +54,7 @@ public class Dialogue : SimpleDialogue {
         HideReplyOptions();
         index = 0;
         answered = true;
-        MentorManager.Instance().advice = mentorAdvice[answer];
+        MentorManager.Instance.advice = mentorAdvice[answer];
         sentences = new string[] { colleagueReactions[answer] };
         StartCoroutine(Type());
     }
