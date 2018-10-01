@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a21823c196e1a7a46a3d549fb9cee80a
+guid: f5c21b74480073b4d93f5b6cca6a22d0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -11,12 +11,7 @@ ModelImporter:
     2300000: rp_mei_posed_001_30k
     3300000: rp_mei_posed_001_30k
     4300000: rp_mei_posed_001_30k
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rp_mei_posed_001_30kMat
-    second: {fileID: 2100000, guid: a83a5989704a2b24db7920f04a92f9b0, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
