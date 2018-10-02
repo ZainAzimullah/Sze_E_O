@@ -6,7 +6,7 @@ public class PlayerManager:Singleton<PlayerManager> {
 
     public List<Tracker> trackers; 
     //the direction where the player face at
-    public Vector3 faceTo
+    /*public Vector3 faceTo
     {
         get; set;
     }
@@ -54,6 +54,15 @@ public class PlayerManager:Singleton<PlayerManager> {
 	public void UpdateMoney(int moneyEarned) {
 		money += moneyEarned;
 	}
+
+    void InitializeTracker()
+    {
+        trackers = new List<Tracker>();
+        for(int i = 0; i <= LevelManager.Instance.GetMaxLevel(); i++)
+        {
+            trackers.Add(new Tracker());
+        }
+    }
 
 }
 

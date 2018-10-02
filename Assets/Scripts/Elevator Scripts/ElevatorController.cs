@@ -17,6 +17,7 @@ public class ElevatorController : MonoBehaviour {
 	public void GroundButton() {
         //Debug.Log("START BUTTON IS WORKING");
         //SceneManager.LoadScene("Gameplay");
+        LevelManager.Instance.currentLevel = 0;
         SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL0);
 	}
 
@@ -25,7 +26,9 @@ public class ElevatorController : MonoBehaviour {
 
         //Debug.Log("LEVEL ONE BUTTON IS WORKING");
         //SceneManager.LoadScene("Level1");
+        LevelManager.Instance.currentLevel = 1;
         SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
+
         
     }
 
@@ -39,6 +42,7 @@ public class ElevatorController : MonoBehaviour {
         {
             // Debug.Log("LEVEL TWO BUTTON IS WORKING");
             // SceneManager.LoadScene("Level2");
+            //LevelManager.Instance.currentLevel = 2;
         }
     }
 
