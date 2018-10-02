@@ -108,6 +108,8 @@ public class PlayerController : MonoBehaviour {
             {
                 PlayerManager.Instance.playerPosition = gb.transform.position;
                 PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                PlayerManager.Instance.camAngle = cam.eulerAngles;
+                PlayerManager.Instance.camPos = cam.position;
                 sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }
         }
@@ -122,19 +124,27 @@ public class PlayerController : MonoBehaviour {
         {
             SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
             if (collision.gameObject.tag == "Elevator")
-            {               
+            {
+                PlayerManager.Instance.playerPosition = gb.transform.position;
+                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                PlayerManager.Instance.camAngle = cam.eulerAngles;
+                PlayerManager.Instance.camPos = cam.position;
                 sceneTransitionManager.LoadScene(SceneEnum.ELEVATOR);
             }
             if (collision.gameObject.tag == "Dialog")
             {
                 PlayerManager.Instance.playerPosition = gb.transform.position;
                 PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                PlayerManager.Instance.camAngle = cam.eulerAngles;
+                PlayerManager.Instance.camPos = cam.position;
                 sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }              
             if (collision.gameObject.tag == "Computer")
             {
                 PlayerManager.Instance.playerPosition=gb.transform.position;
                 PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                PlayerManager.Instance.camAngle = cam.eulerAngles;
+                PlayerManager.Instance.camPos=cam.position;
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
             }
         }

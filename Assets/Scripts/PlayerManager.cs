@@ -8,6 +8,21 @@ public class PlayerManager:Singleton<PlayerManager> {
         get; set;
     }
 
+    public Vector3 playerPosition
+    {
+        get; set;
+    }
+
+    public Vector3 camAngle
+    {
+        get;set;
+    }
+
+    public Vector3 camPos
+    {
+        get;set;
+    }
+
     public int money;
 
     [SerializeField]
@@ -22,7 +37,7 @@ public class PlayerManager:Singleton<PlayerManager> {
 
     private void Update()
     {
-            Debug.Log("yo");
+            //Debug.Log("yo");
         if (Input.GetKey(KeyCode.R))
         {
             UpdateExperience(-5);
@@ -34,10 +49,7 @@ public class PlayerManager:Singleton<PlayerManager> {
     }
 
     
-    public Vector3 playerPosition
-    {
-        get;set;
-    }
+
     
 	public int GetExperience() {
         // change to return actual exp not percentage 

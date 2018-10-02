@@ -16,7 +16,6 @@ public class FollowPlayer : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
         Quaternion cameraAngle = 
             Quaternion.AngleAxis(Input.GetAxis("Mouse X") * RotateSpeed, Vector3.up);
         Offset = cameraAngle * Offset;
