@@ -546,7 +546,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: B
+  m_Text: '*'
 --- !u!222 &156849254
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -971,9 +971,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: A
+    - m_Text: /
       m_Image: {fileID: 0}
-    - m_Text: Not A
+    - m_Text: '*'
+      m_Image: {fileID: 0}
+    - m_Text: +
+      m_Image: {fileID: 0}
+    - m_Text: '-'
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -994,12 +998,12 @@ RectTransform:
   - {fileID: 618669263}
   - {fileID: 315351937}
   m_Father: {fileID: 1725501355}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -535, y: -20}
-  m_SizeDelta: {x: 130, y: 25}
+  m_AnchoredPosition: {x: -194, y: 46}
+  m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &297206258
 MonoBehaviour:
@@ -1513,7 +1517,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1725501355}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1578,7 +1582,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349251976}
-        m_MethodName: checkCode
+        m_MethodName: CheckBooleanGame2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1636,7 +1640,7 @@ RectTransform:
   m_Children:
   - {fileID: 1737517015}
   m_Father: {fileID: 1725501355}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2130,7 +2134,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: The code below is supposed to return the average of three variables. Unfortunately,
-    there is a logic error present. Please change the below variables to get the code
+    there is a logic error present. Please change the below operators to get the code
     working!
 --- !u!222 &702276426
 CanvasRenderer:
@@ -2324,9 +2328,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: B
+    - m_Text: '*'
       m_Image: {fileID: 0}
-    - m_Text: Not B
+    - m_Text: '-'
+      m_Image: {fileID: 0}
+    - m_Text: /
+      m_Image: {fileID: 0}
+    - m_Text: +
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2347,12 +2355,12 @@ RectTransform:
   - {fileID: 2058968585}
   - {fileID: 11401446}
   m_Father: {fileID: 1725501355}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21, y: -20}
-  m_SizeDelta: {x: 130, y: 25}
+  m_AnchoredPosition: {x: 175, y: 46}
+  m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &804533121
 MonoBehaviour:
@@ -2537,7 +2545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.57, y: 21}
+  m_AnchoredPosition: {x: 17.57, y: -38}
   m_SizeDelta: {x: 1740, y: 419.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &828020040
@@ -2572,7 +2580,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "private double findAvg (int A, int B, int C) {\n\tdouble avg;\n \n\n\tsetSunVisible(true);\n\n}"
+  m_Text: "private double findAvg (int A, int B, int C) {\n\t\n\tdouble avg = (A \t\t\tB
+    \t\t\t  C) \t\t\t3 ;\n \t\n\t\n\treturn avg;\n}"
 --- !u!222 &828020041
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3618,7 +3627,7 @@ RectTransform:
   m_Children:
   - {fileID: 973812146}
   m_Father: {fileID: 1725501355}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3745,7 +3754,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A
+  m_Text: /
 --- !u!222 &1323372321
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4036,85 +4045,6 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1479578159}
-  m_CullTransparentMesh: 0
---- !u!1 &1538702681
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1538702682}
-  - component: {fileID: 1538702684}
-  - component: {fileID: 1538702683}
-  m_Layer: 5
-  m_Name: VariableText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1538702682
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1538702681}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1725501355}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39, y: 498.19995}
-  m_SizeDelta: {x: 1650, y: 160}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1538702683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1538702681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.4, g: 1, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 72102a44d78d1fe48898cd7e027779da, type: 3}
-    m_FontSize: 42
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 50
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'A - It is day time
-
-    B - It is raining
-
-    C - It is very cloudy'
---- !u!222 &1538702684
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1538702681}
   m_CullTransparentMesh: 0
 --- !u!1 &1573625394
 GameObject:
@@ -4588,7 +4518,6 @@ RectTransform:
   m_Children:
   - {fileID: 702276424}
   - {fileID: 828020039}
-  - {fileID: 1538702682}
   - {fileID: 297206257}
   - {fileID: 804533120}
   - {fileID: 1935111829}
@@ -5203,9 +5132,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: C
+    - m_Text: +
       m_Image: {fileID: 0}
-    - m_Text: Not C
+    - m_Text: /
+      m_Image: {fileID: 0}
+    - m_Text: '*'
+      m_Image: {fileID: 0}
+    - m_Text: '-'
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5226,12 +5159,12 @@ RectTransform:
   - {fileID: 1573625395}
   - {fileID: 1736014254}
   m_Father: {fileID: 1725501355}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 510, y: -20}
-  m_SizeDelta: {x: 130, y: 25}
+  m_AnchoredPosition: {x: 547, y: 46}
+  m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935111830
 MonoBehaviour:
@@ -5488,7 +5421,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: C
+  m_Text: +
 --- !u!222 &2108586391
 CanvasRenderer:
   m_ObjectHideFlags: 0
