@@ -68,6 +68,10 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         {
             sceneName = "Options";
         }
+        if (scene == SceneEnum.LEVEL0)
+        {
+            sceneName = "Level0";
+        }
         if (scene == SceneEnum.LEVEL1)
         {
             sceneName = "Level1";
@@ -99,6 +103,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
 public enum SceneEnum
 {
     MAIN_MENU,
+    LEVEL0,
     LEVEL1,
     OPTIONS,
     ELEVATOR,
