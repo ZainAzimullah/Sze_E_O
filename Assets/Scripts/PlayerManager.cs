@@ -35,10 +35,6 @@ public class PlayerManager:Singleton<PlayerManager> {
         exp.MaxVal = 100;
     }
 
-    public Vector3 playerPosition
-    {
-        get;set;
-    }
 
     public Stat GetExperience() {
         return exp;

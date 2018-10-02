@@ -127,8 +127,9 @@ public class PlayerController : MonoBehaviour {
             {
                 PlayerManager.Instance.playerPosition = gb.transform.position;
                 PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
-                PlayerManager.Instance.camAngle = cam.eulerAngles;
-                PlayerManager.Instance.camPos = cam.position;
+                /*PlayerManager.Instance.camAngle = cam.eulerAngles;
+                PlayerManager.Instance.camPos = cam.position;*/
+                Debug.Log("DELETED");
                 sceneTransitionManager.LoadScene(SceneEnum.ELEVATOR);
             }
             if (collision.gameObject.tag == "Dialog")

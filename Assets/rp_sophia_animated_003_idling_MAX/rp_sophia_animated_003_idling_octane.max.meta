@@ -170,6 +170,7 @@ ModelImporter:
     400162: rp_sophia_animated_003_idling_upperleg_twist_l
     400164: rp_sophia_animated_003_idling_upperleg_twist_r
     2100000: 'Material #248'
+    2100002: 'Material #17'
     4300000: rp_sophia_animated_003_idling_geo
     7400000: Take 001
     9500000: //RootNode

@@ -18,23 +18,23 @@ namespace FollowPlayerNamespace
             //Debug.Log(player.camPos);
             if (player.camAngle == Vector3.zero)
             {
-                player.camAngle = this.transform.eulerAngles;
+                //player.camAngle = this.transform.eulerAngles;
             }
             else
             {
-                transform.eulerAngles = player.camAngle;
+                //transform.eulerAngles = player.camAngle;
             }
 
             if (player.camPos == Vector3.zero)
             {
-                player.camPos = this.transform.position;
+                //player.camPos = this.transform.position;
             }
             else
             {
-                transform.position = player.camPos;
+                //transform.position = player.camPos;
             }
 
-            
+            Debug.Log("IN");
 
             Offset = transform.position - Player.position;
         }

@@ -39,6 +39,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
      */
     public void LoadScene(SceneEnum currentScene)
     {
+        Debug.Log(PlayerManager.Instance.camPos);
         previousScene = this.currentScene;
         this.currentScene = currentScene;
         string scene = MapScene(currentScene);
