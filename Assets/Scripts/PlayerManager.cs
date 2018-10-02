@@ -65,7 +65,7 @@ public class PlayerManager:Singleton<PlayerManager> {
      */
     public Tracker GetTracker(int index)
     {
-        Debug.Log(index);
+        
         return trackers[index];
     }
 
@@ -76,7 +76,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         {
             trackers.Add(new Tracker());
         }
-        Debug.Log(trackers.Count);
+        
     }
 
 }
