@@ -18,7 +18,8 @@ public class Stat
         }
         set 
         {
-            this.currentVal = Mathf.Clamp(value, 0, MaxVal); 
+            // Prevents EXP from going over minimum and maximum values
+            currentVal = Mathf.Clamp(value, 0, MaxVal); 
         }
     }
 
@@ -30,7 +31,7 @@ public class Stat
         }
         set
         {
-            this.maxVal = value;
+            maxVal = value;
         }
     }
 

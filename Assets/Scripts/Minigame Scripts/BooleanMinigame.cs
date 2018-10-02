@@ -41,6 +41,9 @@ public class BooleanMinigame : MonoBehaviour {
 			disableButtons();
 			correctPanel.gameObject.SetActive(true);
 			earnedText.text = "You earned $"+ moneyEarned + " and " + experienceEarned +" experience";
+			
+			// Updates the global experience of the player
+			PlayerManager.Instance.UpdateExperience(experienceEarned);
 		} else {
 			disableButtons();
 			tryAgainPanel.gameObject.SetActive(true);
