@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager:Singleton<PlayerManager> {
     public BadgeType badge;
+
+    public List<Tracker> trackers; 
     //the direction where the player face at
     public Vector3 faceTo
     {
@@ -13,15 +16,15 @@ public class PlayerManager:Singleton<PlayerManager> {
         get; set;
     }
     //the main camera angle
-    public Vector3 camAngle
+    /*public Vector3 camAngle
     {
         get;set;
-    }
+    }*/
     //the position of the main camera
-    public Vector3 camPos
+    /*public Vector3 camPos
     {
         get;set;
-    }
+    }*/
 
     public int money;
 

@@ -16,23 +16,23 @@ namespace FollowPlayerNamespace
         {
             PlayerManager player=PlayerManager.Instance;
             //Debug.Log(player.camPos);
-            if (player.camAngle == Vector3.zero)
+            /*if (player.camAngle == Vector3.zero)
             {
                 //player.camAngle = this.transform.eulerAngles;
             }
             else
             {
                 //transform.eulerAngles = player.camAngle;
-            }
+            }*/
 
-            if (player.camPos == Vector3.zero)
+            /*if (player.camPos == Vector3.zero)
             {
                 //player.camPos = this.transform.position;
             }
             else
             {
                 //transform.position = player.camPos;
-            }
+            }*/
 
             Debug.Log("IN");
 
