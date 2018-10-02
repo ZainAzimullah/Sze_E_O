@@ -20,25 +20,17 @@ public class PlayerManager:Singleton<PlayerManager> {
         exp.MaxVal = 100;
     }
 
-    private void Update()
-    {
-
-    }
-
     public Vector3 playerPosition
     {
         get;set;
     }
 
     public Stat GetExperience() {
-        // change to return actual exp not percentage 
-//        Debug.Log(exp.CurrentVal + "Current value");
         return exp;
     }
 
 	public void UpdateExperience(float gainedExperience) {
         exp.CurrentVal += gainedExperience;
-//	    Debug.Log(exp.CurrentVal + "Updated expreience");
 	}
 
 	public int GetMoney() {
