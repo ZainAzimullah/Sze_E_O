@@ -82,9 +82,10 @@ public class BooleanMinigame : MonoBehaviour {
 	}
 
 	public void progress() {
-		// TODO NEED TO SET TO PREVIOS SCREEN TO CONTINUE THE DIALOG
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-	}
+        // TODO NEED TO SET TO PREVIOS SCREEN TO CONTINUE THE DIALOG
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.GREG_DIALOGUE_AFTER_MINIGAME);
+    }
 
 	public void exitGame() {
 		disableButtons();
@@ -92,7 +93,8 @@ public class BooleanMinigame : MonoBehaviour {
 	}
 
 	public void exitYes() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
 	}
 
 

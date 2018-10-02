@@ -18,13 +18,32 @@ public class PlayerController : MonoBehaviour {
     Quaternion targetRotation;
     Transform cam;
 
-
-
     // Use this for initialization
     void Start () {
         animator = gb.GetComponent<Animator>();
         cam = Camera.main.transform;
-	}
+        PlayerManager playerManager=PlayerManager.Instance;
+        
+        if (playerManager.playerPosition == Vector3.zero)
+        {
+            
+            playerManager.playerPosition=(Vector3)gb.transform.position;
+        }
+        else
+        {
+            gb.transform.position = playerManager.playerPosition;
+        }
+
+        if (playerManager.faceTo == Vector3.zero)
+        {
+            playerManager.faceTo = gb.transform.eulerAngles;
+        }
+        else
+        {
+            gb.transform.eulerAngles = playerManager.faceTo;
+        }
+      
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -42,8 +61,7 @@ public class PlayerController : MonoBehaviour {
     void Move()
     {
         Rigidbody rigidbody = gb.GetComponent<Rigidbody>();
-        animator.SetBool("isWalking", true);
-        //transform.position += transform.forward * velocity * Time.deltaTime;   
+        animator.SetBool("isWalking", true); 
         rigidbody.MovePosition(transform.position + transform.forward * velocity * Time.deltaTime);
         
     }
@@ -85,53 +103,40 @@ public class PlayerController : MonoBehaviour {
         collision.impulse.Set(0, 0, 0);
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
             if (collision.gameObject.tag == "Dialog")
             {
-                Debug.Log("Dialog");
-                SceneManager.LoadScene("Gameplay");
+                PlayerManager.Instance.playerPosition = gb.transform.position;
+                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }
         }
             
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            
-            if (collision.gameObject.tag == "Elevator")
-            {
-                Debug.Log("Elevator");
-                
-            }
-            if (collision.gameObject.tag == "Dialog")
-                Debug.Log("Dialog");
-            if (collision.gameObject.tag == "Computer")
-                Debug.Log("Computer");
-
-        }*/
+        
     }
 
     private void OnTriggerStay(Collider collision)
     {
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
             if (collision.gameObject.tag == "Elevator")
-            {
-                Debug.Log("Elevator");
-                SceneManager.LoadScene("Gameplay");
-
+            {               
+                sceneTransitionManager.LoadScene(SceneEnum.ELEVATOR);
             }
             if (collision.gameObject.tag == "Dialog")
             {
-                Debug.Log("Dialog");
-                SceneManager.LoadScene("Gameplay");
+                PlayerManager.Instance.playerPosition = gb.transform.position;
+                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }              
             if (collision.gameObject.tag == "Computer")
             {
-                Debug.Log("Computer");
-                SceneManager.LoadScene("Gameplay");
+                PlayerManager.Instance.playerPosition=gb.transform.position;
+                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
             }
-
-                
-
         }
     }
 }
