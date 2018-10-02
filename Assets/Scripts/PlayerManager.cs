@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerManager:Singleton<PlayerManager> {
     public BadgeType badge;
 
-    public List<Tracker> trackers; 
+    private List<Tracker> trackers; 
     //the direction where the player face at
     /*public Vector3 faceTo
     {
@@ -36,6 +36,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         exp = new Stat();
         exp.Initialize();
         exp.MaxVal = 100;
+        InitializeTracker();
     }
 
 
@@ -55,13 +56,27 @@ public class PlayerManager:Singleton<PlayerManager> {
 		money += moneyEarned;
 	}
 
+    public List<Tracker> GetTrackers()
+    {
+        return trackers;
+    }
+    /**
+     * Get the tracker in level "index" in the tracker list.
+     */
+    public Tracker GetTracker(int index)
+    {
+        Debug.Log(index);
+        return trackers[index];
+    }
+
     void InitializeTracker()
     {
         trackers = new List<Tracker>();
-        for(int i = 0; i <= LevelManager.Instance.GetMaxLevel(); i++)
+        for(int i = 0; i <= LevelManager.Instance.GetMaxLevel()+1; i++)
         {
             trackers.Add(new Tracker());
         }
+        Debug.Log(trackers.Count);
     }
 
 }

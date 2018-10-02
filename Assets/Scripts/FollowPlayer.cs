@@ -15,26 +15,24 @@ namespace FollowPlayerNamespace
         void Start()
         {
             PlayerManager player=PlayerManager.Instance;
-            //Debug.Log(player.camPos);
-            /*if (player.camAngle == Vector3.zero)
+            Tracker tracker = player.GetTracker(LevelManager.Instance.currentLevel);
+            if (tracker.camAngle == Vector3.zero)
             {
-                //player.camAngle = this.transform.eulerAngles;
+                tracker.camAngle = this.transform.eulerAngles;
             }
             else
             {
-                //transform.eulerAngles = player.camAngle;
-            }*/
+                transform.eulerAngles = tracker.camAngle;
+            }
 
-            /*if (player.camPos == Vector3.zero)
+            if (tracker.camPos == Vector3.zero)
             {
-                //player.camPos = this.transform.position;
+                tracker.camPos = this.transform.position;
             }
             else
             {
-                //transform.position = player.camPos;
-            }*/
-
-            Debug.Log("IN");
+                transform.position = tracker.camPos;
+            }
 
             Offset = transform.position - Player.position;
         }
