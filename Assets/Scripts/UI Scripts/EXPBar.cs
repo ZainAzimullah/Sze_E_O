@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class EXPBar : MonoBehaviour 
+public class EXPBar : MonoBehaviour
 {
-
 	[SerializeField]
 	private float fillAmount;
 
@@ -12,32 +11,23 @@ public class EXPBar : MonoBehaviour
 
 	public float MaxValue { get; set; }
 
-    
-	public float Value 
+	private void Start()
 	{
-		set 
-		{
-            fillAmount = Map(value, 0, MaxValue, 0, 1);
-		}
+		// On scene start get Current EXP
+		fillAmount = PlayerManager.Instance.GetExperience().CurrentVal;
 	}
 
-	void Start () 
+	public float Value 
 	{
-		
+		set { fillAmount = value / PlayerManager.Instance.GetExperience().MaxVal; }
+		get { return fillAmount; }
 	}
 	
 	void Update () 
 	{
-        Value = PlayerManager.Instance.GetExperience();
+        Value = PlayerManager.Instance.GetExperience().CurrentVal;
 
-        if (fillAmount != content.fillAmount)
-        {
-            content.fillAmount = fillAmount;
-        }
+		content.fillAmount = Value;
     }
 
-	private float Map (float value, float inputMin, float inputMax, float outputMin, float outputMax) 
-	{
-		return (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) + outputMin;
-	}
 }

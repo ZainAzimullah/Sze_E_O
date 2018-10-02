@@ -20,31 +20,16 @@ public class PlayerManager:Singleton<PlayerManager> {
         exp.MaxVal = 100;
     }
 
-    private void Update()
-    {
-            Debug.Log("yo");
-        if (Input.GetKey(KeyCode.R))
-        {
-            UpdateExperience(-5);
-        }
-        if (Input.GetKey(KeyCode.T))
-        {
-            UpdateExperience(5);
-        }
-    }
-
-    
     public Vector3 playerPosition
     {
         get;set;
     }
-    
-	public int GetExperience() {
-        // change to return actual exp not percentage 
-        return (int) exp.CurrentVal;
-	}
 
-	public void UpdateExperience(int gainedExperience) {
+    public Stat GetExperience() {
+        return exp;
+    }
+
+	public void UpdateExperience(float gainedExperience) {
         exp.CurrentVal += gainedExperience;
 	}
 
