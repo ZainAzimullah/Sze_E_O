@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ConsultGregDialog.unity
     guid: 4883390dfd9844b49b7be0d548cba233
+  - enabled: 1
+    path: Assets/Scenes/BooleanGame2.unity
+    guid: 06cf18bb08b844d05b5f5c1f291c4c4c
   m_configObjects: {}
