@@ -22,30 +22,23 @@ public class PlayerManager:Singleton<PlayerManager> {
 
     private void Update()
     {
-            Debug.Log("yo");
-        if (Input.GetKey(KeyCode.R))
-        {
-            UpdateExperience(-5);
-        }
-        if (Input.GetKey(KeyCode.T))
-        {
-            UpdateExperience(5);
-        }
+
     }
 
-    
     public Vector3 playerPosition
     {
         get;set;
     }
-    
-	public int GetExperience() {
-        // change to return actual exp not percentage 
-        return (int) exp.CurrentVal;
-	}
 
-	public void UpdateExperience(int gainedExperience) {
+    public Stat GetExperience() {
+        // change to return actual exp not percentage 
+//        Debug.Log(exp.CurrentVal + "Current value");
+        return exp;
+    }
+
+	public void UpdateExperience(float gainedExperience) {
         exp.CurrentVal += gainedExperience;
+//	    Debug.Log(exp.CurrentVal + "Updated expreience");
 	}
 
 	public int GetMoney() {
