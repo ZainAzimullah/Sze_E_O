@@ -11,22 +11,14 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void StartGame() {
-		//Debug.Log("START BUTTON IS WORKING");
-        //SceneManager.LoadScene("Gameplay");
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL0);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.INTRO_DIALOG);
     }
 
 	public void ResumeGame() {
-
-		//Debug.Log("RESUME BUTTON IS WORKING");
-        //SceneManager.LoadScene("Gameplay");
         SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
 	}
 
 	public void Options() {
-
-        //Debug.Log("OPTIONS BUTTON IS WORKING");
-        //SceneManager.LoadScene("Options");
         SceneTransitionManager.Instance.LoadScene(SceneEnum.OPTIONS);
 	}
 
@@ -35,7 +27,6 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void MainMenu() {
-        //SceneManager.LoadScene("MainMenu");
         SceneTransitionManager.Instance.LoadScene(SceneEnum.MAIN_MENU);
 	}
 
