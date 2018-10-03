@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour {
                 SetTracker(tracker);
                 sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }              
-            if (collision.gameObject.tag == "Computer"|| collision.gameObject.tag == "Computer4")
+            if (collision.gameObject.tag == "Computer")
             {
                 SetTracker(tracker);
                 if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame)) {
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
             }
-            if (collision.gameObject.tag == "Computer1"|| collision.gameObject.tag == "Computer5")
+            if ( collision.gameObject.tag == "Computer5")
             {
                 SetTracker(tracker);
                 if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame2))
@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME2);
             }
-            if (collision.gameObject.tag == "Computer2"|| collision.gameObject.tag == "Computer6")
+            if ( collision.gameObject.tag == "Computer6")
             {
                 SetTracker(tracker);
                 if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame3))
@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME3);
             }
-            if (collision.gameObject.tag == "Computer3"|| collision.gameObject.tag == "Computer7")
+            if (collision.gameObject.tag == "Computer3")
             {
                 SetTracker(tracker);
                 if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame4))
@@ -183,6 +183,11 @@ public class PlayerController : MonoBehaviour {
                     return;
                 }
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME4);
+            }
+            if (collision.gameObject.tag == "Computer4" || collision.gameObject.tag == "Computer1" || collision.gameObject.tag == "Computer2" || collision.gameObject.tag == "Computer7")
+            {
+                SetTracker(tracker);
+                SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
             }
             if (collision.gameObject.tag == "TutorialComputer")
             {
