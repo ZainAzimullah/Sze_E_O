@@ -93,6 +93,10 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         {
             sceneName = "BooleanGame";
         }
+        if (scene == SceneEnum.MENTOR_ADVICE_LEVEL1)
+        {
+            throw new System.NotImplementedException();
+        }
         return sceneName;
     }
 }
@@ -110,5 +114,6 @@ public enum SceneEnum
     ELEVATOR,
     CONSULT_GREG_DIALOGUE,
     GREG_DIALOGUE_AFTER_MINIGAME,
-    BOOLEAN_GAME
+    BOOLEAN_GAME,
+    MENTOR_ADVICE_LEVEL1
 }

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BooleanMinigame : MonoBehaviour {
@@ -120,8 +122,8 @@ public class BooleanMinigame : MonoBehaviour {
 	}
 
 	public void progress() {
-        // TODO NEED TO SET TO PREVIOS SCREEN TO CONTINUE THE DIALOG
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.GREG_DIALOGUE_AFTER_MINIGAME);
+        MinigameType minigame = (MinigameType) Enum.Parse(typeof(MinigameType), SceneManager.GetActiveScene().name, true);
+        LevelLogicManager.Instance.MinigameDone(minigame);
     }
 
 	public void exitGame() {

@@ -27,6 +27,7 @@ public class ElevatorController : MonoBehaviour {
         //Debug.Log("LEVEL ONE BUTTON IS WORKING");
         //SceneManager.LoadScene("Level1");
         LevelManager.Instance.currentLevel = 1;
+        LevelLogicManager.Instance.PrepareLevel();
         SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
 
         
