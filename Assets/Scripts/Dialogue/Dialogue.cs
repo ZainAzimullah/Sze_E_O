@@ -50,6 +50,14 @@ public class Dialogue : SimpleDialogue {
 
     private void Resume()
     {
+        if (answer == 2)
+        {
+            PlayerManager.Instance.UpdateExperience((PlayerManager.Instance.GetExperience().MaxVal - PlayerManager.Instance.GetExperience().CurrentVal));
+            
+        }
+
+
+
         ClearText();
         HideReplyOptions();
         index = 0;
