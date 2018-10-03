@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/*
+ * Special subclass of SimpleDialogue used for a conversation
+ * followed by questions with multiple answers the player must choose from.
+ * Upon choosing an answer, the colleague reacts in a certain way (and the mentor
+ * may respond accordingly later).
+ */
 public class Dialogue : SimpleDialogue {
+    private const int CORRECT_ANSWER = 2; // The correct answer 
+                    //(MAKE THIS PUBLIC AND SET FROM UNITY FOR MODIFIABILITY WHEN MAKING MORE LEVELS)
 
     // Q&A info
-    public string[] colleagueReactions;
-    public string[] mentorAdvice;
-    private int answer = -1;
-    private bool answered;
+    public string[] colleagueReactions; // The reactions the colleague will have (depends on answer)
+    public string[] mentorAdvice; // The advice the mentor could give (depends on answer)
+    private int answer = -1; // The answer the user chose
+    private bool answered; // Has the player answered?
 
     // Buttons
-    public GameObject prompt;
+    public GameObject prompt; // The question
     public GameObject buttonA;
     public GameObject buttonB;
     public GameObject buttonC;
@@ -20,6 +28,7 @@ public class Dialogue : SimpleDialogue {
 
     void Update()
     {
+        // Check if dialogue needs to wait for user's response to the bad comment from colleague
         if (IsTypedOut() && IsLastSentence() && !IsFinished())
         {
             BrightenMainCharacter();
@@ -27,6 +36,7 @@ public class Dialogue : SimpleDialogue {
         }
     }
 
+    // BUTTON HANDLERS //
     public void ButtonA()
     {
         answer = 0;
@@ -48,16 +58,18 @@ public class Dialogue : SimpleDialogue {
         Resume();
     }
 
+    /*
+     * Carry on dialogue after player responded
+     */
     private void Resume()
     {
+        // Check correct
         if (answer == 2)
         {
             PlayerManager.Instance.UpdateExperience((PlayerManager.Instance.GetExperience().MaxVal - PlayerManager.Instance.GetExperience().CurrentVal));
-            
         }
 
-
-
+        // Store information and resume conversation
         ClearText();
         HideReplyOptions();
         index = 0;
@@ -95,6 +107,5 @@ public class Dialogue : SimpleDialogue {
     public override void Finish()
     {
         base.Finish();
-        //Debug.Log(MentorManager.Instance.advice);
     }
 }

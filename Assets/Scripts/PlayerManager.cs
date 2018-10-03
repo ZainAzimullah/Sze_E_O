@@ -3,17 +3,15 @@ using UnityEngine;
 
 public class PlayerManager:Singleton<PlayerManager> {
     public BadgeType badge;
-
     private List<Tracker> trackers; 
-
-
     public int money;
 
     [SerializeField]
-    private Stat exp;
+    private Stat exp; // Experience points the player has
 
     private void Awake()
     {
+        // Initialise experience info
         exp = new Stat();
         exp.Initialize();
         exp.MaxVal = 100;
@@ -22,6 +20,7 @@ public class PlayerManager:Singleton<PlayerManager> {
 
     void Update()
     {
+        // Exit on Esc key
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
@@ -48,9 +47,7 @@ public class PlayerManager:Singleton<PlayerManager> {
     {
         return trackers;
     }
-    /**
-     * Get the tracker in level "index" in the tracker list.
-     */
+
     public Tracker GetTracker(int index)
     {
         
@@ -59,6 +56,7 @@ public class PlayerManager:Singleton<PlayerManager> {
 
     void InitializeTracker()
     {
+        // To track the player and camera in every level
         trackers = new List<Tracker>();
         for(int i = 0; i <= LevelManager.Instance.GetMaxLevel()+1; i++)
         {

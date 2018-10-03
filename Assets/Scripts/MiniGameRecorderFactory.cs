@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-class MinigameRecorderFactory
+// Factory pattern used here
+public class MinigameRecorderFactory
 {
     private static IMinigameRecorder minigameRecorder;
 

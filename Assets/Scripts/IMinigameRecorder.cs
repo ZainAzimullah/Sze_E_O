@@ -1,4 +1,6 @@
-﻿public interface IMinigameRecorder
+﻿// Interface for recorders for each level to store information
+// about the completion of minigames.  Factory pattern used here.
+public interface IMinigameRecorder
 {
     bool CanShowDialogueWithColleague();
     bool CanShowDialogueWithMentor();

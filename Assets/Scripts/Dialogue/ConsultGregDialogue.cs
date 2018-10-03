@@ -6,8 +6,9 @@ public class ConsultGregDialogue : SimpleDialogue {
 
 	// Use this for initialization
 	public override void Start () {
-        // Clear text and start typing
         ClearText();
+
+        // Determine what Greg should say upon approaching him
         if (LevelLogicManager.Instance.GetMinigameRecorder().CanShowDialogueWithColleague() && PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
         {
             sentences = new string[] {"Greg: Progress to the next level!"};
@@ -15,6 +16,8 @@ public class ConsultGregDialogue : SimpleDialogue {
         {
             sentences = new string[] { "Greg: There are no more bugs" };
         }
+
+        // Start typing
         StartCoroutine(Type());
     }
 }

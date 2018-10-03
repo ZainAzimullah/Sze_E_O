@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Look after the player's progress through the level, control game flow
 public class LevelLogicManager : Singleton<LevelLogicManager> {
-
+    // Store minigame information
     private IMinigameRecorder minigameRecorder;
-    public readonly int LEVEL_THRESHHOLD = 100;
+    public readonly int LEVEL_THRESHHOLD = 100;  // points needed to progress
 
     public IMinigameRecorder GetMinigameRecorder()
     {
