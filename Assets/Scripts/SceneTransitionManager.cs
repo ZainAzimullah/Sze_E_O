@@ -107,7 +107,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         }
         if (scene == SceneEnum.MENTOR_ADVICE_LEVEL1)
         {
-            throw new System.NotImplementedException();
+            sceneName = "MentorAdviceDialogue";
         }
         return sceneName;
     }
