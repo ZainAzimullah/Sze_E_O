@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ExitScreen.unity
     guid: 428e33c06b7574e4da2b3613ae36ed11
+  - enabled: 1
+    path: Assets/Scenes/NoBugsComputerScene.unity
+    guid: df55b1dc0dab34c3783f6e0356168249
   m_configObjects: {}
