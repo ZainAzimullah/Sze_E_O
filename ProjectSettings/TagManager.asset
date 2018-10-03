@@ -8,6 +8,15 @@ TagManager:
   - Elevator
   - Dialog
   - Wall
+  - TutorialComputer
+  - Computer1
+  - Computer2
+  - Computer3
+  - Computer4
+  - Computer5
+  - Computer6
+  - Computer7
+  - Mentor
   layers:
   - Default
   - TransparentFX

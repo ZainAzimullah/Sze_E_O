@@ -14,13 +14,33 @@ namespace FollowPlayerNamespace
 
         void Start()
         {
+            PlayerManager player=PlayerManager.Instance;
+            Tracker tracker = player.GetTracker(LevelManager.Instance.currentLevel);
+            if (tracker.camAngle == Vector3.zero)
+            {
+                tracker.camAngle = this.transform.eulerAngles;
+            }
+            else
+            {
+                transform.eulerAngles = tracker.camAngle;
+            }
+
+            if (tracker.camPos == Vector3.zero)
+            {
+                tracker.camPos = this.transform.position;
+            }
+            else
+            {
+                transform.position = tracker.camPos;
+            }
+
             Offset = transform.position - Player.position;
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            
             Quaternion cameraAngle =
                 Quaternion.AngleAxis(Input.GetAxis("Mouse X") * RotateSpeed, Vector3.up);
             Offset = cameraAngle * Offset;

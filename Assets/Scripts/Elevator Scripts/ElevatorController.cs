@@ -15,8 +15,10 @@ public class ElevatorController : MonoBehaviour {
 	}
 
 	public void GroundButton() {
-		//Debug.Log("START BUTTON IS WORKING");
-		//SceneManager.LoadScene("Gameplay");
+        //Debug.Log("START BUTTON IS WORKING");
+        //SceneManager.LoadScene("Gameplay");
+        LevelManager.Instance.currentLevel = 0;
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL0);
 	}
 
     public void LevelOne()
@@ -24,20 +26,22 @@ public class ElevatorController : MonoBehaviour {
 
         //Debug.Log("LEVEL ONE BUTTON IS WORKING");
         //SceneManager.LoadScene("Level1");
+        LevelManager.Instance.currentLevel = 1;
+        LevelLogicManager.Instance.PrepareLevel();
         SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
+
         
     }
 
     public void LevelTwo()
     {
-        if (PlayerManager.Instance.badge < BadgeType.TEAM_LEAD)
+        if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
+        {
+            PlayerManager.Instance.badge = BadgeType.CEO;
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.EXIT);
+        } else
         {
             PopupPanel.SetActive(true);
-        }
-        else
-        {
-            // Debug.Log("LEVEL TWO BUTTON IS WORKING");
-            // SceneManager.LoadScene("Level2");
         }
     }
 

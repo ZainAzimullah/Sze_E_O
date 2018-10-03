@@ -13,7 +13,7 @@ public class MainMenuController : MonoBehaviour {
 	public void StartGame() {
 		//Debug.Log("START BUTTON IS WORKING");
         //SceneManager.LoadScene("Gameplay");
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL0);
     }
 
 	public void ResumeGame() {
@@ -31,8 +31,6 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void Quit() {
-
-		Debug.Log("QUIT BUTTON IS WORKING");
 		Application.Quit();
 	}
 

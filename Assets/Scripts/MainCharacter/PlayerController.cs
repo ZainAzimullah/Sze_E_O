@@ -23,24 +23,24 @@ public class PlayerController : MonoBehaviour {
         animator = gb.GetComponent<Animator>();
         cam = Camera.main.transform;
         PlayerManager playerManager=PlayerManager.Instance;
-        
-        if (playerManager.playerPosition == Vector3.zero)
+        Tracker tracker = playerManager.GetTracker(LevelManager.Instance.currentLevel);
+        if (tracker.playerPos == Vector3.zero)
         {
             
-            playerManager.playerPosition=(Vector3)gb.transform.position;
+            tracker.playerPos=(Vector3)gb.transform.position;
         }
         else
         {
-            gb.transform.position = playerManager.playerPosition;
+            gb.transform.position = tracker.playerPos;
         }
 
-        if (playerManager.faceTo == Vector3.zero)
+        if (tracker.playerAngle == Vector3.zero)
         {
-            playerManager.faceTo = gb.transform.eulerAngles;
+            tracker.playerAngle = gb.transform.eulerAngles;
         }
         else
         {
-            gb.transform.eulerAngles = playerManager.faceTo;
+            gb.transform.eulerAngles = tracker.playerAngle;
         }
       
     }
@@ -104,15 +104,27 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
+            int currentLevel = LevelManager.Instance.currentLevel;
+            Tracker tracker = PlayerManager.Instance.GetTracker(currentLevel);
             if (collision.gameObject.tag == "Dialog")
             {
-                PlayerManager.Instance.playerPosition = gb.transform.position;
-                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                tracker.playerPos = gb.transform.position;
+                tracker.playerAngle = gb.transform.eulerAngles;
+                tracker.camAngle = cam.eulerAngles;
+                tracker.camPos = cam.position;
                 sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }
         }
             
         
+    }
+
+    void SetTracker(Tracker tracker)
+    {
+        tracker.playerPos = gb.transform.position;
+        tracker.playerAngle = gb.transform.eulerAngles;
+        tracker.camAngle = cam.eulerAngles;
+        tracker.camPos = cam.position;
     }
 
     private void OnTriggerStay(Collider collision)
@@ -121,21 +133,71 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
+            int currentLevel = LevelManager.Instance.currentLevel;
+            Tracker tracker = PlayerManager.Instance.GetTracker(currentLevel);
             if (collision.gameObject.tag == "Elevator")
-            {               
+            {
+                SetTracker(tracker);
                 sceneTransitionManager.LoadScene(SceneEnum.ELEVATOR);
             }
             if (collision.gameObject.tag == "Dialog")
             {
-                PlayerManager.Instance.playerPosition = gb.transform.position;
-                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                SetTracker(tracker);
                 sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }              
             if (collision.gameObject.tag == "Computer")
             {
-                PlayerManager.Instance.playerPosition=gb.transform.position;
-                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                SetTracker(tracker);
+                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame)) {
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    return;
+                }
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
+            }
+            if ( collision.gameObject.tag == "Computer5")
+            {
+                SetTracker(tracker);
+                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame2))
+                {
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    return;
+                }
+                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME2);
+            }
+            if ( collision.gameObject.tag == "Computer6")
+            {
+                SetTracker(tracker);
+                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame3))
+                {
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    return;
+                }
+                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME3);
+            }
+            if (collision.gameObject.tag == "Computer3")
+            {
+                SetTracker(tracker);
+                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame4))
+                {
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    return;
+                }
+                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME4);
+            }
+            if (collision.gameObject.tag == "Computer4" || collision.gameObject.tag == "Computer1" || collision.gameObject.tag == "Computer2" || collision.gameObject.tag == "Computer7")
+            {
+                SetTracker(tracker);
+                SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+            }
+            if (collision.gameObject.tag == "TutorialComputer")
+            {
+                SetTracker(tracker);
+                sceneTransitionManager.LoadScene(SceneEnum.INTRO_AT_COMPUTER);
+            }
+            if (collision.gameObject.tag == "Mentor")
+            {
+                SetTracker(tracker);
+                sceneTransitionManager.LoadScene(SceneEnum.INTRO_DIALOG);
             }
         }
     }

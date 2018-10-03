@@ -39,6 +39,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
      */
     public void LoadScene(SceneEnum currentScene)
     {
+        //Debug.Log(PlayerManager.Instance.camPos);
         previousScene = this.currentScene;
         this.currentScene = currentScene;
         string scene = MapScene(currentScene);
@@ -68,6 +69,10 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         {
             sceneName = "Options";
         }
+        if (scene == SceneEnum.LEVEL0)
+        {
+            sceneName = "Level0";
+        }
         if (scene == SceneEnum.LEVEL1)
         {
             sceneName = "Level1";
@@ -88,6 +93,38 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         {
             sceneName = "BooleanGame";
         }
+        if (scene == SceneEnum.BOOLEAN_GAME2)
+        {
+            sceneName = "BooleanGame2";
+        }
+        if (scene == SceneEnum.BOOLEAN_GAME3)
+        {
+            sceneName = "BooleanGame3";
+        }
+        if (scene == SceneEnum.BOOLEAN_GAME4)
+        {
+            sceneName = "BooleanGame4";
+        }
+        if (scene == SceneEnum.MENTOR_ADVICE_LEVEL1)
+        {
+            sceneName = "MentorAdviceDialogue";
+        }
+        if (scene == SceneEnum.EXIT)
+        {
+            sceneName = "ExitScreen";
+        }
+        if (scene == SceneEnum.NO_BUGS)
+        {
+            sceneName = "NoBugsComputerScene";
+        }
+        if(scene == SceneEnum.INTRO_AT_COMPUTER)
+        {
+            sceneName = "IntroAtComputerDialog";
+        }
+        if (scene == SceneEnum.INTRO_DIALOG)
+        {
+            sceneName = "IntroDialogue";
+        }
         return sceneName;
     }
 }
@@ -99,10 +136,19 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
 public enum SceneEnum
 {
     MAIN_MENU,
+    LEVEL0,
     LEVEL1,
     OPTIONS,
     ELEVATOR,
     CONSULT_GREG_DIALOGUE,
     GREG_DIALOGUE_AFTER_MINIGAME,
-    BOOLEAN_GAME
+    BOOLEAN_GAME,
+    BOOLEAN_GAME2,
+    BOOLEAN_GAME3,
+    BOOLEAN_GAME4,
+    MENTOR_ADVICE_LEVEL1,
+    EXIT,
+    NO_BUGS,
+    INTRO_AT_COMPUTER,
+    INTRO_DIALOG
 }
