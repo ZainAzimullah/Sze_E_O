@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class BooleanMinigame : MonoBehaviour {
@@ -23,40 +20,78 @@ public class BooleanMinigame : MonoBehaviour {
 	public int moneyEarned = 100;
 	public int experienceEarned = 10;
 
+	// Player answers
+	private string _answer1;
+	private string _answer2;
+	private string _answer3;
+	
 	// Use this for initialization
 	void Start() {
 		correctPanel.SetActive(false);
 		tryAgainPanel.SetActive(false);
 		areYouSurePanel.SetActive(false);
 	}
-
-	public void checkCode() {
-		var var1Val = variable1.value;
-		var var2Val = variable2.value;
-		var var3Val = variable3.value;
-		var answer1 = variable1.options[var1Val].text;
-		var answer2 = variable2.options[var2Val].text;
-		var answer3 = variable3.options[var3Val].text;
-		if (answer1.Equals("A") & answer2.Equals("Not B") & answer3.Equals("Not C")) {
-			disableButtons();
-			correctPanel.gameObject.SetActive(true);
-			earnedText.text = "You earned $"+ moneyEarned + " and " + experienceEarned +" experience";
-			
-			// Updates the global experience of the player
-			PlayerManager.Instance.UpdateExperience(experienceEarned);
+	
+	public void CheckBooleanGame1()
+	{
+		RetrieveAnswers();
+		if (_answer1.Equals("A") & _answer2.Equals("Not B") & _answer3.Equals("Not C")) {
+			CorrectAnswer();
 		} else {
-			disableButtons();
-			tryAgainPanel.gameObject.SetActive(true);
-			// cannot lose money from minigame
-			if (moneyEarned >= 20) {
-				moneyEarned -= 20;
-			}
-			// minimum experience earned is 2
-			if (experienceEarned >= 4) {
-				experienceEarned -= 2;
-			}
+			IncorrectAnswer();
 		}
+	}
+	
+	public void CheckBooleanGame2() 
+	{
+		RetrieveAnswers();
+		if (_answer1.Equals("+") & _answer2.Equals("+") & _answer3.Equals("/")) {
+			CorrectAnswer();
+		} else {
+			IncorrectAnswer();
+		}
+	}
 
+	public void CheckBooleanGame3()
+	{
+		//TODO: Implement third Boolean game
+	}
+	
+	public void CheckBooleanGame4()
+	{
+		//TODO: Implement fourth Boolean game
+	}
+	
+	private void RetrieveAnswers()
+	{
+		_answer1 = variable1.options[variable1.value].text;
+		_answer2 = variable2.options[variable2.value].text;
+		_answer3 = variable3.options[variable3.value].text;
+	}
+
+	// Correct answer prompt
+	private void CorrectAnswer()
+	{
+		disableButtons();
+		correctPanel.gameObject.SetActive(true);
+		earnedText.text = "You earned $"+ moneyEarned + " and " + experienceEarned +" experience";
+		// Updates the global experience of the player
+		PlayerManager.Instance.UpdateExperience(experienceEarned);
+	}
+
+	// Incorrect answer prompt
+	private void IncorrectAnswer()
+	{
+		disableButtons();
+		tryAgainPanel.gameObject.SetActive(true);
+		// cannot lose money from minigame
+		if (moneyEarned >= 20) {
+			moneyEarned -= 20;
+		}
+		// minimum experience earned is 2
+		if (experienceEarned >= 4) {
+			experienceEarned -= 2;
+		}
 	}
 
 	public void disableButtons() {
@@ -86,7 +121,6 @@ public class BooleanMinigame : MonoBehaviour {
 
 	public void progress() {
         // TODO NEED TO SET TO PREVIOS SCREEN TO CONTINUE THE DIALOG
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         SceneTransitionManager.Instance.LoadScene(SceneEnum.GREG_DIALOGUE_AFTER_MINIGAME);
     }
 
@@ -96,7 +130,6 @@ public class BooleanMinigame : MonoBehaviour {
 	}
 
 	public void exitYes() {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
 	}
 
