@@ -20,6 +20,13 @@ public class PlayerManager:Singleton<PlayerManager> {
         InitializeTracker();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 
     public Stat GetExperience() {
         return exp;

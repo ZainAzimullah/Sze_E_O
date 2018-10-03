@@ -31,8 +31,6 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void Quit() {
-
-		Debug.Log("QUIT BUTTON IS WORKING");
 		Application.Quit();
 	}
 
