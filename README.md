@@ -66,6 +66,9 @@ If running from within Unity you need to run it from the _preload scene.
 <li>https://assetstore.unity.com/packages/3d/characters/humanoids/bodyguards-31711</li>
 <li>https://assetstore.unity.com/packages/3d/characters/humanoids/modern-female-professional-secretary-44429</li>
 <li>https://www.turbosquid.com/3d-models/free-reception-table-3d-model/978087</li>
+<li>https://assetstore.unity.com/packages/3d/props/interior/props-for-the-classroom-5977</li>
+<li>https://assetstore.unity.com/packages/3d/props/furniture/big-furniture-pack-7717</li>
+<li>https://assetstore.unity.com/packages/3d/waste-bin-73303</li>
 <li>http://www.cadnav.com/3d-models/model-20624.html</li>
 <li>https://assetstore.unity.com/packages/3d/props/electronics/modern-vending-machine-pbr-127874</li>
 <li>https://assetstore.unity.com/packages/3d/props/interior/yughues-free-decorative-plants-13283</li>
