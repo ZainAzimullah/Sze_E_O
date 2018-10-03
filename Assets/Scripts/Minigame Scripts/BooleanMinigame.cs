@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BooleanMinigame : MonoBehaviour {
@@ -55,11 +56,49 @@ public class BooleanMinigame : MonoBehaviour {
 	public void CheckBooleanGame3()
 	{
 		//TODO: Implement third Boolean game
+		_answer1 = variable1.options[variable1.value].text;
+		if (_answer1.Equals("+")) {
+
+			quitButton.enabled = false;
+			exitButton.enabled = false;
+			runButton.enabled = false;
+			variable1.enabled = false;
+
+			correctPanel.gameObject.SetActive(true);
+			earnedText.text = "You earned $" + moneyEarned + " and " + experienceEarned + " experience";
+			// Updates the global experience of the player
+			PlayerManager.Instance.UpdateExperience(experienceEarned);
+
+		} else {
+
+			quitButton.enabled = false;
+			exitButton.enabled = false;
+			runButton.enabled = false;
+			variable1.enabled = false;
+
+			tryAgainPanel.gameObject.SetActive(true);
+			// cannot lose money from minigame
+			if (moneyEarned >= 20) {
+				moneyEarned -= 20;
+			}
+			// minimum experience earned is 2
+			if (experienceEarned >= 4) {
+				experienceEarned -= 2;
+			}
+		
+		}
+
+
 	}
 	
 	public void CheckBooleanGame4()
 	{
-		//TODO: Implement fourth Boolean game
+		RetrieveAnswers();
+		if (_answer1.Equals("Green") & _answer2.Equals("Not B") & _answer3.Equals("true")) {
+			CorrectAnswer();
+		} else {
+			IncorrectAnswer();
+		}
 	}
 	
 	private void RetrieveAnswers()
@@ -116,7 +155,14 @@ public class BooleanMinigame : MonoBehaviour {
 	public void tryAgain() {
 		areYouSurePanel.gameObject.SetActive(false);
 		tryAgainPanel.gameObject.SetActive(false);
-		enableButtons();
+		if (SceneManager.GetActiveScene().name.Equals("BooleanGame3")){
+			quitButton.enabled = true;
+			exitButton.enabled = true;
+			runButton.enabled = true;
+			variable1.enabled = true;
+		} else {
+			enableButtons();
+		}
 	}
 
 	public void progress() {
