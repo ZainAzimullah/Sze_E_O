@@ -4,7 +4,7 @@
 Download the zip file in releases on GitHub.
 Extract it and run the .exe file (the other 2 files need to be in the same directory).
 When you run the exe file, you will have to choose your resolution.
-Choose the resolution closes to 1920x1200.
+Choose the resolution closest to 1920x1200.
 Enjoy.
 </p>
 
@@ -58,6 +58,8 @@ Enjoy.
 </table>
 
 <h1>References</h1>
-https://www.cgtrader.com/free-3d-models/character
-https://www.cgtrader.com/free-3d-models/character/woman/mei-001-woman-office-clothes
-https://www.cgtrader.com/free-3d-models/character/woman/sophia-animated-003-idling
+<ul>
+<li>https://www.cgtrader.com/free-3d-models/character</li>
+<li>https://www.cgtrader.com/free-3d-models/character/woman/mei-001-woman-office-clothes</li>
+<li>https://www.cgtrader.com/free-3d-models/character/woman/sophia-animated-003-idling</li>
+</ul>
