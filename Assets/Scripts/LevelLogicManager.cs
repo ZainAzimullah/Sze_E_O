@@ -5,6 +5,12 @@ using UnityEngine;
 public class LevelLogicManager : Singleton<LevelLogicManager> {
 
     private IMinigameRecorder minigameRecorder;
+    public readonly int LEVEL_THRESHHOLD = 100;
+
+    public IMinigameRecorder GetMinigameRecorder()
+    {
+        return minigameRecorder;
+    }
 
     public void PrepareLevel()
     {

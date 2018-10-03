@@ -1,4 +1,4 @@
-﻿internal interface IMinigameRecorder
+﻿public interface IMinigameRecorder
 {
     bool CanShowDialogueWithColleague();
     bool CanShowDialogueWithMentor();

@@ -109,6 +109,10 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         {
             sceneName = "MentorAdviceDialogue";
         }
+        if (scene == SceneEnum.EXIT)
+        {
+            sceneName = "ExitScreen";
+        }
         return sceneName;
     }
 }
@@ -130,5 +134,6 @@ public enum SceneEnum
     BOOLEAN_GAME2,
     BOOLEAN_GAME3,
     BOOLEAN_GAME4,
-    MENTOR_ADVICE_LEVEL1
+    MENTOR_ADVICE_LEVEL1,
+    EXIT
 }

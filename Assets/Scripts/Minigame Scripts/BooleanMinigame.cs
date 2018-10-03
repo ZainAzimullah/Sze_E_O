@@ -20,7 +20,7 @@ public class BooleanMinigame : MonoBehaviour {
 
 	// game money and experience variables
 	public int moneyEarned = 100;
-	public int experienceEarned = 10;
+	public int experienceEarned = 25;
 
 	// Player answers
 	private string _answer1;
@@ -82,10 +82,6 @@ public class BooleanMinigame : MonoBehaviour {
 			if (moneyEarned >= 20) {
 				moneyEarned -= 20;
 			}
-			// minimum experience earned is 2
-			if (experienceEarned >= 4) {
-				experienceEarned -= 2;
-			}
 		
 		}
 
@@ -115,22 +111,20 @@ public class BooleanMinigame : MonoBehaviour {
 		disableButtons();
 		correctPanel.gameObject.SetActive(true);
 		earnedText.text = "You earned $"+ moneyEarned + " and " + experienceEarned +" experience";
-		// Updates the global experience of the player
+        // Updates the global experience of the player
+        Debug.Log("Before update: " + PlayerManager.Instance.GetExperience().CurrentVal);
 		PlayerManager.Instance.UpdateExperience(experienceEarned);
-	}
+        Debug.Log("After update: " + PlayerManager.Instance.GetExperience().CurrentVal);
+    }
 
-	// Incorrect answer prompt
-	private void IncorrectAnswer()
+    // Incorrect answer prompt
+    private void IncorrectAnswer()
 	{
 		disableButtons();
 		tryAgainPanel.gameObject.SetActive(true);
 		// cannot lose money from minigame
 		if (moneyEarned >= 20) {
 			moneyEarned -= 20;
-		}
-		// minimum experience earned is 2
-		if (experienceEarned >= 4) {
-			experienceEarned -= 2;
 		}
 	}
 

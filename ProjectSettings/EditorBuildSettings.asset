@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MentorAdviceDialogue.unity
     guid: 8c8da2c465536a34fa8d48e29d4f4956
+  - enabled: 1
+    path: Assets/Scenes/ExitScreen.unity
+    guid: 428e33c06b7574e4da2b3613ae36ed11
   m_configObjects: {}

@@ -35,15 +35,13 @@ public class ElevatorController : MonoBehaviour {
 
     public void LevelTwo()
     {
-        if (PlayerManager.Instance.badge < BadgeType.TEAM_LEAD)
+        if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
+        {
+            PlayerManager.Instance.badge = BadgeType.CEO;
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.EXIT);
+        } else
         {
             PopupPanel.SetActive(true);
-        }
-        else
-        {
-            // Debug.Log("LEVEL TWO BUTTON IS WORKING");
-            // SceneManager.LoadScene("Level2");
-            //LevelManager.Instance.currentLevel = 2;
         }
     }
 
