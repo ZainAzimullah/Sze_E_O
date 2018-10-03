@@ -1,7 +1,7 @@
 <h1>Execution Instructions</h1>
 
 <p>
-Download the zip file in releases on GitHub.
+Download the zip file "Run_Sze_E_O.zip" from "releases" on GitHub.
 Extract it and run the .exe file (the other files need to be in the same directory).
 When you run the exe file, you will have to choose your resolution.  Uncheck "Windowed"
 Choose the resolution closest to 1920x1200.
