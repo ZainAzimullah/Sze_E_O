@@ -113,6 +113,10 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         {
             sceneName = "ExitScreen";
         }
+        if (scene == SceneEnum.NO_BUGS)
+        {
+            sceneName = "NoBugsComputerScene";
+        }
         return sceneName;
     }
 }
@@ -135,5 +139,6 @@ public enum SceneEnum
     BOOLEAN_GAME3,
     BOOLEAN_GAME4,
     MENTOR_ADVICE_LEVEL1,
-    EXIT
+    EXIT,
+    NO_BUGS
 }

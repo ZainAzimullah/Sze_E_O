@@ -37,4 +37,9 @@ internal class Level1MinigameRecorder : IMinigameRecorder
         }
         playedMinigames.Add(minigame);
     }
+
+    public bool HasCompleted(MinigameType minigameType)
+    {
+        return playedMinigames.Contains(minigameType);
+    }
 }

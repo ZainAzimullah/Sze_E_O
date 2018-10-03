@@ -148,21 +148,40 @@ public class PlayerController : MonoBehaviour {
             if (collision.gameObject.tag == "Computer"|| collision.gameObject.tag == "Computer4")
             {
                 SetTracker(tracker);
+                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame)) {
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    return;
+                }
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
             }
             if (collision.gameObject.tag == "Computer1"|| collision.gameObject.tag == "Computer5")
             {
                 SetTracker(tracker);
+                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame2))
+                {
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    return;
+                }
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME2);
             }
             if (collision.gameObject.tag == "Computer2"|| collision.gameObject.tag == "Computer6")
             {
                 SetTracker(tracker);
+                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame3))
+                {
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    return;
+                }
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME3);
             }
             if (collision.gameObject.tag == "Computer3"|| collision.gameObject.tag == "Computer7")
             {
                 SetTracker(tracker);
+                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame4))
+                {
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    return;
+                }
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME4);
             }
             if (collision.gameObject.tag == "TutorialComputer")

@@ -3,6 +3,7 @@
     bool CanShowDialogueWithColleague();
     bool CanShowDialogueWithMentor();
     void RegisterMinigameComplete(MinigameType minigame);
+    bool HasCompleted(MinigameType minigameType);
 }
 
 
