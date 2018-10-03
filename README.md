@@ -62,4 +62,11 @@ If running from within Unity you need to run it from the _preload scene.
 <li>https://www.cgtrader.com/free-3d-models/character</li>
 <li>https://www.cgtrader.com/free-3d-models/character/woman/mei-001-woman-office-clothes</li>
 <li>https://www.cgtrader.com/free-3d-models/character/woman/sophia-animated-003-idling</li>
+<li>https://assetstore.unity.com/packages/3d/characters/humanoids/man-in-a-suit-51662</li>
+<li>https://assetstore.unity.com/packages/3d/characters/humanoids/bodyguards-31711</li>
+<li>https://assetstore.unity.com/packages/3d/characters/humanoids/modern-female-professional-secretary-44429</li>
+<li>https://www.turbosquid.com/3d-models/free-reception-table-3d-model/978087</li>
+<li>http://www.cadnav.com/3d-models/model-20624.html</li>
+<li>https://assetstore.unity.com/packages/3d/props/electronics/modern-vending-machine-pbr-127874</li>
+<li>https://assetstore.unity.com/packages/3d/props/interior/yughues-free-decorative-plants-13283</li>
 </ul>
