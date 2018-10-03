@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BooleanGame3.unity
     guid: 758940c662c404716938cbe484c0a17e
+  - enabled: 1
+    path: Assets/Scenes/NoBugsComputerScene.unity
+    guid: df55b1dc0dab34c3783f6e0356168249
   m_configObjects: {}
