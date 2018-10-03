@@ -10,7 +10,9 @@ public class MoveRandom : MonoBehaviour {
     Animator animator;
     public GameObject gb;
     bool inNavigation;
-    public int waitTimeBeforeNextDest;
+    public int waitTime;
+    public int walkTime;
+    bool startNaveEnd = false;
 
     void Start()
     {
@@ -23,27 +25,37 @@ public class MoveRandom : MonoBehaviour {
     {
         if (!inNavigation)
         {
-            inNavigation = true;
-            animator.SetBool("isWalking", true);
-            Vector3 randomDirection = Random.insideUnitSphere * 25;
-            randomDirection += transform.position;
-            NavMeshHit hit;
-            NavMesh.SamplePosition(randomDirection, out hit, 25, 1);
-            Vector3 finalPosition = hit.position;
-            agent.SetDestination(finalPosition);
+            StartCoroutine(startNavigation());
         }
         else {
-            if (Vector3.Distance(transform.position, agent.destination) <= 1f)
+            if (Vector3.Distance(transform.position, agent.destination) <= 3f || startNaveEnd)
             {
                 StartCoroutine(finishNavigation());
             }
         }
     }
 
+    IEnumerator startNavigation()
+    {
+        inNavigation = true;
+        animator.SetBool("isWalking", true);
+        Vector3 randomDirection = Random.insideUnitSphere * 25;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomDirection, out hit, 25, 1);
+        Vector3 finalPosition = hit.position;
+        agent.SetDestination(finalPosition);
+        gb.GetComponent<NavMeshAgent>().isStopped = false;
+        yield return new WaitForSeconds(walkTime);
+        startNaveEnd = true;
+    }
+
     IEnumerator finishNavigation()
     {
         animator.SetBool("isWalking", false);
-        yield return new WaitForSeconds(waitTimeBeforeNextDest);
+        gb.GetComponent<NavMeshAgent>().isStopped = true;
+        yield return new WaitForSeconds(waitTime);
+        startNaveEnd = false;
         inNavigation = false;
     }
 
