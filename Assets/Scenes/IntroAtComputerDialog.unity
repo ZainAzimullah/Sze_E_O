@@ -145,18 +145,18 @@ MonoBehaviour:
   sentences:
   - 'Margaret: You must interact with computers in order to complete different jobs.
     Depending on how well you did on the job, you will gain experience points. '
-  - 'Margaret: Gaining expereience points promotes you to higher positions in the
-    company. Badges are used to represent this and gives you access privedges to higher
-    floor levels. '
+  - 'Margaret: Gaining experience points promotes you to higher positions in the company.
+    Badges are used to represent this and gives you access privedges to higher floor
+    levels. '
   - 'Margaret:There are other people you will meet on higher floors. You will have
     to talk to them and respond appropriately which may hinder or accelerate your
     growth within the company.  '
   - 'Margaret: As the software industry is comprised of only 30% women, your co-workers
-    may come off as a bit insensitive but dont be afraid to talk to them and hopefully
+    may come off as a bit insensitive but don''t be afraid to talk to them and hopefully
     change some ingrained views on women in engineering.  '
   - 'Margaret: Congratulations on passing the interviews. Please proceed to the first
-    level via the elevator. Ill always be around on every floor you go to if you need
-    help. Good luck. '
+    level via the elevator. I''ll always be around on every floor you go to if you
+    need help. Good luck. '
   - 'Margaret: Once you have completed level 1, go into the elevator and go to level
     2 to become CEO! '
   szeShader: {fileID: 1995170511}
