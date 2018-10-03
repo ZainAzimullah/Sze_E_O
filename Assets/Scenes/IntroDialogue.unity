@@ -148,8 +148,8 @@ MonoBehaviour:
     how to interact with items and characters."
   - 'Margret: First of all, what is your name?'
   - 'Sze: My name is Sze.'
-  - "Margret: Welcome aboard Sze! I\u2019m glad you joined us. Follow me using your
-    WASD keys and I\u2019ll show you how to use the computers. "
+  - "Margret: Welcome aboard Sze! I\u2019m glad you joined us. Using your WASD keys,
+    walk to the computer and press space bar."
   szeShader: {fileID: 1995170511}
   otherShader: {fileID: 1137215561}
   continueButton: {fileID: 1413401916}
