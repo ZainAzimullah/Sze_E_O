@@ -192,7 +192,12 @@ public class PlayerController : MonoBehaviour {
             if (collision.gameObject.tag == "TutorialComputer")
             {
                 SetTracker(tracker);
-                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
+                sceneTransitionManager.LoadScene(SceneEnum.INTRO_AT_COMPUTER);
+            }
+            if (collision.gameObject.tag == "Mentor")
+            {
+                SetTracker(tracker);
+                sceneTransitionManager.LoadScene(SceneEnum.INTRO_DIALOG);
             }
         }
     }

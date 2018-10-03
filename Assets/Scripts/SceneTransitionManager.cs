@@ -117,6 +117,14 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         {
             sceneName = "NoBugsComputerScene";
         }
+        if(scene == SceneEnum.INTRO_AT_COMPUTER)
+        {
+            sceneName = "IntroAtComputerDialog";
+        }
+        if (scene == SceneEnum.INTRO_DIALOG)
+        {
+            sceneName = "IntroDialogue";
+        }
         return sceneName;
     }
 }
@@ -140,5 +148,7 @@ public enum SceneEnum
     BOOLEAN_GAME4,
     MENTOR_ADVICE_LEVEL1,
     EXIT,
-    NO_BUGS
+    NO_BUGS,
+    INTRO_AT_COMPUTER,
+    INTRO_DIALOG
 }

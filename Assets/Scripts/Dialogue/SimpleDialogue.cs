@@ -80,7 +80,8 @@ public class SimpleDialogue : MonoBehaviour {
     public virtual void Finish()
     {
         // THIS IS CALLED WHEN THE DIALOGUE IS FINISHED
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
+        
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL0);
     }
 
     public void BrightenMainCharacter()
