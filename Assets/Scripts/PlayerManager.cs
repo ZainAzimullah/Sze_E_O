@@ -5,26 +5,7 @@ public class PlayerManager:Singleton<PlayerManager> {
     public BadgeType badge;
 
     private List<Tracker> trackers; 
-    //the direction where the player face at
-    /*public Vector3 faceTo
-    {
-        get; set;
-    }
-    //the position where the player is
-    public Vector3 playerPosition
-    {
-        get; set;
-    }
-    //the main camera angle
-    /*public Vector3 camAngle
-    {
-        get;set;
-    }*/
-    //the position of the main camera
-    /*public Vector3 camPos
-    {
-        get;set;
-    }*/
+
 
     public int money;
 

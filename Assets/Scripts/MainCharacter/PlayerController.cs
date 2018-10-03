@@ -108,10 +108,6 @@ public class PlayerController : MonoBehaviour {
             Tracker tracker = PlayerManager.Instance.GetTracker(currentLevel);
             if (collision.gameObject.tag == "Dialog")
             {
-                /*PlayerManager.Instance.playerPosition = gb.transform.position;
-                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
-                //PlayerManager.Instance.camAngle = cam.eulerAngles;
-                //PlayerManager.Instance.camPos = cam.position;*/
                 tracker.playerPos = gb.transform.position;
                 tracker.playerAngle = gb.transform.eulerAngles;
                 tracker.camAngle = cam.eulerAngles;
@@ -133,10 +129,6 @@ public class PlayerController : MonoBehaviour {
             Tracker tracker = PlayerManager.Instance.GetTracker(currentLevel);
             if (collision.gameObject.tag == "Elevator")
             {
-                /*PlayerManager.Instance.playerPosition = gb.transform.position;
-                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
-                /*PlayerManager.Instance.camAngle = cam.eulerAngles;
-                PlayerManager.Instance.camPos = cam.position;*/
                 tracker.playerPos = gb.transform.position;
                 tracker.playerAngle= gb.transform.eulerAngles;
                 tracker.camAngle= cam.eulerAngles;
@@ -145,10 +137,6 @@ public class PlayerController : MonoBehaviour {
             }
             if (collision.gameObject.tag == "Dialog")
             {
-                /*PlayerManager.Instance.playerPosition = gb.transform.position;
-                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;*/
-                //PlayerManager.Instance.camAngle = cam.eulerAngles;
-                //PlayerManager.Instance.camPos = cam.position;
                 tracker.playerPos = gb.transform.position;
                 tracker.playerAngle = gb.transform.eulerAngles;
                 tracker.camAngle = cam.eulerAngles;
@@ -157,10 +145,6 @@ public class PlayerController : MonoBehaviour {
             }              
             if (collision.gameObject.tag == "Computer")
             {
-                /*PlayerManager.Instance.playerPosition=gb.transform.position;
-                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;*/
-                //PlayerManager.Instance.camAngle = cam.eulerAngles;
-                //PlayerManager.Instance.camPos=cam.position;
                 tracker.playerPos = gb.transform.position;
                 tracker.playerAngle = gb.transform.eulerAngles;
                 tracker.camAngle = cam.eulerAngles;
