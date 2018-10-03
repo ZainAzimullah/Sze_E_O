@@ -957,6 +957,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: d483c2143a69ccc4f841042eb9a72cb5, type: 3}
+      propertyPath: m_TagString
+      value: TutorialComputer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d483c2143a69ccc4f841042eb9a72cb5, type: 3}
   m_IsPrefabAsset: 0
@@ -1175,6 +1179,23 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aefd9b8d8cb28f4f87b54d78bf0fca3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &671408473 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: d483c2143a69ccc4f841042eb9a72cb5,
+    type: 3}
+  m_PrefabInternal: {fileID: 424023565}
+--- !u!65 &671408477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 671408473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.61078733, y: 0.28833035, z: 0.7632392}
+  m_Center: {x: 0.04709214, y: -0.00041198038, z: 0.24422204}
 --- !u!1 &695145034
 GameObject:
   m_ObjectHideFlags: 0

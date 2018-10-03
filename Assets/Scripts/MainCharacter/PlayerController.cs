@@ -151,6 +151,14 @@ public class PlayerController : MonoBehaviour {
                 tracker.camPos = cam.position;
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
             }
+            if (collision.gameObject.tag == "TutorialComputer")
+            {
+                tracker.playerPos = gb.transform.position;
+                tracker.playerAngle = gb.transform.eulerAngles;
+                tracker.camAngle = cam.eulerAngles;
+                tracker.camPos = cam.position;
+                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
+            }
         }
     }
 }

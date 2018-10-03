@@ -8,6 +8,7 @@ TagManager:
   - Elevator
   - Dialog
   - Wall
+  - TutorialComputer
   layers:
   - Default
   - TransparentFX
