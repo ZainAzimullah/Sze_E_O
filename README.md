@@ -2,7 +2,7 @@
 
 <p>
 Download the zip file in releases on GitHub.
-Extract it and run the .exe file (the other 2 files need to be in the same directory).
+Extract it and run the .exe file (the other files need to be in the same directory).
 When you run the exe file, you will have to choose your resolution.
 Choose the resolution closest to 1920x1200.
 If running from within Unity you need to run it from the _preload scene.
