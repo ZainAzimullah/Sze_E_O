@@ -172,7 +172,17 @@ public class BooleanMinigame : MonoBehaviour {
     }
 
 	public void exitGame() {
-		disableButtons();
+        if (SceneManager.GetActiveScene().name.Equals("BooleanGame3"))
+        {
+            quitButton.enabled = false;
+            exitButton.enabled = false;
+            runButton.enabled = false;
+            variable1.enabled = false;
+        }
+        else
+        {
+            disableButtons();
+        }    
 		areYouSurePanel.SetActive(true);
 	}
 

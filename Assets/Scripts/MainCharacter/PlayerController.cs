@@ -119,6 +119,14 @@ public class PlayerController : MonoBehaviour {
         
     }
 
+    void SetTracker(Tracker tracker)
+    {
+        tracker.playerPos = gb.transform.position;
+        tracker.playerAngle = gb.transform.eulerAngles;
+        tracker.camAngle = cam.eulerAngles;
+        tracker.camPos = cam.position;
+    }
+
     private void OnTriggerStay(Collider collision)
     {
         
@@ -129,34 +137,37 @@ public class PlayerController : MonoBehaviour {
             Tracker tracker = PlayerManager.Instance.GetTracker(currentLevel);
             if (collision.gameObject.tag == "Elevator")
             {
-                tracker.playerPos = gb.transform.position;
-                tracker.playerAngle= gb.transform.eulerAngles;
-                tracker.camAngle= cam.eulerAngles;
-                tracker.camPos= cam.position; 
+                SetTracker(tracker);
                 sceneTransitionManager.LoadScene(SceneEnum.ELEVATOR);
             }
             if (collision.gameObject.tag == "Dialog")
             {
-                tracker.playerPos = gb.transform.position;
-                tracker.playerAngle = gb.transform.eulerAngles;
-                tracker.camAngle = cam.eulerAngles;
-                tracker.camPos = cam.position;
+                SetTracker(tracker);
                 sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }              
-            if (collision.gameObject.tag == "Computer")
+            if (collision.gameObject.tag == "Computer"|| collision.gameObject.tag == "Computer4")
             {
-                tracker.playerPos = gb.transform.position;
-                tracker.playerAngle = gb.transform.eulerAngles;
-                tracker.camAngle = cam.eulerAngles;
-                tracker.camPos = cam.position;
+                SetTracker(tracker);
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
+            }
+            if (collision.gameObject.tag == "Computer1"|| collision.gameObject.tag == "Computer5")
+            {
+                SetTracker(tracker);
+                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME2);
+            }
+            if (collision.gameObject.tag == "Computer2"|| collision.gameObject.tag == "Computer6")
+            {
+                SetTracker(tracker);
+                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME3);
+            }
+            if (collision.gameObject.tag == "Computer3"|| collision.gameObject.tag == "Computer7")
+            {
+                SetTracker(tracker);
+                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME4);
             }
             if (collision.gameObject.tag == "TutorialComputer")
             {
-                tracker.playerPos = gb.transform.position;
-                tracker.playerAngle = gb.transform.eulerAngles;
-                tracker.camAngle = cam.eulerAngles;
-                tracker.camPos = cam.position;
+                SetTracker(tracker);
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
             }
         }
