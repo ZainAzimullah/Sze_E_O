@@ -23,24 +23,24 @@ public class PlayerController : MonoBehaviour {
         animator = gb.GetComponent<Animator>();
         cam = Camera.main.transform;
         PlayerManager playerManager=PlayerManager.Instance;
-        
-        if (playerManager.playerPosition == Vector3.zero)
+        Tracker tracker = playerManager.GetTracker(LevelManager.Instance.currentLevel);
+        if (tracker.playerPos == Vector3.zero)
         {
             
-            playerManager.playerPosition=(Vector3)gb.transform.position;
+            tracker.playerPos=(Vector3)gb.transform.position;
         }
         else
         {
-            gb.transform.position = playerManager.playerPosition;
+            gb.transform.position = tracker.playerPos;
         }
 
-        if (playerManager.faceTo == Vector3.zero)
+        if (tracker.playerAngle == Vector3.zero)
         {
-            playerManager.faceTo = gb.transform.eulerAngles;
+            tracker.playerAngle = gb.transform.eulerAngles;
         }
         else
         {
-            gb.transform.eulerAngles = playerManager.faceTo;
+            gb.transform.eulerAngles = tracker.playerAngle;
         }
       
     }
@@ -104,10 +104,14 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
+            int currentLevel = LevelManager.Instance.currentLevel;
+            Tracker tracker = PlayerManager.Instance.GetTracker(currentLevel);
             if (collision.gameObject.tag == "Dialog")
             {
-                PlayerManager.Instance.playerPosition = gb.transform.position;
-                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                tracker.playerPos = gb.transform.position;
+                tracker.playerAngle = gb.transform.eulerAngles;
+                tracker.camAngle = cam.eulerAngles;
+                tracker.camPos = cam.position;
                 sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }
         }
@@ -121,20 +125,30 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
+            int currentLevel = LevelManager.Instance.currentLevel;
+            Tracker tracker = PlayerManager.Instance.GetTracker(currentLevel);
             if (collision.gameObject.tag == "Elevator")
-            {               
+            {
+                tracker.playerPos = gb.transform.position;
+                tracker.playerAngle= gb.transform.eulerAngles;
+                tracker.camAngle= cam.eulerAngles;
+                tracker.camPos= cam.position; 
                 sceneTransitionManager.LoadScene(SceneEnum.ELEVATOR);
             }
             if (collision.gameObject.tag == "Dialog")
             {
-                PlayerManager.Instance.playerPosition = gb.transform.position;
-                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                tracker.playerPos = gb.transform.position;
+                tracker.playerAngle = gb.transform.eulerAngles;
+                tracker.camAngle = cam.eulerAngles;
+                tracker.camPos = cam.position;
                 sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
             }              
             if (collision.gameObject.tag == "Computer")
             {
-                PlayerManager.Instance.playerPosition=gb.transform.position;
-                PlayerManager.Instance.faceTo = gb.transform.eulerAngles;
+                tracker.playerPos = gb.transform.position;
+                tracker.playerAngle = gb.transform.eulerAngles;
+                tracker.camAngle = cam.eulerAngles;
+                tracker.camPos = cam.position;
                 sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
             }
         }

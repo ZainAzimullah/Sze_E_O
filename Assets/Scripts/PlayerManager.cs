@@ -1,12 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager:Singleton<PlayerManager> {
     public BadgeType badge;
-    
-    public Vector3 faceTo
-    {
-        get; set;
-    }
+
+    private List<Tracker> trackers; 
+
 
     public int money;
 
@@ -18,12 +17,9 @@ public class PlayerManager:Singleton<PlayerManager> {
         exp = new Stat();
         exp.Initialize();
         exp.MaxVal = 100;
+        InitializeTracker();
     }
 
-    public Vector3 playerPosition
-    {
-        get;set;
-    }
 
     public Stat GetExperience() {
         return exp;
@@ -40,6 +36,29 @@ public class PlayerManager:Singleton<PlayerManager> {
 	public void UpdateMoney(int moneyEarned) {
 		money += moneyEarned;
 	}
+
+    public List<Tracker> GetTrackers()
+    {
+        return trackers;
+    }
+    /**
+     * Get the tracker in level "index" in the tracker list.
+     */
+    public Tracker GetTracker(int index)
+    {
+        
+        return trackers[index];
+    }
+
+    void InitializeTracker()
+    {
+        trackers = new List<Tracker>();
+        for(int i = 0; i <= LevelManager.Instance.GetMaxLevel()+1; i++)
+        {
+            trackers.Add(new Tracker());
+        }
+        
+    }
 
 }
 

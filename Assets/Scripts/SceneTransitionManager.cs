@@ -39,6 +39,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
      */
     public void LoadScene(SceneEnum currentScene)
     {
+        //Debug.Log(PlayerManager.Instance.camPos);
         previousScene = this.currentScene;
         this.currentScene = currentScene;
         string scene = MapScene(currentScene);
@@ -67,6 +68,10 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         if (scene == SceneEnum.OPTIONS)
         {
             sceneName = "Options";
+        }
+        if (scene == SceneEnum.LEVEL0)
+        {
+            sceneName = "Level0";
         }
         if (scene == SceneEnum.LEVEL1)
         {
@@ -99,6 +104,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
 public enum SceneEnum
 {
     MAIN_MENU,
+    LEVEL0,
     LEVEL1,
     OPTIONS,
     ELEVATOR,
