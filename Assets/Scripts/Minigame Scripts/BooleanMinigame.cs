@@ -108,7 +108,7 @@ public class BooleanMinigame : MonoBehaviour {
 	// Correct answer prompt
 	private void CorrectAnswer()
 	{
-		disableButtons();
+		DisableButtons();
 		correctPanel.gameObject.SetActive(true);
 		earnedText.text = "You earned $"+ moneyEarned + " and " + experienceEarned +" experience";
         // Updates the global experience of the player
@@ -120,7 +120,7 @@ public class BooleanMinigame : MonoBehaviour {
     // Incorrect answer prompt
     private void IncorrectAnswer()
 	{
-		disableButtons();
+		DisableButtons();
 		tryAgainPanel.gameObject.SetActive(true);
 		// cannot lose money from minigame
 		if (moneyEarned >= 20) {
@@ -128,7 +128,7 @@ public class BooleanMinigame : MonoBehaviour {
 		}
 	}
 
-	public void disableButtons() {
+	public void DisableButtons() {
 		quitButton.enabled = false;
 		exitButton.enabled = false;
 		runButton.enabled = false;
@@ -137,7 +137,7 @@ public class BooleanMinigame : MonoBehaviour {
 		variable3.enabled = false;
 	}
 
-	public void enableButtons() {
+	public void EnableButtons() {
 		quitButton.enabled = true;
 		exitButton.enabled = true;
 		runButton.enabled = true;
@@ -147,7 +147,7 @@ public class BooleanMinigame : MonoBehaviour {
 	}
 
 	//this method is also used for when user presses no on the exit prompt
-	public void tryAgain() {
+	public void TryAgain() {
 		areYouSurePanel.gameObject.SetActive(false);
 		tryAgainPanel.gameObject.SetActive(false);
 		if (SceneManager.GetActiveScene().name.Equals("BooleanGame3")){
@@ -156,11 +156,12 @@ public class BooleanMinigame : MonoBehaviour {
 			runButton.enabled = true;
 			variable1.enabled = true;
 		} else {
-			enableButtons();
+			EnableButtons();
 		}
 	}
 
-	public void progress() {
+	public void Progress()
+    {
         MinigameType minigame = (MinigameType) Enum.Parse(typeof(MinigameType), SceneManager.GetActiveScene().name, true);
         LevelLogicManager.Instance.MinigameDone(minigame);
     }
@@ -175,7 +176,7 @@ public class BooleanMinigame : MonoBehaviour {
         }
         else
         {
-            disableButtons();
+            DisableButtons();
         }    
 		areYouSurePanel.SetActive(true);
 	}
