@@ -23,9 +23,9 @@ public class BooleanMinigame : MonoBehaviour {
 	public int experienceEarned = 25;
 
 	// Player answers
-	private string _answer1;
-	private string _answer2;
-	private string _answer3;
+	private string answer1;
+	private string answer2;
+	private string answer3;
 	
 	// Use this for initialization
 	void Start() {
@@ -37,7 +37,7 @@ public class BooleanMinigame : MonoBehaviour {
 	public void CheckBooleanGame1()
 	{
 		RetrieveAnswers();
-		if (_answer1.Equals("A") & _answer2.Equals("Not B") & _answer3.Equals("Not C")) {
+		if (answer1.Equals("A") & answer2.Equals("Not B") & answer3.Equals("Not C")) {
 			CorrectAnswer();
 		} else {
 			IncorrectAnswer();
@@ -47,7 +47,7 @@ public class BooleanMinigame : MonoBehaviour {
 	public void CheckBooleanGame2() 
 	{
 		RetrieveAnswers();
-		if (_answer1.Equals("+") & _answer2.Equals("+") & _answer3.Equals("/")) {
+		if (answer1.Equals("+") & answer2.Equals("+") & answer3.Equals("/")) {
 			CorrectAnswer();
 		} else {
 			IncorrectAnswer();
@@ -57,8 +57,8 @@ public class BooleanMinigame : MonoBehaviour {
 	public void CheckBooleanGame3()
 	{
 		//TODO: Implement third Boolean game
-		_answer1 = variable1.options[variable1.value].text;
-		if (_answer1.Equals("+")) {
+		answer1 = variable1.options[variable1.value].text;
+		if (answer1.Equals("+")) {
 
 			quitButton.enabled = false;
 			exitButton.enabled = false;
@@ -91,7 +91,7 @@ public class BooleanMinigame : MonoBehaviour {
 	public void CheckBooleanGame4()
 	{
 		RetrieveAnswers();
-		if (_answer1.Equals("Green") & _answer2.Equals("Not B") & _answer3.Equals("true")) {
+		if (answer1.Equals("Green") & answer2.Equals("Not B") & answer3.Equals("true")) {
 			CorrectAnswer();
 		} else {
 			IncorrectAnswer();
@@ -100,9 +100,9 @@ public class BooleanMinigame : MonoBehaviour {
 	
 	private void RetrieveAnswers()
 	{
-		_answer1 = variable1.options[variable1.value].text;
-		_answer2 = variable2.options[variable2.value].text;
-		_answer3 = variable3.options[variable3.value].text;
+		answer1 = variable1.options[variable1.value].text;
+		answer2 = variable2.options[variable2.value].text;
+		answer3 = variable3.options[variable3.value].text;
 	}
 
 	// Correct answer prompt
