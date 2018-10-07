@@ -180,7 +180,7 @@ public class BooleanMinigame : MonoBehaviour {
 		areYouSurePanel.SetActive(true);
 	}
 
-	public void exitYes() {
+	public void ExitYes() {
         SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
 	}
 
