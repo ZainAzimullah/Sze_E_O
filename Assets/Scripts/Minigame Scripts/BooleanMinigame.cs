@@ -165,7 +165,7 @@ public class BooleanMinigame : MonoBehaviour {
         LevelLogicManager.Instance.MinigameDone(minigame);
     }
 
-	public void exitGame() {
+	public void ExitGame() {
         if (SceneManager.GetActiveScene().name.Equals("BooleanGame3"))
         {
             quitButton.enabled = false;
