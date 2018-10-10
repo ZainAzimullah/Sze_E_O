@@ -23,23 +23,34 @@ public class ElevatorController : MonoBehaviour {
 
     public void LevelOne()
     {
-
-        //Debug.Log("LEVEL ONE BUTTON IS WORKING");
-        //SceneManager.LoadScene("Level1");
         LevelManager.Instance.currentLevel = 1;
         LevelLogicManager.Instance.PrepareLevel();
         SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
-
-        
     }
 
     public void LevelTwo()
     {
         if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
         {
+            PlayerManager.Instance.badge = BadgeType.TEAM_LEAD;
+            LevelManager.Instance.currentLevel = 2;
+            LevelLogicManager.Instance.PrepareLevel();
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL2);
+        }
+        else
+        {
+            PopupPanel.SetActive(true);
+        }
+    }
+
+    public void CEOLevel()
+    {
+        if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
+        {
             PlayerManager.Instance.badge = BadgeType.CEO;
             SceneTransitionManager.Instance.LoadScene(SceneEnum.EXIT);
-        } else
+        }
+        else
         {
             PopupPanel.SetActive(true);
         }

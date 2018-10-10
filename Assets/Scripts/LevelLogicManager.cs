@@ -16,6 +16,7 @@ public class LevelLogicManager : Singleton<LevelLogicManager> {
     public void PrepareLevel()
     {
         minigameRecorder = MinigameRecorderFactory.GetMiniGameRecorderForLevel(LevelManager.Instance.currentLevel);
+        PlayerManager.Instance.Refresh();
     }
 
     public void MinigameDone(MinigameType minigame)
