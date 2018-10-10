@@ -24,6 +24,7 @@ public class LevelManager : Singleton<LevelManager> {
     public void IncreaseMaxLevel()
     {
         maxLevel++;
+        PlayerManager.Instance.AddTracker();
     }
 
     public void DecreaseMaxLevel()

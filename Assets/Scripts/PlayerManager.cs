@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,11 @@ public class PlayerManager:Singleton<PlayerManager> {
         InitializeTracker();
     }
 
+    public void AddTracker()
+    {
+        trackers.Add(new Tracker());
+    }
+
     void Update()
     {
         // Exit on Esc key
@@ -25,7 +31,15 @@ public class PlayerManager:Singleton<PlayerManager> {
         {
             Application.Quit();
         }
+
+        // Hack for testing
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            exp.CurrentVal = 100;
+            LevelManager.Instance.IncreaseMaxLevel();
+        }
     }
+
 
     public Stat GetExperience() {
         return exp;
@@ -63,6 +77,11 @@ public class PlayerManager:Singleton<PlayerManager> {
             trackers.Add(new Tracker());
         }
         
+    }
+
+    public void Refresh()
+    {
+        exp.CurrentVal = 0;
     }
 
 }
