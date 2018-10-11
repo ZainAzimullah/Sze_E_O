@@ -27,6 +27,11 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void MainMenu() {
+        if (PlayerManager.Instance.GetNumberofTrackers() > 0)
+        {
+            PlayerManager.Instance.ReinitializeTracker();
+        }
+        LevelManager.Instance.currentLevel = 0;
         SceneTransitionManager.Instance.LoadScene(SceneEnum.MainMenu);
 	}
 

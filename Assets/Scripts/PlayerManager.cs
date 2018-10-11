@@ -68,6 +68,11 @@ public class PlayerManager:Singleton<PlayerManager> {
         return trackers[index];
     }
 
+    public int GetNumberofTrackers()
+    {
+        return trackers.Count;
+    }
+
     void InitializeTracker()
     {
         // To track the player and camera in every level
@@ -78,6 +83,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         }
         
     }
+
 
     public void ReinitializeTracker()
     {
