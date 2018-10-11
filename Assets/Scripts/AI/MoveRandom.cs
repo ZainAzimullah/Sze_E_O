@@ -6,39 +6,35 @@ using UnityEngine.AI;
 public class MoveRandom : MonoBehaviour {
 
     NavMeshAgent agent;
-    NavMeshPath path;
     Animator animator;
     public GameObject gb;
-    bool inNavigation;
-    public int waitTime;
     public int walkTime;
     public GameObject player;
-    bool startNaveEnd = false;
+    bool inCoroutine;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        path = new NavMeshPath();
         animator = gb.GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (!inNavigation && !(Vector3.Distance(player.transform.position, agent.transform.position) < (double)2.0))
+        if (!(Vector3.Distance(player.transform.position, agent.transform.position) < 1.4f) && !inCoroutine)
         {
+            inCoroutine = true;
             StartCoroutine(startNavigation());
         }
         else {
-            if (Vector3.Distance(transform.position, agent.destination) <= 3f || startNaveEnd || Vector3.Distance(player.transform.position, agent.transform.position) < (double)2.0)
+            if (Vector3.Distance(player.transform.position, agent.transform.position) < 1.4f || Vector3.Distance(transform.position, agent.destination) <= (double)2.0)
             {
-                StartCoroutine(finishNavigation());
+                StartCoroutine(stopNavigation());
             }
         }
     }
 
     IEnumerator startNavigation()
     {
-        inNavigation = true;
         animator.SetBool("isWalking", true);
         Vector3 randomDirection = Random.insideUnitSphere * 25;
         randomDirection += transform.position;
@@ -48,16 +44,16 @@ public class MoveRandom : MonoBehaviour {
         agent.SetDestination(finalPosition);
         gb.GetComponent<NavMeshAgent>().isStopped = false;
         yield return new WaitForSeconds(walkTime);
-        startNaveEnd = true;
+        animator.SetBool("isWalking", false);
+        gb.GetComponent<NavMeshAgent>().isStopped = true;
+        inCoroutine = false;
     }
 
-    IEnumerator finishNavigation()
+    string stopNavigation()
     {
         animator.SetBool("isWalking", false);
         gb.GetComponent<NavMeshAgent>().isStopped = true;
-        yield return new WaitForSeconds(waitTime);
-        startNaveEnd = false;
-        inNavigation = false;
+        return "";
     }
 
     Vector3 getNewRandomPosition()
