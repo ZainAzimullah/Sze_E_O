@@ -143,12 +143,12 @@ MonoBehaviour:
   textDisplay: {fileID: 159653163}
   typingSpeed: 0.02
   sentences:
-  - "Margret: Welcome to Sze E O headquarters.  My name is Margaret Hamilton and I
-    will be your mentor. I\u2019ll teach you some basic stuff here in the lobby about
-    how to interact with items and characters."
-  - 'Margret: First of all, what is your name?'
+  - "Margaret: Welcome to Sze E O headquarters.  My name is Margaret Hamilton and
+    I will be your mentor. I\u2019ll teach you some basic stuff here in the lobby
+    about how to interact with items and characters."
+  - 'Margaret: First of all, what is your name?'
   - 'Sze: My name is Sze.'
-  - "Margret: Welcome aboard Sze! I\u2019m glad you joined us."
+  - "Margaret: Welcome aboard Sze! I\u2019m glad you joined us."
   - 'Margaret:  Use your WASD keys to move around, while moving your mouse to change
     the camera angle.  If you walk up to a person or object and press the space bar,
     you can interact with it.  To get between levels, interact with the elevator.'
