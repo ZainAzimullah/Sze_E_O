@@ -788,6 +788,7 @@ MonoBehaviour:
   szeShader: {fileID: 1137215561}
   otherShader: {fileID: 1995170511}
   continueButton: {fileID: 1413401916}
+  CORRECT_ANSWER: 2
   colleagueReactions:
   - 'Greg: However, one computer is still broken.  Go and fix the last bug.'
   - 'Greg: Ignoring me?  How rude.  Go and fix the last bug.'
