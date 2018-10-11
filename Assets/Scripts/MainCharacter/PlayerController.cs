@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!IsGrounded())
+        {
+            Rigidbody rigidbody = gb.GetComponent<Rigidbody>();
+            rigidbody.MovePosition(transform.position + Vector3.down * 7 *Time.deltaTime);
+        }
         GetInput();
         if(Mathf.Abs(input.x)<1 && Mathf.Abs(input.y) < 1){
             animator.SetBool("isWalking", false);
@@ -101,6 +106,8 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionStay(Collision collision)
     {
         collision.impulse.Set(0, 0, 0);
+        Rigidbody rigidbody = gb.GetComponent<Rigidbody>();
+        rigidbody.AddForce(Vector3.down * 5000 * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
@@ -200,5 +207,10 @@ public class PlayerController : MonoBehaviour {
                 sceneTransitionManager.LoadScene(SceneEnum.INTRO_DIALOG);
             }
         }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, -Vector2.up, 0.1f);
     }
 }
