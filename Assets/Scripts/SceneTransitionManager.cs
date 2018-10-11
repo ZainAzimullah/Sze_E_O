@@ -47,6 +47,11 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         SceneManager.LoadScene(scene);
     }
 
+    public void LoadCurrentLevelScene()
+    {
+        LoadScene((SceneEnum) LevelManager.Instance.currentLevel);
+    }
+
     /**
      *A method to load the previous scene
      */
@@ -72,10 +77,16 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
  */
 public enum SceneEnum
 {
-    MainMenu,
+    // LEVELS GO HERE //
+
+    // *** DO NOT CHANGE THIS ORDER *** //
     Level0,
     Level1,
     Level2,
+    // ****** //
+
+    // OTHER SCENES //
+    MainMenu,
     Options,
     Elevator,
     ConsultGregDialog,

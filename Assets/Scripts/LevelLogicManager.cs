@@ -32,7 +32,7 @@ public class LevelLogicManager : Singleton<LevelLogicManager> {
             SceneTransitionManager.Instance.LoadScene(SceneEnum.MentorAdviceDialogue);
         } else
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
+            SceneTransitionManager.Instance.LoadCurrentLevelScene();
         }
     }
 }

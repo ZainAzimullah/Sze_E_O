@@ -79,17 +79,7 @@ public class SimpleDialogue : MonoBehaviour {
 
     public virtual void Finish()
     {
-        // TODO:  Refactor this!!!!!!
-        if (LevelManager.Instance.currentLevel == 0)
-        {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level0);
-        }else if(LevelManager.Instance.currentLevel == 1)
-        {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
-        } else if (LevelManager.Instance.currentLevel == 2)
-        {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level2);
-        }
+        SceneTransitionManager.Instance.LoadCurrentLevelScene();
     }
 
     public void Skip()
