@@ -12,6 +12,7 @@ public class MoveRandom : MonoBehaviour {
     bool inNavigation;
     public int waitTime;
     public int walkTime;
+    public GameObject player;
     bool startNaveEnd = false;
 
     void Start()
@@ -23,12 +24,12 @@ public class MoveRandom : MonoBehaviour {
 
     void Update()
     {
-        if (!inNavigation)
+        if (!inNavigation && !(Vector3.Distance(player.transform.position, agent.transform.position) < (double)2.0))
         {
             StartCoroutine(startNavigation());
         }
         else {
-            if (Vector3.Distance(transform.position, agent.destination) <= 3f || startNaveEnd)
+            if (Vector3.Distance(transform.position, agent.destination) <= 3f || startNaveEnd || Vector3.Distance(player.transform.position, agent.transform.position) < (double)2.0)
             {
                 StartCoroutine(finishNavigation());
             }
