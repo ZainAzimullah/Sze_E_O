@@ -67,7 +67,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         
         return trackers[index];
     }
-
+    //Get the number of levels of player and camera positions have been stored
     public int GetNumberofTrackers()
     {
         return trackers.Count;
@@ -84,7 +84,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         
     }
 
-
+    //To clear all the stored player and camera positions and angles
     public void ReinitializeTracker()
     {
         trackers.Clear();

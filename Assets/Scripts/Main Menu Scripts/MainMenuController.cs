@@ -27,10 +27,12 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void MainMenu() {
+        //Check whether it's the first time to get into MainMenu
         if (PlayerManager.Instance.GetNumberofTrackers() > 0)
         {
             PlayerManager.Instance.ReinitializeTracker();
         }
+        //Avoid tutorial dialogue load to the current level
         LevelManager.Instance.currentLevel = 0;
         SceneTransitionManager.Instance.LoadScene(SceneEnum.MainMenu);
 	}
