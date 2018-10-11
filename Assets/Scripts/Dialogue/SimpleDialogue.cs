@@ -82,13 +82,13 @@ public class SimpleDialogue : MonoBehaviour {
         // TODO:  Refactor this!!!!!!
         if (LevelManager.Instance.currentLevel == 0)
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL0);
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level0);
         }else if(LevelManager.Instance.currentLevel == 1)
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
         } else if (LevelManager.Instance.currentLevel == 2)
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL2);
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level2);
         }
     }
 

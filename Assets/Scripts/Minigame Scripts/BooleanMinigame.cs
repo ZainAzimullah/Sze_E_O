@@ -182,7 +182,7 @@ public class BooleanMinigame : MonoBehaviour {
 	}
 
 	public void ExitYes() {
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
 	}
 
 

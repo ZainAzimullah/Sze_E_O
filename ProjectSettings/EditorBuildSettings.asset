@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroAtComputerDialog.unity
     guid: 050018201f13e4be3bcf75d8a33e0ba4
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 4fd8ac87d96785949ad8832a74ecbf87
   m_configObjects: {}

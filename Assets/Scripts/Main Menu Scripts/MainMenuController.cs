@@ -11,15 +11,15 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void StartGame() {
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.INTRO_DIALOG);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.IntroDialogue);
     }
 
 	public void ResumeGame() {
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
 	}
 
 	public void Options() {
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.OPTIONS);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.Options);
 	}
 
 	public void Quit() {
@@ -27,7 +27,7 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void MainMenu() {
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.MAIN_MENU);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.MainMenu);
 	}
 
 }

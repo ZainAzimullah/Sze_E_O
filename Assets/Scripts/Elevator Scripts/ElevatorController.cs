@@ -18,14 +18,14 @@ public class ElevatorController : MonoBehaviour {
         //Debug.Log("START BUTTON IS WORKING");
         //SceneManager.LoadScene("Gameplay");
         LevelManager.Instance.currentLevel = 0;
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL0);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.Level0);
 	}
 
     public void LevelOne()
     {
         LevelManager.Instance.currentLevel = 1;
         LevelLogicManager.Instance.PrepareLevel();
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
     }
 
     public void LevelTwo()
@@ -35,7 +35,7 @@ public class ElevatorController : MonoBehaviour {
             PlayerManager.Instance.badge = BadgeType.TEAM_LEAD;
             LevelManager.Instance.currentLevel = 2;
             LevelLogicManager.Instance.PrepareLevel();
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL2);
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level2);
         }
         else
         {
@@ -48,7 +48,7 @@ public class ElevatorController : MonoBehaviour {
         if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
         {
             PlayerManager.Instance.badge = BadgeType.CEO;
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.EXIT);
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.ExitScreen);
         }
         else
         {

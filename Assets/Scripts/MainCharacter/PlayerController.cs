@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour {
                 tracker.playerAngle = gb.transform.eulerAngles;
                 tracker.camAngle = cam.eulerAngles;
                 tracker.camPos = cam.position;
-                sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
+                sceneTransitionManager.LoadScene(SceneEnum.ConsultGregDialog);
             }
         }
             
@@ -145,66 +145,66 @@ public class PlayerController : MonoBehaviour {
             if (collision.gameObject.tag == "Elevator")
             {
                 SetTracker(tracker);
-                sceneTransitionManager.LoadScene(SceneEnum.ELEVATOR);
+                sceneTransitionManager.LoadScene(SceneEnum.Elevator);
             }
             if (collision.gameObject.tag == "Dialog")
             {
                 SetTracker(tracker);
-                sceneTransitionManager.LoadScene(SceneEnum.CONSULT_GREG_DIALOGUE);
+                sceneTransitionManager.LoadScene(SceneEnum.ConsultGregDialog);
             }              
             if (collision.gameObject.tag == "Computer")
             {
                 SetTracker(tracker);
                 if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame)) {
-                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
                     return;
                 }
-                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME);
+                sceneTransitionManager.LoadScene(SceneEnum.BooleanGame);
             }
             if ( collision.gameObject.tag == "Computer5")
             {
                 SetTracker(tracker);
                 if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame2))
                 {
-                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
                     return;
                 }
-                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME2);
+                sceneTransitionManager.LoadScene(SceneEnum.BooleanGame2);
             }
             if ( collision.gameObject.tag == "Computer6")
             {
                 SetTracker(tracker);
                 if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame3))
                 {
-                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
                     return;
                 }
-                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME3);
+                sceneTransitionManager.LoadScene(SceneEnum.BooleanGame3);
             }
             if (collision.gameObject.tag == "Computer3")
             {
                 SetTracker(tracker);
                 if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame4))
                 {
-                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
                     return;
                 }
-                sceneTransitionManager.LoadScene(SceneEnum.BOOLEAN_GAME4);
+                sceneTransitionManager.LoadScene(SceneEnum.BooleanGame4);
             }
             if (collision.gameObject.tag == "Computer4" || collision.gameObject.tag == "Computer1" || collision.gameObject.tag == "Computer2" || collision.gameObject.tag == "Computer7")
             {
                 SetTracker(tracker);
-                SceneTransitionManager.Instance.LoadScene(SceneEnum.NO_BUGS);
+                SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
             }
             if (collision.gameObject.tag == "TutorialComputer")
             {
                 SetTracker(tracker);
-                sceneTransitionManager.LoadScene(SceneEnum.INTRO_AT_COMPUTER);
+                sceneTransitionManager.LoadScene(SceneEnum.IntroAtComputerDialog);
             }
             if (collision.gameObject.tag == "Mentor")
             {
                 SetTracker(tracker);
-                sceneTransitionManager.LoadScene(SceneEnum.INTRO_DIALOG);
+                sceneTransitionManager.LoadScene(SceneEnum.IntroDialogue);
             }
         }
     }

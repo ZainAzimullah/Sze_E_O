@@ -25,14 +25,14 @@ public class LevelLogicManager : Singleton<LevelLogicManager> {
 
         if (minigameRecorder.CanShowDialogueWithColleague())
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.GREG_DIALOGUE_AFTER_MINIGAME);
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.GregDialogueAfterMinigame);
         }
         else if (minigameRecorder.CanShowDialogueWithMentor())
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.MENTOR_ADVICE_LEVEL1);
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.MentorAdviceDialogue);
         } else
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
         }
     }
 }
