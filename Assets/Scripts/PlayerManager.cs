@@ -79,6 +79,12 @@ public class PlayerManager:Singleton<PlayerManager> {
         
     }
 
+    public void ReinitializeTracker()
+    {
+        trackers.Clear();
+        InitializeTracker();
+    }
+
     public void Refresh()
     {
         exp.CurrentVal = 0;
