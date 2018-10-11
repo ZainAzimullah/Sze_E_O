@@ -1,22 +1,18 @@
-﻿internal class Level2MinigameRecorder : IMinigameRecorder
+﻿using System.Collections.Generic;
+
+internal class Level2MinigameRecorder : AbstractMinigameRecorder
 {
-    public bool CanShowDialogueWithColleague()
+    public Level2MinigameRecorder()
     {
-        throw new System.NotImplementedException();
+        Initialise();
     }
 
-    public bool CanShowDialogueWithMentor()
+    protected override void Initialise()
     {
-        throw new System.NotImplementedException();
-    }
-
-    public bool HasCompleted(MinigameType minigameType)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void RegisterMinigameComplete(MinigameType minigame)
-    {
-        throw new System.NotImplementedException();
+        allMinigames = new HashSet<MinigameType>()
+        {
+            MinigameType.PUT_YOUR_MINI_GAMES_HERE
+        };
+        requiredMinigamesForDialogue = 3;
     }
 }

@@ -7,9 +7,9 @@ using UnityEngine;
 // Factory pattern used here
 public class MinigameRecorderFactory
 {
-    private static IMinigameRecorder minigameRecorder;
+    private static AbstractMinigameRecorder minigameRecorder;
 
-    public static IMinigameRecorder GetMiniGameRecorderForLevel(int level)
+    public static AbstractMinigameRecorder GetMiniGameRecorderForLevel(int level)
     {
         switch (level)
         {
