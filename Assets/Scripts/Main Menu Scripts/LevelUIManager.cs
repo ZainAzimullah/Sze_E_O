@@ -23,9 +23,5 @@ public class LevelUIManager : MonoBehaviour {
         dialogPanel.SetActive(false);
     }
 
-    public void OnSaveButtonClicked()
-    {
-        dialogPanel.SetActive(false);
-        //To Do: need to implement saving mechanism here
-    }
+
 }
