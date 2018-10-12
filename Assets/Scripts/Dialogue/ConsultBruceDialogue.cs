@@ -11,14 +11,14 @@ public class ConsultBruceDialogue : SimpleDialogue
         ClearText();
 
         // Determine what Greg should say upon approaching him
-        if (LevelLogicManager.Instance.GetMinigameRecorder().CanShowDialogueWithColleague() && PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
+        if (GameLogicManager.Instance.GetMinigameRecorder().CanShowDialogueWithColleague() && PlayerManager.Instance.GetExperience().CurrentVal == GameLogicManager.Instance.LEVEL_THRESHOLD)
         {
             /* Uncomment the line of code and put in what he should say:*/
             //sentences = new string[] { "Bruce: " };
             throw new System.NotImplementedException();
         }
         // Determine what Greg should say upon approaching him after failing confrontation earlier
-        else if (LevelLogicManager.Instance.GetMinigameRecorder().CanShowDialogueWithMentor())
+        else if (GameLogicManager.Instance.GetMinigameRecorder().CanShowDialogueWithMentor())
         {
             /* Uncomment the line of code and put in what he should say:*/
             //sentences = new string[] { "Bruce: " };

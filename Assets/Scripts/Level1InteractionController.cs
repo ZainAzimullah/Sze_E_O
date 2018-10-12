@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class Level1InteractionController : AbstractInteractionController
+public class Level1Controller : AbstractLevelController
 {
     private enum Level1Tag
     {
@@ -43,7 +43,7 @@ public class Level1InteractionController : AbstractInteractionController
                 SceneTransitionManager.Instance.LoadScene(SceneEnum.ConsultGregDialog);
                 break;
             default:
-                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(tagToScene[tag]))
+                if (GameLogicManager.Instance.GetMinigameRecorder().HasCompleted(tagToScene[tag]))
                 {
                     SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
                 } else {
@@ -51,5 +51,10 @@ public class Level1InteractionController : AbstractInteractionController
                 }
                 break;
         }
+    }
+
+    public override void ColleagueConfrontation()
+    {
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.GregDialogueAfterMinigame);
     }
 }

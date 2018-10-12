@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour {
 	public void StartGame() {
         LevelManager.Instance.currentLevel = 0;
-        PlayerManager.Instance.UpdateExperience(LevelLogicManager.Instance.LEVEL_THRESHHOLD);
-        LevelLogicManager.Instance.PrepareForFirstVisit();
+        PlayerManager.Instance.UpdateExperience(GameLogicManager.Instance.LEVEL_THRESHOLD);
+        GameLogicManager.Instance.PrepareForFirstVisit();
         SceneTransitionManager.Instance.LoadScene(SceneEnum.IntroDialogue);
     }
 

@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour {
         {
             Tracker tracker = PlayerManager.Instance.GetTracker(LevelManager.Instance.currentLevel);
             SetTracker(tracker);
-            LevelLogicManager.Instance.Interaction(collision);
+            GameLogicManager.Instance.Interaction(collision);
         }
     }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Level0InteractionController : AbstractInteractionController
+public class Level0Controller : AbstractLevelController
 {
     private enum Level0Tag
     {
@@ -22,5 +22,10 @@ public class Level0InteractionController : AbstractInteractionController
                 SceneTransitionManager.Instance.LoadScene(SceneEnum.IntroDialogue);
                 break;
         }
+    }
+
+    public override void ColleagueConfrontation()
+    {
+        throw new ColleageConfrontationOnFoyerException();
     }
 }

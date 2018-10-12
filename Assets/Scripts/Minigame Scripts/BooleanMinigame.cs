@@ -163,7 +163,7 @@ public class BooleanMinigame : MonoBehaviour {
 	public void Progress()
     {
         SceneEnum minigame = (SceneEnum) Enum.Parse(typeof(SceneEnum), SceneManager.GetActiveScene().name, true);
-        LevelLogicManager.Instance.MinigameDone(minigame);
+        GameLogicManager.Instance.MinigameDone(minigame);
     }
 
 	public void ExitGame() {

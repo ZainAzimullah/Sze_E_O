@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class AbstractInteractionController
+public abstract class AbstractLevelController
 {
     private enum GlobalTag
     {
@@ -27,4 +27,5 @@ public abstract class AbstractInteractionController
     }
 
     protected abstract void InteractHook(Collider collision);
+    public abstract void ColleagueConfrontation();
 }

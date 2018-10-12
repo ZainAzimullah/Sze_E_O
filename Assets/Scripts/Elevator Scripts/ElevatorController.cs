@@ -42,9 +42,7 @@ public class ElevatorController : MonoBehaviour {
 
     private void CheckVisit(BadgeType badgeType)
     {
-        Debug.Log(badgeType);
-        Debug.Log(PlayerManager.Instance.badge);
-        if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD 
+        if (PlayerManager.Instance.GetExperience().CurrentVal == GameLogicManager.Instance.LEVEL_THRESHOLD 
             || PlayerManager.Instance.badge >= badgeType)
         {
             LevelManager.Instance.currentLevel = (int) badgeType;
@@ -52,11 +50,11 @@ public class ElevatorController : MonoBehaviour {
             {
                 PlayerManager.Instance.badge = badgeType;
                 PlayerManager.Instance.Refresh();
-                LevelLogicManager.Instance.PrepareForFirstVisit();
+                GameLogicManager.Instance.PrepareForFirstVisit();
             }
             else
             {
-                LevelLogicManager.Instance.PrepareForRevisit();
+                GameLogicManager.Instance.PrepareForRevisit();
             }
 
             SceneTransitionManager.Instance.LoadScene(badgeType.GetAssociatedScene());

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Look after the player's progress through the level, control game flow
-public class LevelLogicManager : Singleton<LevelLogicManager> {
+public class GameLogicManager : Singleton<GameLogicManager> {
     // Store minigame information
     private AbstractMinigameRecorder minigameRecorder;
-    private AbstractInteractionController interactionController;
-    public readonly int LEVEL_THRESHHOLD = 100;  // points needed to progress
+    private AbstractLevelController levelController;
+    public readonly int LEVEL_THRESHOLD = 100;  // points needed to progress
 
     public AbstractMinigameRecorder GetMinigameRecorder()
     {
@@ -25,8 +25,8 @@ public class LevelLogicManager : Singleton<LevelLogicManager> {
 
     public void PrepareForRevisit()
     {
-        interactionController = InteractionControllerFactory.GetInteractionController(LevelManager.Instance.currentLevel);
-
+        Debug.Log("hello");
+        levelController = LevelControllerFactory.GetInteractionController(LevelManager.Instance.currentLevel);
     }
 
     public void MinigameDone(SceneEnum minigame)
@@ -35,7 +35,7 @@ public class LevelLogicManager : Singleton<LevelLogicManager> {
 
         if (minigameRecorder.CanShowDialogueWithColleague())
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.GregDialogueAfterMinigame);
+            levelController.ColleagueConfrontation();
         }
         else if (minigameRecorder.CanShowDialogueWithMentor())
         {
@@ -48,6 +48,6 @@ public class LevelLogicManager : Singleton<LevelLogicManager> {
 
     public void Interaction(Collider collision)
     {
-        interactionController.Interact(collision);
+        levelController.Interact(collision);
     }
 }
