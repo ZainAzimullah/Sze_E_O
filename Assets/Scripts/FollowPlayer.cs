@@ -40,14 +40,17 @@ namespace FollowPlayerNamespace
         // Update is called once per frame
         void Update()
         {
-            
-            Quaternion cameraAngle =
+            if (!LevelUIManager.Instance.isCamFreeze)
+            {
+                Quaternion cameraAngle =
                 Quaternion.AngleAxis(Input.GetAxis("Mouse X") * RotateSpeed, Vector3.up);
-            Offset = cameraAngle * Offset;
+                Offset = cameraAngle * Offset;
 
-            transform.position = Player.position + Offset;
-            transform.localRotation = Player.localRotation;
-            transform.LookAt(Player);
+                transform.position = Player.position + Offset;
+                transform.localRotation = Player.localRotation;
+                transform.LookAt(Player);
+            }
+            
         }
 
     }

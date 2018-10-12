@@ -18,28 +18,39 @@ public class ElevatorController : MonoBehaviour {
         //Debug.Log("START BUTTON IS WORKING");
         //SceneManager.LoadScene("Gameplay");
         LevelManager.Instance.currentLevel = 0;
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL0);
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.Level0);
 	}
 
     public void LevelOne()
     {
-
-        //Debug.Log("LEVEL ONE BUTTON IS WORKING");
-        //SceneManager.LoadScene("Level1");
         LevelManager.Instance.currentLevel = 1;
         LevelLogicManager.Instance.PrepareLevel();
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
-
-        
+        SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
     }
 
     public void LevelTwo()
     {
         if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
         {
+            PlayerManager.Instance.badge = BadgeType.TEAM_LEAD;
+            LevelManager.Instance.currentLevel = 2;
+            LevelLogicManager.Instance.PrepareLevel();
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level2);
+        }
+        else
+        {
+            PopupPanel.SetActive(true);
+        }
+    }
+
+    public void CEOLevel()
+    {
+        if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
+        {
             PlayerManager.Instance.badge = BadgeType.CEO;
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.EXIT);
-        } else
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.ExitScreen);
+        }
+        else
         {
             PopupPanel.SetActive(true);
         }

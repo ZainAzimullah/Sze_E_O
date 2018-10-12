@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -46,6 +47,11 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
         SceneManager.LoadScene(scene);
     }
 
+    public void LoadCurrentLevelScene()
+    {
+        LoadScene((SceneEnum) LevelManager.Instance.currentLevel);
+    }
+
     /**
      *A method to load the previous scene
      */
@@ -60,71 +66,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
      */
     private string MapScene(SceneEnum scene)
     {
-        string sceneName="";
-        if (scene == SceneEnum.MAIN_MENU)
-        {
-            sceneName = "MainMenu";
-        }
-        if (scene == SceneEnum.OPTIONS)
-        {
-            sceneName = "Options";
-        }
-        if (scene == SceneEnum.LEVEL0)
-        {
-            sceneName = "Level0";
-        }
-        if (scene == SceneEnum.LEVEL1)
-        {
-            sceneName = "Level1";
-        }
-        if (scene == SceneEnum.ELEVATOR)
-        {
-            sceneName = "Elevator";
-        }
-        if (scene == SceneEnum.GREG_DIALOGUE_AFTER_MINIGAME)
-        {
-            sceneName = "GregDialogueAfterMinigame";
-        }
-        if (scene == SceneEnum.CONSULT_GREG_DIALOGUE)
-        {
-            sceneName = "ConsultGregDialog";
-        }
-        if (scene == SceneEnum.BOOLEAN_GAME)
-        {
-            sceneName = "BooleanGame";
-        }
-        if (scene == SceneEnum.BOOLEAN_GAME2)
-        {
-            sceneName = "BooleanGame2";
-        }
-        if (scene == SceneEnum.BOOLEAN_GAME3)
-        {
-            sceneName = "BooleanGame3";
-        }
-        if (scene == SceneEnum.BOOLEAN_GAME4)
-        {
-            sceneName = "BooleanGame4";
-        }
-        if (scene == SceneEnum.MENTOR_ADVICE_LEVEL1)
-        {
-            sceneName = "MentorAdviceDialogue";
-        }
-        if (scene == SceneEnum.EXIT)
-        {
-            sceneName = "ExitScreen";
-        }
-        if (scene == SceneEnum.NO_BUGS)
-        {
-            sceneName = "NoBugsComputerScene";
-        }
-        if(scene == SceneEnum.INTRO_AT_COMPUTER)
-        {
-            sceneName = "IntroAtComputerDialog";
-        }
-        if (scene == SceneEnum.INTRO_DIALOG)
-        {
-            sceneName = "IntroDialogue";
-        }
+        string sceneName = Enum.GetName(typeof(SceneEnum), scene);
         return sceneName;
     }
 }
@@ -135,20 +77,27 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
  */
 public enum SceneEnum
 {
-    MAIN_MENU,
-    LEVEL0,
-    LEVEL1,
-    OPTIONS,
-    ELEVATOR,
-    CONSULT_GREG_DIALOGUE,
-    GREG_DIALOGUE_AFTER_MINIGAME,
-    BOOLEAN_GAME,
-    BOOLEAN_GAME2,
-    BOOLEAN_GAME3,
-    BOOLEAN_GAME4,
-    MENTOR_ADVICE_LEVEL1,
-    EXIT,
-    NO_BUGS,
-    INTRO_AT_COMPUTER,
-    INTRO_DIALOG
+    // LEVELS GO HERE //
+
+    // *** DO NOT CHANGE THIS ORDER *** //
+    Level0,
+    Level1,
+    Level2,
+    // ****** //
+
+    // OTHER SCENES //
+    MainMenu,
+    Options,
+    Elevator,
+    ConsultGregDialog,
+    GregDialogueAfterMinigame,
+    BooleanGame,
+    BooleanGame2,
+    BooleanGame3,
+    BooleanGame4,
+    MentorAdviceDialogue,
+    ExitScreen,
+    NoBugsComputerScene,
+    IntroAtComputerDialog,
+    IntroDialogue
 }

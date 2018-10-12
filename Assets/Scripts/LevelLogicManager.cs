@@ -5,10 +5,10 @@ using UnityEngine;
 // Look after the player's progress through the level, control game flow
 public class LevelLogicManager : Singleton<LevelLogicManager> {
     // Store minigame information
-    private IMinigameRecorder minigameRecorder;
+    private AbstractMinigameRecorder minigameRecorder;
     public readonly int LEVEL_THRESHHOLD = 100;  // points needed to progress
 
-    public IMinigameRecorder GetMinigameRecorder()
+    public AbstractMinigameRecorder GetMinigameRecorder()
     {
         return minigameRecorder;
     }
@@ -16,6 +16,7 @@ public class LevelLogicManager : Singleton<LevelLogicManager> {
     public void PrepareLevel()
     {
         minigameRecorder = MinigameRecorderFactory.GetMiniGameRecorderForLevel(LevelManager.Instance.currentLevel);
+        PlayerManager.Instance.Refresh();
     }
 
     public void MinigameDone(MinigameType minigame)
@@ -24,14 +25,14 @@ public class LevelLogicManager : Singleton<LevelLogicManager> {
 
         if (minigameRecorder.CanShowDialogueWithColleague())
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.GREG_DIALOGUE_AFTER_MINIGAME);
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.GregDialogueAfterMinigame);
         }
         else if (minigameRecorder.CanShowDialogueWithMentor())
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.MENTOR_ADVICE_LEVEL1);
+            SceneTransitionManager.Instance.LoadScene(SceneEnum.MentorAdviceDialogue);
         } else
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.LEVEL1);
+            SceneTransitionManager.Instance.LoadCurrentLevelScene();
         }
     }
 }

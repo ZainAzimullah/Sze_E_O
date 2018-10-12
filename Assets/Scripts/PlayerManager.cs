@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,11 @@ public class PlayerManager:Singleton<PlayerManager> {
         InitializeTracker();
     }
 
+    public void AddTracker()
+    {
+        trackers.Add(new Tracker());
+    }
+
     void Update()
     {
         // Exit on Esc key
@@ -25,7 +31,15 @@ public class PlayerManager:Singleton<PlayerManager> {
         {
             Application.Quit();
         }
+
+        // Hack for testing (press Enter)
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            exp.CurrentVal = 100;
+            LevelManager.Instance.IncreaseMaxLevel();
+        }
     }
+
 
     public Stat GetExperience() {
         return exp;
@@ -53,6 +67,11 @@ public class PlayerManager:Singleton<PlayerManager> {
         
         return trackers[index];
     }
+    //Get the number of levels of player and camera positions have been stored
+    public int GetNumberofTrackers()
+    {
+        return trackers.Count;
+    }
 
     void InitializeTracker()
     {
@@ -63,6 +82,18 @@ public class PlayerManager:Singleton<PlayerManager> {
             trackers.Add(new Tracker());
         }
         
+    }
+
+    //To clear all the stored player and camera positions and angles
+    public void ReinitializeTracker()
+    {
+        trackers.Clear();
+        InitializeTracker();
+    }
+
+    public void Refresh()
+    {
+        exp.CurrentVal = 0;
     }
 
 }

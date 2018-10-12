@@ -6,7 +6,7 @@ public class LevelManager : Singleton<LevelManager> {
 
     public int currentLevel
     {
-        get;set;
+        get; set;
     }
 
     private int maxLevel;
@@ -14,6 +14,7 @@ public class LevelManager : Singleton<LevelManager> {
 	// Use this for initialization
 	void Start () {
         maxLevel = 1;
+        currentLevel = 0;
 	}
 	
 	// Update is called once per frame
@@ -24,6 +25,7 @@ public class LevelManager : Singleton<LevelManager> {
     public void IncreaseMaxLevel()
     {
         maxLevel++;
+        PlayerManager.Instance.AddTracker();
     }
 
     public void DecreaseMaxLevel()
