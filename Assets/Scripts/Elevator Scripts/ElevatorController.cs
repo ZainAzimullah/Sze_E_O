@@ -9,59 +9,48 @@ public class ElevatorController : MonoBehaviour {
     public GameObject PopupPanel;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         PopupPanel.SetActive(false);
-	}
+    }
 
-	public void GroundButton() {
-        LevelManager.Instance.currentLevel = 0;
-        LevelLogicManager.Instance.PrepareForRevisit();
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.Level0);
-	}
+    public void GroundButton()
+    {
+        CheckVisit(BadgeType.NEW_PLAYER);
+    }
 
     public void LevelOne()
     {
-        LevelManager.Instance.currentLevel = 1;
-        LevelLogicManager.Instance.PrepareForRevisit();
-        if (LevelLogicManager.Instance.GetMinigameRecorder() == null)
-        {
-            LevelLogicManager.Instance.PrepareForFirstVisit();
-        }
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
+        CheckVisit(BadgeType.GRADUATE);
     }
 
     public void LevelTwo()
     {
-        if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD || PlayerManager.Instance.badge >= BadgeType.TEAM_LEAD)
-        {
-            if (PlayerManager.Instance.badge < BadgeType.TEAM_LEAD)
-            {
-                PlayerManager.Instance.badge = BadgeType.TEAM_LEAD;
-                PlayerManager.Instance.Refresh();
-                LevelLogicManager.Instance.PrepareForFirstVisit();
-            }
-            else
-            {
-                LevelLogicManager.Instance.PrepareForRevisit();
-            }
-
-            LevelManager.Instance.currentLevel = 2;
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level2);
-        }
-        else
-        {
-            PopupPanel.SetActive(true);
-        }
+        CheckVisit(BadgeType.TEAM_LEAD);
     }
 
     public void LevelThree()
     {
-        if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD || PlayerManager.Instance.badge >= BadgeType.MANAGER)
+        CheckVisit(BadgeType.MANAGER);
+    }
+
+    public void WinGame()
+    {
+        CheckVisit(BadgeType.CEO);
+    }
+
+    private void CheckVisit(BadgeType badgeType)
+    {
+        Debug.Log(badgeType);
+        Debug.Log(PlayerManager.Instance.badge);
+        if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD 
+            || PlayerManager.Instance.badge >= badgeType)
         {
-            if (PlayerManager.Instance.badge < BadgeType.MANAGER)
+            LevelManager.Instance.currentLevel = (int) badgeType;
+            if (PlayerManager.Instance.badge < badgeType)
             {
-                PlayerManager.Instance.badge = BadgeType.MANAGER;
+                PlayerManager.Instance.badge = badgeType;
                 PlayerManager.Instance.Refresh();
                 LevelLogicManager.Instance.PrepareForFirstVisit();
             }
@@ -70,21 +59,7 @@ public class ElevatorController : MonoBehaviour {
                 LevelLogicManager.Instance.PrepareForRevisit();
             }
 
-            LevelManager.Instance.currentLevel = 3;
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.Level3);
-        }
-        else
-        {
-            PopupPanel.SetActive(true);
-        }
-    }
-
-    public void CEOLevel()
-    {
-        if (PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
-        {
-            PlayerManager.Instance.badge = BadgeType.CEO;
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.ExitScreen);
+            SceneTransitionManager.Instance.LoadScene(badgeType.GetAssociatedScene());
         }
         else
         {

@@ -102,3 +102,25 @@ public enum SceneEnum
     IntroAtComputerDialog,
     IntroDialogue
 }
+
+public static class BadgeTypeExtension
+{
+    public static SceneEnum GetAssociatedScene(this BadgeType badgeType)
+    {
+        switch (badgeType)
+        {
+            case BadgeType.NEW_PLAYER:
+                return SceneEnum.Level0;
+            case BadgeType.GRADUATE:
+                return SceneEnum.Level1;
+            case BadgeType.TEAM_LEAD:
+                return SceneEnum.Level2;
+            case BadgeType.MANAGER:
+                return SceneEnum.Level3;
+            case BadgeType.CEO:
+                return SceneEnum.ExitScreen;
+        }
+
+        throw new BadgeToSceneMappingException();
+    }
+}

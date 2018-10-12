@@ -4,14 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-        PlayerManager.Instance.badge = BadgeType.GRADUATE;
-	}
-
 	public void StartGame() {
         LevelManager.Instance.currentLevel = 0;
+        PlayerManager.Instance.UpdateExperience(LevelLogicManager.Instance.LEVEL_THRESHHOLD);
         LevelLogicManager.Instance.PrepareForFirstVisit();
         SceneTransitionManager.Instance.LoadScene(SceneEnum.IntroDialogue);
     }

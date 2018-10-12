@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager:Singleton<PlayerManager> {
-    public BadgeType badge;
+    public BadgeType badge = BadgeType.NEW_PLAYER;
     private List<Tracker> trackers; 
     public int money;
 
@@ -99,6 +99,7 @@ public class PlayerManager:Singleton<PlayerManager> {
 }
 
 public enum BadgeType {
+    NEW_PLAYER,
     GRADUATE,
     TEAM_LEAD,
     MANAGER,
