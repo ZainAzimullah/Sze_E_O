@@ -23,17 +23,17 @@ public class MoveRandom : MonoBehaviour {
         if (!(Vector3.Distance(player.transform.position, agent.transform.position) < 1.4f) && !inCoroutine)
         {
             inCoroutine = true;
-            StartCoroutine(startNavigation());
+            StartCoroutine(StartNavigation());
         }
         else {
             if (Vector3.Distance(player.transform.position, agent.transform.position) < 1.4f || Vector3.Distance(transform.position, agent.destination) <= (double)2.0)
             {
-                StartCoroutine(stopNavigation());
+                StopNavigation();
             }
         }
     }
 
-    IEnumerator startNavigation()
+    private IEnumerator StartNavigation()
     {
         animator.SetBool("isWalking", true);
         Vector3 randomDirection = Random.insideUnitSphere * 25;
@@ -49,14 +49,13 @@ public class MoveRandom : MonoBehaviour {
         inCoroutine = false;
     }
 
-    string stopNavigation()
+    private void StopNavigation()
     {
         animator.SetBool("isWalking", false);
         gb.GetComponent<NavMeshAgent>().isStopped = true;
-        return "";
     }
 
-    Vector3 getNewRandomPosition()
+    private Vector3 GetNewRandomPosition()
     {
         float x = Random.Range(-20, 20);
         float z = Random.Range(-20, 20);
