@@ -11,6 +11,8 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void StartGame() {
+        LevelManager.Instance.currentLevel = 0;
+        LevelLogicManager.Instance.PrepareForFirstVisit();
         SceneTransitionManager.Instance.LoadScene(SceneEnum.IntroDialogue);
     }
 

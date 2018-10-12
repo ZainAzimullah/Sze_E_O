@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelLogicManager : Singleton<LevelLogicManager> {
     // Store minigame information
     private AbstractMinigameRecorder minigameRecorder;
+    private AbstractInteractionController interactionController;
     public readonly int LEVEL_THRESHHOLD = 100;  // points needed to progress
 
     public AbstractMinigameRecorder GetMinigameRecorder()
@@ -13,13 +14,22 @@ public class LevelLogicManager : Singleton<LevelLogicManager> {
         return minigameRecorder;
     }
 
-    public void PrepareLevel()
+    public void PrepareForFirstVisit()
     {
-        minigameRecorder = MinigameRecorderFactory.GetMiniGameRecorderForLevel(LevelManager.Instance.currentLevel);
-        PlayerManager.Instance.Refresh();
+        if (LevelManager.Instance.currentLevel != 0)
+        {
+            minigameRecorder = MinigameRecorderFactory.GetMiniGameRecorderForLevel(LevelManager.Instance.currentLevel);
+        }
+        PrepareForRevisit();
     }
 
-    public void MinigameDone(MinigameType minigame)
+    public void PrepareForRevisit()
+    {
+        interactionController = InteractionControllerFactory.GetInteractionController(LevelManager.Instance.currentLevel);
+
+    }
+
+    public void MinigameDone(SceneEnum minigame)
     {
         minigameRecorder.RegisterMinigameComplete(minigame);
 
@@ -34,5 +44,10 @@ public class LevelLogicManager : Singleton<LevelLogicManager> {
         {
             SceneTransitionManager.Instance.LoadCurrentLevelScene();
         }
+    }
+
+    public void Interaction(Collider collision)
+    {
+        interactionController.Interact(collision);
     }
 }

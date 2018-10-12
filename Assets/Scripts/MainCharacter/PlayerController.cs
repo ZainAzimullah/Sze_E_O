@@ -139,73 +139,9 @@ public class PlayerController : MonoBehaviour {
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
-            int currentLevel = LevelManager.Instance.currentLevel;
-            Tracker tracker = PlayerManager.Instance.GetTracker(currentLevel);
-            if (collision.gameObject.tag == "Elevator")
-            {
-                SetTracker(tracker);
-                sceneTransitionManager.LoadScene(SceneEnum.Elevator);
-            }
-            if (collision.gameObject.tag == "Dialog")
-            {
-                SetTracker(tracker);
-                sceneTransitionManager.LoadScene(SceneEnum.ConsultGregDialog);
-            }              
-            if (collision.gameObject.tag == "Computer")
-            {
-                SetTracker(tracker);
-                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame)) {
-                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
-                    return;
-                }
-                sceneTransitionManager.LoadScene(SceneEnum.BooleanGame);
-            }
-            if ( collision.gameObject.tag == "Computer5")
-            {
-                SetTracker(tracker);
-                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame2))
-                {
-                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
-                    return;
-                }
-                sceneTransitionManager.LoadScene(SceneEnum.BooleanGame2);
-            }
-            if ( collision.gameObject.tag == "Computer6")
-            {
-                SetTracker(tracker);
-                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame3))
-                {
-                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
-                    return;
-                }
-                sceneTransitionManager.LoadScene(SceneEnum.BooleanGame3);
-            }
-            if (collision.gameObject.tag == "Computer3")
-            {
-                SetTracker(tracker);
-                if (LevelLogicManager.Instance.GetMinigameRecorder().HasCompleted(MinigameType.BooleanGame4))
-                {
-                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
-                    return;
-                }
-                sceneTransitionManager.LoadScene(SceneEnum.BooleanGame4);
-            }
-            if (collision.gameObject.tag == "Computer4" || collision.gameObject.tag == "Computer1" || collision.gameObject.tag == "Computer2" || collision.gameObject.tag == "Computer7")
-            {
-                SetTracker(tracker);
-                SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
-            }
-            if (collision.gameObject.tag == "TutorialComputer")
-            {
-                SetTracker(tracker);
-                sceneTransitionManager.LoadScene(SceneEnum.IntroAtComputerDialog);
-            }
-            if (collision.gameObject.tag == "Mentor")
-            {
-                SetTracker(tracker);
-                sceneTransitionManager.LoadScene(SceneEnum.IntroDialogue);
-            }
+            Tracker tracker = PlayerManager.Instance.GetTracker(LevelManager.Instance.currentLevel);
+            SetTracker(tracker);
+            LevelLogicManager.Instance.Interaction(collision);
         }
     }
 

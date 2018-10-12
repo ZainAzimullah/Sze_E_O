@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public abstract class AbstractMinigameRecorder
 {
     protected int requiredMinigamesForDialogue;
-    protected HashSet<MinigameType> playedMinigames = new HashSet<MinigameType>();
-    protected HashSet<MinigameType> allMinigames;
+    protected HashSet<SceneEnum> playedMinigames = new HashSet<SceneEnum>();
+    protected HashSet<SceneEnum> allMinigames;
 
     protected abstract void Initialise();
 
@@ -23,7 +23,7 @@ public abstract class AbstractMinigameRecorder
     }
 
     // Notify this that the minigame has been played
-    public void RegisterMinigameComplete(MinigameType minigame)
+    public void RegisterMinigameComplete(SceneEnum minigame)
     {
         if (!allMinigames.Contains(minigame))
         {
@@ -33,21 +33,8 @@ public abstract class AbstractMinigameRecorder
     }
 
     // Has a particular minigame been done?
-    public bool HasCompleted(MinigameType minigameType)
+    public bool HasCompleted(SceneEnum minigameType)
     {
         return playedMinigames.Contains(minigameType);
     }
-}
-
-
-public enum MinigameType
-{
-    // Level 1
-    BooleanGame,
-    BooleanGame2,
-    BooleanGame3,
-    BooleanGame4,
-    
-    // Level 2
-    PUT_YOUR_MINI_GAMES_HERE
 }

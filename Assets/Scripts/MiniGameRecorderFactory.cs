@@ -13,12 +13,13 @@ public class MinigameRecorderFactory
     {
         switch (level)
         {
+            case 0:
+                return null;
             case 1:
                 return new Level1MinigameRecorder();
             case 2:
                 return new Level2MinigameRecorder();
             default:
-                Debug.Log(level);
                 throw new NoMiniGameForThisLevelException();
         }
     }

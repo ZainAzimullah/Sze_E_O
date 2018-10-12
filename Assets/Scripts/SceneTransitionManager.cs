@@ -83,6 +83,7 @@ public enum SceneEnum
     Level0,
     Level1,
     Level2,
+    Level3,
     // ****** //
 
     // OTHER SCENES //

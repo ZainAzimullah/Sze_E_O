@@ -101,5 +101,6 @@ public class PlayerManager:Singleton<PlayerManager> {
 public enum BadgeType {
     GRADUATE,
     TEAM_LEAD,
+    MANAGER,
     CEO
 }
