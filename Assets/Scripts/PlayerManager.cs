@@ -32,8 +32,8 @@ public class PlayerManager:Singleton<PlayerManager> {
             Application.Quit();
         }
 
-        // Hack for testing
-        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        // Hack for testing (press Enter)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             exp.CurrentVal = 100;
             LevelManager.Instance.IncreaseMaxLevel();
