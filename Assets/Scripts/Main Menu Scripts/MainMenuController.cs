@@ -32,10 +32,14 @@ public class MainMenuController : MonoBehaviour {
         {
             PlayerManager.Instance.ReinitializeTracker();
         }
+
         //Avoid tutorial dialogue load to the current level
         LevelManager.Instance.currentLevel = 0;
+
         //To Ensure nothing is frozen
         Time.timeScale = 1;
+        LevelUIManager.Instance.isCamFreeze = false;
+
         SceneTransitionManager.Instance.LoadScene(SceneEnum.MainMenu);
 	}
 

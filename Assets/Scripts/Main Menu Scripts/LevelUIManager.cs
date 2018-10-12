@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelUIManager : MonoBehaviour {
+public class LevelUIManager : Singleton<LevelUIManager> {
     public GameObject dialogPanel;
+
+    public bool isCamFreeze
+    {
+        get;set;
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +21,7 @@ public class LevelUIManager : MonoBehaviour {
         {
             dialogPanel.SetActive(true);
             Time.timeScale = 0;
+            isCamFreeze = true;
         }
 	}
 
@@ -23,6 +29,7 @@ public class LevelUIManager : MonoBehaviour {
     {
         dialogPanel.SetActive(false);
         Time.timeScale = 1;
+        isCamFreeze = false;
     }
 
 
