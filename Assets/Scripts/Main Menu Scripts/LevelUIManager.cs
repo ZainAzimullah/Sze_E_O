@@ -5,6 +5,8 @@ using UnityEngine;
 public class LevelUIManager : Singleton<LevelUIManager> {
     public GameObject dialogPanel;
 
+    private bool isESCPressed;
+
     public bool isCamFreeze
     {
         get;set;
@@ -19,9 +21,25 @@ public class LevelUIManager : Singleton<LevelUIManager> {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            dialogPanel.SetActive(true);
-            Time.timeScale = 0;
-            isCamFreeze = true;
+            isESCPressed = !isESCPressed;
+            if (isESCPressed)
+            {
+                dialogPanel.SetActive(true);
+
+                //Freeze camera and movement
+                Time.timeScale = 0;
+                isCamFreeze = true;
+            }
+            else
+            {
+                //when ESC is pressed twice, 
+                //do the same behaviour 
+                //as the resume button is clicked
+                OnResumeButtonClicked();
+            }
+            
+
+            
         }
 	}
 
