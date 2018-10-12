@@ -34,6 +34,8 @@ public class MainMenuController : MonoBehaviour {
         }
         //Avoid tutorial dialogue load to the current level
         LevelManager.Instance.currentLevel = 0;
+        //To Ensure nothing is frozen
+        Time.timeScale = 1;
         SceneTransitionManager.Instance.LoadScene(SceneEnum.MainMenu);
 	}
 

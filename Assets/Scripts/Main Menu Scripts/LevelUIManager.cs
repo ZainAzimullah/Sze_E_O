@@ -15,12 +15,14 @@ public class LevelUIManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             dialogPanel.SetActive(true);
+            Time.timeScale = 0;
         }
 	}
 
     public void OnResumeButtonClicked()
     {
         dialogPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 
 
