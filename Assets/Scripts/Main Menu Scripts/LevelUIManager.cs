@@ -45,6 +45,7 @@ public class LevelUIManager : Singleton<LevelUIManager> {
 
     public void OnResumeButtonClicked()
     {
+        isESCPressed = false;
         dialogPanel.SetActive(false);
         Time.timeScale = 1;
         isCamFreeze = false;
