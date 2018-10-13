@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Store information about the current level
+// NB:  THIS CLASS MUST BE IN THE PRELOAD SCENE
 public class LevelManager : Singleton<LevelManager> {
 
     public int currentLevel
@@ -22,6 +24,7 @@ public class LevelManager : Singleton<LevelManager> {
 		
 	}
 
+    // Increase the max level when the player is advancing
     public void IncreaseMaxLevel()
     {
         maxLevel++;

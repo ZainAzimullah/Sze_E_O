@@ -12,12 +12,12 @@ internal class Level1MinigameRecorder : AbstractMinigameRecorder
 
     protected override void Initialise()
     {
-        allMinigames = new HashSet<SceneEnum>()
+        allMinigames = new HashSet<SceneName>()
         {
-            SceneEnum.BooleanGame,
-            SceneEnum.BooleanGame2,
-            SceneEnum.BooleanGame3,
-            SceneEnum.BooleanGame4
+            SceneName.BooleanGame,
+            SceneName.BooleanGame2,
+            SceneName.BooleanGame3,
+            SceneName.BooleanGame4
         };
         requiredMinigamesForDialogue = 3;
     }

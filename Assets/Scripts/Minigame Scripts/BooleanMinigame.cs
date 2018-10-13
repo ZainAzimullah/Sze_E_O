@@ -162,7 +162,7 @@ public class BooleanMinigame : MonoBehaviour {
 
 	public void Progress()
     {
-        SceneEnum minigame = (SceneEnum) Enum.Parse(typeof(SceneEnum), SceneManager.GetActiveScene().name, true);
+        SceneName minigame = (SceneName) Enum.Parse(typeof(SceneName), SceneManager.GetActiveScene().name, true);
         GameLogicManager.Instance.MinigameDone(minigame);
     }
 
@@ -182,7 +182,7 @@ public class BooleanMinigame : MonoBehaviour {
 	}
 
 	public void ExitYes() {
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
+        SceneTransitionManager.Instance.LoadScene(SceneName.Level1);
 	}
 
 

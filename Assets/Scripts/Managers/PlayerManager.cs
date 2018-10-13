@@ -2,13 +2,17 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+// All important data regarding the player is stored here throughout
+// the duration of the game.
+// NB:  THIS CLASS MUST BE IN THE PRELOAD SCENE
 public class PlayerManager:Singleton<PlayerManager> {
-    public BadgeType badge = BadgeType.NEW_PLAYER;
-    private List<Tracker> trackers; 
-    public int money;
+    public BadgeType badge = BadgeType.NEW_PLAYER; // The current badge used for level access
+    private List<Tracker> trackers; // Tracking the position of the player
+    public int money; // Money the player has collected
 
     [SerializeField]
     private Stat exp; // Experience points the player has
+
     public PlayerMode mode
     {
         get; set;
@@ -71,6 +75,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         
         return trackers[index];
     }
+
     //Get the number of levels of player and camera positions have been stored
     public int GetNumberofTrackers()
     {
@@ -95,6 +100,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         InitializeTracker();
     }
 
+    // Things we need to do when resetting the player for different levels
     public void Refresh()
     {
         exp.CurrentVal = 0;
@@ -109,10 +115,13 @@ public enum PlayerMode
     TESTING
 }
 
+// THE ORDER MATTERS FOR THIS ENUM
+// Place in order of job ranking
+// The ordinal (index) must match the level number
 public enum BadgeType {
-    NEW_PLAYER,
-    GRADUATE,
-    TEAM_LEAD,
-    MANAGER,
-    CEO
+    NEW_PLAYER, // Level 0
+    GRADUATE,   // Level 1
+    TEAM_LEAD,  // Level 2
+    MANAGER,    // Level 3
+    CEO         // Game Over
 }

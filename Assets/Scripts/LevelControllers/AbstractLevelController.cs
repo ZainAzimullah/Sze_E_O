@@ -13,6 +13,8 @@ public abstract class AbstractLevelController
     // This method is called upon interacting with an object (space bar)
     public void Interact(Collider collision)
     {
+        // Non-global (that is, level-specific tags) will throw an exception
+        // and get caught
         try
         {
             GlobalTag tag = (GlobalTag)Enum.Parse(typeof(GlobalTag), collision.gameObject.tag);
@@ -21,11 +23,12 @@ public abstract class AbstractLevelController
             switch (tag)
             {
                 case GlobalTag.Elevator:
-                    SceneTransitionManager.Instance.LoadScene(SceneEnum.Elevator);
+                    SceneTransitionManager.Instance.LoadScene(SceneName.Elevator);
                     break;
             }
         } catch (ArgumentException)
         {
+            // Interact using code in level-specific subclass since tag wasn't global
             InteractHook(collision);
         }
     }

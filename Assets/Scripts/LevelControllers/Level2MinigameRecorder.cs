@@ -9,7 +9,7 @@ internal class Level2MinigameRecorder : AbstractMinigameRecorder
 
     protected override void Initialise()
     {
-        allMinigames = new HashSet<SceneEnum>()
+        allMinigames = new HashSet<SceneName>()
         {
             // PUT MINIGAMES HERE
         };

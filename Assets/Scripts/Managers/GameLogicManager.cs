@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // This manager manages game flow
+// NB:  THIS CLASS MUST BE IN THE PRELOAD SCENE
 public class GameLogicManager : Singleton<GameLogicManager> {
     // Track minigame progress
     private AbstractMinigameRecorder minigameRecorder;
@@ -36,7 +37,7 @@ public class GameLogicManager : Singleton<GameLogicManager> {
     }
 
     // This is called when a minigame has been completed
-    public void MinigameDone(SceneEnum minigame)
+    public void MinigameDone(SceneName minigame)
     {
         minigameRecorder.RegisterMinigameComplete(minigame);
 
@@ -46,7 +47,7 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         }
         else if (minigameRecorder.CanShowDialogueWithMentor())
         {
-            SceneTransitionManager.Instance.LoadScene(SceneEnum.MentorAdviceDialogue);
+            SceneTransitionManager.Instance.LoadScene(SceneName.MentorAdviceDialogue);
         } else
         {
             SceneTransitionManager.Instance.LoadCurrentLevelScene();

@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Level1Controller : AbstractLevelController
 {
+    // Tags for items that can be interacted with go here
     private enum Level1Tag
     {
         Dialog,
@@ -20,16 +21,17 @@ public class Level1Controller : AbstractLevelController
         Computer7
     }
 
-    private readonly IDictionary<Level1Tag, SceneEnum> tagToScene = new Dictionary<Level1Tag, SceneEnum>()
+    private readonly IDictionary<Level1Tag, SceneName> tagToScene = new Dictionary<Level1Tag, SceneName>()
     {
-        {Level1Tag.Computer, SceneEnum.BooleanGame},
-        {Level1Tag.Computer1, SceneEnum.NoBugsComputerScene},
-        {Level1Tag.Computer2, SceneEnum.NoBugsComputerScene},
-        {Level1Tag.Computer3, SceneEnum.BooleanGame2},
-        {Level1Tag.Computer4, SceneEnum.NoBugsComputerScene},
-        {Level1Tag.Computer5, SceneEnum.BooleanGame3},
-        {Level1Tag.Computer6, SceneEnum.BooleanGame4},
-        {Level1Tag.Computer7, SceneEnum.NoBugsComputerScene},
+        // The appropraite scene to load when interacting with that item goes here
+        {Level1Tag.Computer, SceneName.BooleanGame},
+        {Level1Tag.Computer1, SceneName.NoBugsComputerScene},
+        {Level1Tag.Computer2, SceneName.NoBugsComputerScene},
+        {Level1Tag.Computer3, SceneName.BooleanGame2},
+        {Level1Tag.Computer4, SceneName.NoBugsComputerScene},
+        {Level1Tag.Computer5, SceneName.BooleanGame3},
+        {Level1Tag.Computer6, SceneName.BooleanGame4},
+        {Level1Tag.Computer7, SceneName.NoBugsComputerScene},
 
     };
 
@@ -40,12 +42,15 @@ public class Level1Controller : AbstractLevelController
         switch (tag)
         {
             case Level1Tag.Dialog:
-                SceneTransitionManager.Instance.LoadScene(SceneEnum.ConsultGregDialog);
+                SceneTransitionManager.Instance.LoadScene(SceneName.ConsultGregDialog);
                 break;
             default:
+                // They must have interacted with a computer if we end up here.
+                // Check that the minigame on the computer has been done and if its not then
+                // transition to it.
                 if (GameLogicManager.Instance.GetMinigameRecorder().HasCompleted(tagToScene[tag]))
                 {
-                    SceneTransitionManager.Instance.LoadScene(SceneEnum.NoBugsComputerScene);
+                    SceneTransitionManager.Instance.LoadScene(SceneName.NoBugsComputerScene);
                 } else {
                     SceneTransitionManager.Instance.LoadScene(tagToScene[tag]);
                 }
@@ -55,6 +60,6 @@ public class Level1Controller : AbstractLevelController
 
     public override void ColleagueConfrontation()
     {
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.GregDialogueAfterMinigame);
+        SceneTransitionManager.Instance.LoadScene(SceneName.GregDialogueAfterMinigame);
     }
 }

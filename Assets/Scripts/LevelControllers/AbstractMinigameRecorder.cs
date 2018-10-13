@@ -9,10 +9,10 @@ public abstract class AbstractMinigameRecorder
     protected int requiredMinigamesForDialogue;
 
     // A record of the minigames the player has played
-    protected HashSet<SceneEnum> playedMinigames = new HashSet<SceneEnum>();
+    protected HashSet<SceneName> playedMinigames = new HashSet<SceneName>();
 
     // All the minigames the player has played in this level
-    protected HashSet<SceneEnum> allMinigames;
+    protected HashSet<SceneName> allMinigames;
 
     // It is your responsibility to make sure your subclass is initialised properly.
     // You must call this from the constructor
@@ -31,7 +31,7 @@ public abstract class AbstractMinigameRecorder
     }
 
     // Notify this that the minigame has been played
-    public void RegisterMinigameComplete(SceneEnum minigame)
+    public void RegisterMinigameComplete(SceneName minigame)
     {
         if (!allMinigames.Contains(minigame))
         {
@@ -41,7 +41,7 @@ public abstract class AbstractMinigameRecorder
     }
 
     // Has a particular minigame been done?
-    public bool HasCompleted(SceneEnum minigameType)
+    public bool HasCompleted(SceneName minigameType)
     {
         return playedMinigames.Contains(minigameType);
     }
