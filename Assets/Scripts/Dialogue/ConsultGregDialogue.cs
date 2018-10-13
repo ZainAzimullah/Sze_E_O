@@ -9,10 +9,10 @@ public class ConsultGregDialogue : SimpleDialogue {
         ClearText();
 
         // Determine what Greg should say upon approaching him
-        if (LevelLogicManager.Instance.GetMinigameRecorder().CanShowDialogueWithColleague() && PlayerManager.Instance.GetExperience().CurrentVal == LevelLogicManager.Instance.LEVEL_THRESHHOLD)
+        if (GameLogicManager.Instance.GetMinigameRecorder().CanShowDialogueWithColleague() && PlayerManager.Instance.GetExperience().CurrentVal == GameLogicManager.Instance.LEVEL_THRESHOLD)
         {
             sentences = new string[] {"Greg: Progress to the next level!"};
-        } else if (LevelLogicManager.Instance.GetMinigameRecorder().CanShowDialogueWithMentor())
+        } else if (GameLogicManager.Instance.GetMinigameRecorder().CanShowDialogueWithMentor())
         {
             sentences = new string[] { "Greg: There are no more bugs" };
         }

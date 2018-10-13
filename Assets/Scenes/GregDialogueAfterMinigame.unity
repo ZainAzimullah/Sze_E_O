@@ -788,6 +788,7 @@ MonoBehaviour:
   szeShader: {fileID: 1137215561}
   otherShader: {fileID: 1995170511}
   continueButton: {fileID: 1413401916}
+  CORRECT_ANSWER: 2
   colleagueReactions:
   - 'Greg: However, one computer is still broken.  Go and fix the last bug.'
   - 'Greg: Ignoring me?  How rude.  Go and fix the last bug.'
@@ -796,13 +797,13 @@ MonoBehaviour:
     to go to the next level!'
   - 'Greg: Wow that''s not true! Go and fix the bug.'
   mentorAdvice:
-  - 'Sue: Being too agreeable can make it easy for you to get pushed around and cause
-    you to get paid less.  Don''t let people condescend you for being a girl.'
-  - 'Sue: I know that what he said was offensive earlier, but remember that ignoring
+  - 'Margaret: Being too agreeable can make it easy for you to get pushed around and
+    cause you to get paid less.  Don''t let people condescend you for being a girl.'
+  - 'Margaret: I know that what he said was offensive earlier, but remember that ignoring
     these kinds of remarks doesn''t make the problem go away.'
-  - 'Sue: Good job!'
-  - 'Sue: Remember that all genders should be treated equally in the workforce, and
-    there is not one which is better than another.'
+  - 'Margaret: Good job!'
+  - 'Margaret: Remember that all genders should be treated equally in the workforce,
+    and there is not one which is better than another.'
   prompt: {fileID: 1954038483}
   buttonA: {fileID: 197581281}
   buttonB: {fileID: 186479301}
@@ -1368,7 +1369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gender doesn't matter here
+  m_Text: Gender doesn't affect coding ability
 --- !u!222 &1309493237
 CanvasRenderer:
   m_ObjectHideFlags: 0

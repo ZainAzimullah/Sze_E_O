@@ -10,8 +10,7 @@ using TMPro;
  * may respond accordingly later).
  */
 public class Dialogue : SimpleDialogue {
-    private const int CORRECT_ANSWER = 2; // The correct answer 
-                    //(MAKE THIS PUBLIC AND SET FROM UNITY FOR MODIFIABILITY WHEN MAKING MORE LEVELS)
+    public int CORRECT_ANSWER; // The correct answer 
 
     // Q&A info
     public string[] colleagueReactions; // The reactions the colleague will have (depends on answer)
