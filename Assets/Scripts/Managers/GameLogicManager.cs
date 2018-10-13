@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Look after the player's progress through the level, control game flow
+// This manager manages game flow
 public class GameLogicManager : Singleton<GameLogicManager> {
-    // Store minigame information
+    // Track minigame progress
     private AbstractMinigameRecorder minigameRecorder;
+
+    // The controller for the current level
     private AbstractLevelController levelController;
     public readonly int LEVEL_THRESHOLD = 100;  // points needed to progress
 
@@ -14,6 +16,7 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         return minigameRecorder;
     }
 
+    // Set ourselves up for a level being visited for the first time
     public void PrepareForFirstVisit()
     {
         if (LevelManager.Instance.currentLevel != 0)
@@ -23,12 +26,16 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         PrepareForRevisit();
     }
 
+    // Set ourselves up for a level being visited
+    // Since we have been to this level before, we don't want to lose track
+    // of everything and only some things need to be prepared
     public void PrepareForRevisit()
     {
         Debug.Log("hello");
         levelController = LevelControllerFactory.GetInteractionController(LevelManager.Instance.currentLevel);
     }
 
+    // This is called when a minigame has been completed
     public void MinigameDone(SceneEnum minigame)
     {
         minigameRecorder.RegisterMinigameComplete(minigame);
