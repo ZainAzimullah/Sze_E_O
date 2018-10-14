@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 
 // Factory pattern used here
+// Get the MinigameRecorder for a certain level
 public class MinigameRecorderFactory
 {
     private static AbstractMinigameRecorder minigameRecorder;

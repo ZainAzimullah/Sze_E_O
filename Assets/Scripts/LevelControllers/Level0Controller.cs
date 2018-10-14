@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Level0Controller : AbstractLevelController
 {
+    // Interactable items go here
     private enum Level0Tag
     {
         TutorialComputer,
@@ -16,10 +17,10 @@ public class Level0Controller : AbstractLevelController
         switch (tag)
         {
             case Level0Tag.TutorialComputer:
-                SceneTransitionManager.Instance.LoadScene(SceneEnum.IntroAtComputerDialog);
+                SceneTransitionManager.Instance.LoadScene(SceneName.IntroAtComputerDialog);
                 break;
             case Level0Tag.Mentor:
-                SceneTransitionManager.Instance.LoadScene(SceneEnum.IntroDialogue);
+                SceneTransitionManager.Instance.LoadScene(SceneName.IntroDialogue);
                 break;
         }
     }

@@ -6,22 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitionManager : Singleton<SceneTransitionManager> {
 
-    //a property to indicate what the previous scene
-    public SceneEnum previousScene
-    {
-        get; set;
-    }
-    //a property to indicate what the current scene
-    public SceneEnum currentScene
+    public SceneName previousScene
     {
         get; set;
     }
 
-
-    private void Awake()
+    public SceneName currentScene
     {
-        
+        get; set;
     }
+
     // Use this for initialization
     void Start () {
         
@@ -38,18 +32,19 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
      * A method to load the scene;
      * @param currentScene A enum to inidicate which scene is to be loaded
      */
-    public void LoadScene(SceneEnum currentScene)
+    public void LoadScene(SceneName currentScene)
     {
-        //Debug.Log(PlayerManager.Instance.camPos);
         previousScene = this.currentScene;
         this.currentScene = currentScene;
         string scene = MapScene(currentScene);
         SceneManager.LoadScene(scene);
     }
 
+    // Go back to showing the current level.
+    // Normally this is used for exiting a dialogue.
     public void LoadCurrentLevelScene()
     {
-        LoadScene((SceneEnum) LevelManager.Instance.currentLevel);
+        LoadScene((SceneName) LevelManager.Instance.currentLevel);
     }
 
     /**
@@ -64,9 +59,9 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
     /**
      * A helper method to map between Enum and String
      */
-    private string MapScene(SceneEnum scene)
+    private string MapScene(SceneName scene)
     {
-        string sceneName = Enum.GetName(typeof(SceneEnum), scene);
+        string sceneName = Enum.GetName(typeof(SceneName), scene);
         return sceneName;
     }
 }
@@ -75,11 +70,10 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager> {
 /**
  * A group of enums to represent the name of the scene
  */
-public enum SceneEnum
+public enum SceneName
 {
     // LEVELS GO HERE //
-
-    // *** DO NOT CHANGE THIS ORDER *** //
+    // *** THESE NEED TO BE IN ORDER *** //
     Level0,
     Level1,
     Level2,
@@ -103,22 +97,24 @@ public enum SceneEnum
     IntroDialogue
 }
 
+// Extension methods for the BadgeType enum
 public static class BadgeTypeExtension
 {
-    public static SceneEnum GetAssociatedScene(this BadgeType badgeType)
+    // Get the SceneName that corresponds to the badge
+    public static SceneName GetAssociatedScene(this BadgeType badgeType)
     {
         switch (badgeType)
         {
             case BadgeType.NEW_PLAYER:
-                return SceneEnum.Level0;
+                return SceneName.Level0;
             case BadgeType.GRADUATE:
-                return SceneEnum.Level1;
+                return SceneName.Level1;
             case BadgeType.TEAM_LEAD:
-                return SceneEnum.Level2;
+                return SceneName.Level2;
             case BadgeType.MANAGER:
-                return SceneEnum.Level3;
+                return SceneName.Level3;
             case BadgeType.CEO:
-                return SceneEnum.ExitScreen;
+                return SceneName.ExitScreen;
         }
 
         throw new BadgeToSceneMappingException();

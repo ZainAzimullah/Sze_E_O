@@ -1369,7 +1369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gender doesn't matter here
+  m_Text: Gender doesn't affect coding ability
 --- !u!222 &1309493237
 CanvasRenderer:
   m_ObjectHideFlags: 0

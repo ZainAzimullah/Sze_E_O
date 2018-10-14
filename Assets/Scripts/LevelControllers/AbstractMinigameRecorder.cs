@@ -2,12 +2,20 @@
 // about the completion of minigames.  Factory pattern used here.
 using System.Collections.Generic;
 
+// Minigame recorders for each level should extend this class
 public abstract class AbstractMinigameRecorder
 {
+    // The amount of minigames the level needs before the NPC confronts the main player
     protected int requiredMinigamesForDialogue;
-    protected HashSet<SceneEnum> playedMinigames = new HashSet<SceneEnum>();
-    protected HashSet<SceneEnum> allMinigames;
 
+    // A record of the minigames the player has played
+    protected HashSet<SceneName> playedMinigames = new HashSet<SceneName>();
+
+    // All the minigames the player has played in this level
+    protected HashSet<SceneName> allMinigames;
+
+    // It is your responsibility to make sure your subclass is initialised properly.
+    // You must call this from the constructor
     protected abstract void Initialise();
 
     // Check if player has done enough minigames for dialogue
@@ -23,7 +31,7 @@ public abstract class AbstractMinigameRecorder
     }
 
     // Notify this that the minigame has been played
-    public void RegisterMinigameComplete(SceneEnum minigame)
+    public void RegisterMinigameComplete(SceneName minigame)
     {
         if (!allMinigames.Contains(minigame))
         {
@@ -33,7 +41,7 @@ public abstract class AbstractMinigameRecorder
     }
 
     // Has a particular minigame been done?
-    public bool HasCompleted(SceneEnum minigameType)
+    public bool HasCompleted(SceneName minigameType)
     {
         return playedMinigames.Contains(minigameType);
     }

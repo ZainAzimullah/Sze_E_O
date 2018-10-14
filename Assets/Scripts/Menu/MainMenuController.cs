@@ -8,15 +8,15 @@ public class MainMenuController : MonoBehaviour {
         LevelManager.Instance.currentLevel = 0;
         PlayerManager.Instance.mode = PlayerMode.TUTORIAL;
         GameLogicManager.Instance.PrepareForFirstVisit();
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.IntroDialogue);
+        SceneTransitionManager.Instance.LoadScene(SceneName.IntroDialogue);
     }
 
 	public void ResumeGame() {
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.Level1);
+        SceneTransitionManager.Instance.LoadScene(SceneName.Level1);
 	}
 
 	public void Options() {
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.Options);
+        SceneTransitionManager.Instance.LoadScene(SceneName.Options);
 	}
 
 	public void Quit() {
@@ -37,7 +37,7 @@ public class MainMenuController : MonoBehaviour {
         Time.timeScale = 1;
         LevelUIManager.Instance.isCamFreeze = false;
 
-        SceneTransitionManager.Instance.LoadScene(SceneEnum.MainMenu);
+        SceneTransitionManager.Instance.LoadScene(SceneName.MainMenu);
 	}
 
 }
