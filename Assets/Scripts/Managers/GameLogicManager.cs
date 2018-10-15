@@ -10,7 +10,9 @@ public class GameLogicManager : Singleton<GameLogicManager> {
 
     // The controller for the current level
     private AbstractLevelController levelController;
-    public readonly int LEVEL_THRESHOLD = 100;  // points needed to progress
+
+    // points needed to progress
+    public readonly int LEVEL_THRESHOLD = 100;
 
     public AbstractMinigameRecorder GetMinigameRecorder()
     {
@@ -32,11 +34,12 @@ public class GameLogicManager : Singleton<GameLogicManager> {
     // of everything and only some things need to be prepared
     public void PrepareForRevisit()
     {
-        Debug.Log("hello");
         levelController = LevelControllerFactory.GetInteractionController(LevelManager.Instance.currentLevel);
     }
 
     // This is called when a minigame has been completed
+    // Using the Strategy Pattern, the minigameRecorder can determine
+    // what to do for different levels when certain minigames are complete.
     public void MinigameDone(SceneName minigame)
     {
         minigameRecorder.RegisterMinigameComplete(minigame);
@@ -54,6 +57,8 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         }
     }
 
+    // Using the Strategy Pattern, the levelController can determine
+    // what to do for different levels when certain items are interacted with.
     public void Interaction(Collider collision)
     {
         levelController.Interact(collision);
