@@ -19,6 +19,11 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         return minigameRecorder;
     }
 
+    public AbstractLevelController GetLevelController()
+    {
+        return levelController;
+    }
+
     // Set ourselves up for a level being visited for the first time
     public void PrepareForFirstVisit()
     {
