@@ -7,7 +7,7 @@ public class MoveRandom : MonoBehaviour {
 
     NavMeshAgent agent;
     Animator animator;
-    public GameObject gb;
+    public GameObject npc;
     public int walkTime;
     public GameObject player;
     bool inCoroutine;
@@ -15,7 +15,7 @@ public class MoveRandom : MonoBehaviour {
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = gb.GetComponent<Animator>();
+        animator = npc.GetComponent<Animator>();
     }
 
     void Update()
@@ -42,17 +42,17 @@ public class MoveRandom : MonoBehaviour {
         NavMesh.SamplePosition(randomDirection, out hit, 25, 1);
         Vector3 finalPosition = hit.position;
         agent.SetDestination(finalPosition);
-        gb.GetComponent<NavMeshAgent>().isStopped = false;
+        npc.GetComponent<NavMeshAgent>().isStopped = false;
         yield return new WaitForSeconds(walkTime);
         animator.SetBool("isWalking", false);
-        gb.GetComponent<NavMeshAgent>().isStopped = true;
+        npc.GetComponent<NavMeshAgent>().isStopped = true;
         inCoroutine = false;
     }
 
     private void StopNavigation()
     {
         animator.SetBool("isWalking", false);
-        gb.GetComponent<NavMeshAgent>().isStopped = true;
+        npc.GetComponent<NavMeshAgent>().isStopped = true;
     }
 
     private Vector3 GetNewRandomPosition()
