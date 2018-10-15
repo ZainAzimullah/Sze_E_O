@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour {
                 tracker.playerAngle = gb.transform.eulerAngles;
                 tracker.camAngle = cam.eulerAngles;
                 tracker.camPos = cam.position;
-                GameLogicManager.Instance.GetLevelController().Interact(collision.collider);
+                GameLogicManager.Instance.Interaction(collision.collider);
             }
         }
             
