@@ -17,6 +17,14 @@ TagManager:
   - Computer6
   - Computer7
   - Mentor
+  - LV2Computer1
+  - LV2Computer2
+  - LV2Computer3
+  - LV2Computer4
+  - LV2Computer5
+  - LV2Computer6
+  - LV2Computer7
+  - LV2Computer
   layers:
   - Default
   - TransparentFX
