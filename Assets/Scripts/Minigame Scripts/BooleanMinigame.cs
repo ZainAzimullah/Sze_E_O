@@ -3,7 +3,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class BooleanMinigame : MonoBehaviour {
+public class BooleanMinigame : MonoBehaviour, IMinigame {
 
 	// game objects
 	public Dropdown variable1;
