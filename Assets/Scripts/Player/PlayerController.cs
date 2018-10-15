@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour {
             SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
             int currentLevel = LevelManager.Instance.currentLevel;
             Tracker tracker = PlayerManager.Instance.GetTracker(currentLevel);
-            if (collision.gameObject.tag == "Dialog")
+            if (collision.gameObject.tag != "Untagged")
             {
                 tracker.playerPos = gb.transform.position;
                 tracker.playerAngle = gb.transform.eulerAngles;
