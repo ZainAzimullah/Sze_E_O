@@ -249,20 +249,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7429ec6859a3a7249a819ca5123bc70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDisplay: {fileID: 0}
-  typingSpeed: 0
-  sentences: []
-  szeShader: {fileID: 0}
-  otherShader: {fileID: 0}
-  continueButton: {fileID: 0}
-  CORRECT_ANSWER: 0
-  colleagueReactions: []
-  mentorAdvice: []
-  prompt: {fileID: 0}
-  buttonA: {fileID: 0}
-  buttonB: {fileID: 0}
-  buttonC: {fileID: 0}
-  buttonD: {fileID: 0}
+  textDisplay: {fileID: 550390450}
+  typingSpeed: 0.02
+  sentences:
+  - 'Bruce: Good job at spotting all the the differences.'
+  - 'Bruce: I always knew women had good attention to detail.'
+  - "Sze: Thanks?  That isn\u2019t my only skill."
+  - "Sze: By the way.  I noticed that I\u2019m still being paid $100 for each task."
+  - "Bruce: Okay, and what\u2019s the problem?"
+  - "Sze: Well, I came to this level being promoted to a Team Lead.  The men here
+    are being paid $150, but I\u2019m being paid $100, even though I work the same
+    position."
+  - 'Sze: Why is this?'
+  - "Bruce: Well, what if you suddenly take maternity leave?  I don\u2019t want to
+    waste too much of the company\u2019s money."
+  szeShader: {fileID: 1704739023}
+  otherShader: {fileID: 1314009611}
+  continueButton: {fileID: 372077425}
+  CORRECT_ANSWER: 3
+  colleagueReactions:
+  - 'Bruce: Um excuse me, men like kids just as much.  Go and look at the last file.'
+  - "Bruce: Well I\u2019m glad we agree.  Go and look at the last file."
+  - 'Bruce: No.  Go and look at the last file.'
+  - "Bruce: Okay yeah, I guess.  I\u2019ll promote you to Manager and pay you $150"
+  mentorAdvice:
+  - "Margaret: Remember that all genders value family, and both should treated respectfully.
+    \ Regardless of parental commitments, all genders should have equal pay for equal
+    work, and you need to recognise when you\u2019re not getting that and call it
+    out."
+  - "Margaret: There\u2019s no valid reason why Bruce should pay you less than your
+    male colleagues.  Do not be scared to break through the glass ceiling and ask
+    for equal pay."
+  - "Margaret: I\u2019m sorry that Bruce didn\u2019t pay you the $110 you asked for,
+    but he really should be paying you $150 like he pays the other colleagues.  Remember
+    to tell your boss that you deserve equal pay (not just a little bit more than
+    what you have)."
+  - 'Margaret: Good job!'
+  prompt: {fileID: 850149439}
+  buttonA: {fileID: 462062863}
+  buttonB: {fileID: 589479658}
+  buttonC: {fileID: 301683822}
+  buttonD: {fileID: 1789680202}
 --- !u!1 &225707449
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +432,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 128421560}
         m_MethodName: ButtonC
         m_Mode: 1
         m_Arguments:
@@ -527,7 +554,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 128421560}
         m_MethodName: NextSentence
         m_Mode: 1
         m_Arguments:
@@ -694,8 +721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -473, y: -372.1}
-  m_SizeDelta: {x: 900, y: 98.3}
+  m_AnchoredPosition: {x: -473, y: -354.3}
+  m_SizeDelta: {x: 900, y: 134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &462062865
 MonoBehaviour:
@@ -736,7 +763,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 128421560}
         m_MethodName: ButtonA
         m_Mode: 1
         m_Arguments:
@@ -815,7 +842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -566}
+  m_AnchoredPosition: {x: 8, y: -537}
   m_SizeDelta: {x: 250.7, y: 382.4}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &550390450
@@ -972,7 +999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 473, y: -372.1}
+  m_AnchoredPosition: {x: 473, y: -336.44998}
   m_SizeDelta: {x: 900, y: 98.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &589479660
@@ -1014,7 +1041,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 128421560}
         m_MethodName: ButtonB
         m_Mode: 1
         m_Arguments:
@@ -1128,7 +1155,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '*Say nothing*'
+  m_Text: Cool
 --- !u!222 &726978499
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1168,7 +1195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 329, y: -202}
+  m_AnchoredPosition: {x: 333, y: -219}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &850149441
@@ -1217,14 +1244,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 258
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1235,7 +1262,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1358,13 +1385,81 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Girls are way better coders
+  m_Text: I work the same hours, pay me the same.
 --- !u!222 &900850848
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 900850845}
+  m_CullTransparentMesh: 0
+--- !u!1 &1058811247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058811248}
+  - component: {fileID: 1058811250}
+  - component: {fileID: 1058811249}
+  m_Layer: 0
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1058811248
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1058811247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1070730797}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 43, y: 304.2}
+  m_SizeDelta: {x: 1583.1, y: 453.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1058811249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1058811247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: f25c0a3e58d3bc040b732f7a0b18b9b9, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1058811250
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1058811247}
   m_CullTransparentMesh: 0
 --- !u!1 &1070730796
 GameObject:
@@ -1400,7 +1495,7 @@ RectTransform:
   - {fileID: 301683823}
   - {fileID: 1789680203}
   - {fileID: 850149440}
-  - {fileID: 1966856010}
+  - {fileID: 1058811248}
   m_Father: {fileID: 60332300}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1510,7 +1605,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gender doesn't affect coding ability
+  m_Text: Can you at least pay me $110?
 --- !u!222 &1090931148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1550,8 +1645,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 498.59988, y: 284.6}
-  m_SizeDelta: {x: -997.3, y: -689.1}
+  m_AnchoredPosition: {x: 498.59988, y: 305.6}
+  m_SizeDelta: {x: -997.3, y: -731.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314009613
 MonoBehaviour:
@@ -1654,7 +1749,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Haha thank you
+  m_Text: "I guess that\u2019s fair, since men don\u2019t like kids."
 --- !u!222 &1343877961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1771,8 +1866,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -503.3, y: 284.6}
-  m_SizeDelta: {x: -1006.5, y: -689.1}
+  m_AnchoredPosition: {x: -503.30005, y: 305.6}
+  m_SizeDelta: {x: -1006.5, y: -731.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704739025
 MonoBehaviour:
@@ -1843,8 +1938,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 473, y: -505.8}
-  m_SizeDelta: {x: 900, y: 98.3}
+  m_AnchoredPosition: {x: 473, y: -482}
+  m_SizeDelta: {x: 900, y: 145.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1789680204
 MonoBehaviour:
@@ -1915,7 +2010,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 128421560}
         m_MethodName: ButtonD
         m_Mode: 1
         m_Arguments:
@@ -2024,71 +2119,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1966856009
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1966856010}
-  - component: {fileID: 1966856012}
-  - component: {fileID: 1966856011}
-  m_Layer: 0
-  m_Name: RawImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1966856010
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966856009}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1070730797}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035, y: 317}
-  m_SizeDelta: {x: 1920, y: 566}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1966856011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966856009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 579f1091e4dca404bae1a8575e58ee23, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &1966856012
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966856009}
-  m_CullTransparentMesh: 0
