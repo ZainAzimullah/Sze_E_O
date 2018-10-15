@@ -1,0 +1,422 @@
+fileFormatVersion: 2
+guid: 87efe540dc7ca484c825d073d31a3253
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ball n_1
+    100002: ball n_10
+    100004: ball n_11
+    100006: ball n_12
+    100008: ball n_13
+    100010: ball n_14
+    100012: ball n_15
+    100014: ball n_2
+    100016: ball n_3
+    100018: ball n_4
+    100020: ball n_5
+    100022: ball n_6
+    100024: ball n_7
+    100026: ball n_8
+    100028: balls
+    100030: beer 1
+    100032: beer 2
+    100034: beer bott0
+    100036: beer bottl
+    100038: beer labe0
+    100040: beer label
+    100042: billiard t
+    100044: //RootNode
+    100046: bottom tab
+    100048: Camera002
+    100050: Camera002.target
+    100052: cue1
+    100054: cue2
+    100056: Direct001.target
+    100058: Direct002.target
+    100060: limbo
+    100062: Line001
+    100064: Line002
+    100066: Line003
+    100068: Line004
+    100070: Line005
+    100072: Line006
+    100074: Line007
+    100076: Line008
+    100078: metal corn
+    100080: metal dots
+    100082: Object003
+    100084: OilTank001
+    100086: OilTank002
+    100088: OilTank003
+    100090: OilTank005
+    100092: OilTank006
+    100094: OilTank007
+    100096: OilTank008
+    100098: OilTank009
+    100100: OilTank010
+    100102: OilTank011
+    100104: OilTank012
+    100106: OilTank013
+    100108: OilTank016
+    100110: OilTank017
+    100112: OilTank018
+    100114: OilTank019
+    100116: OilTank020
+    100118: OilTank021
+    100120: OilTank022
+    100122: OilTank023
+    100124: table body
+    100126: table cor0
+    100128: table cor1
+    100130: table cor2
+    100132: table corn
+    100134: table legs
+    100136: upper bee0
+    100138: upper beer
+    100140: upper tabl
+    400000: ball n_1
+    400002: ball n_10
+    400004: ball n_11
+    400006: ball n_12
+    400008: ball n_13
+    400010: ball n_14
+    400012: ball n_15
+    400014: ball n_2
+    400016: ball n_3
+    400018: ball n_4
+    400020: ball n_5
+    400022: ball n_6
+    400024: ball n_7
+    400026: ball n_8
+    400028: balls
+    400030: beer 1
+    400032: beer 2
+    400034: beer bott0
+    400036: beer bottl
+    400038: beer labe0
+    400040: beer label
+    400042: billiard t
+    400044: //RootNode
+    400046: bottom tab
+    400048: Camera002
+    400050: Camera002.target
+    400052: cue1
+    400054: cue2
+    400056: Direct001.target
+    400058: Direct002.target
+    400060: limbo
+    400062: Line001
+    400064: Line002
+    400066: Line003
+    400068: Line004
+    400070: Line005
+    400072: Line006
+    400074: Line007
+    400076: Line008
+    400078: metal corn
+    400080: metal dots
+    400082: Object003
+    400084: OilTank001
+    400086: OilTank002
+    400088: OilTank003
+    400090: OilTank005
+    400092: OilTank006
+    400094: OilTank007
+    400096: OilTank008
+    400098: OilTank009
+    400100: OilTank010
+    400102: OilTank011
+    400104: OilTank012
+    400106: OilTank013
+    400108: OilTank016
+    400110: OilTank017
+    400112: OilTank018
+    400114: OilTank019
+    400116: OilTank020
+    400118: OilTank021
+    400120: OilTank022
+    400122: OilTank023
+    400124: table body
+    400126: table cor0
+    400128: table cor1
+    400130: table cor2
+    400132: table corn
+    400134: table legs
+    400136: upper bee0
+    400138: upper beer
+    400140: upper tabl
+    2100000: limbo
+    2100002: pallina 11
+    2100004: pallina 12
+    2100006: pallina 15
+    2100008: pallina 5
+    2100010: pallina 7
+    2100012: pallina 13
+    2100014: pallina 6
+    2100016: pallina 2
+    2100018: pallina 8
+    2100020: pallina 14
+    2100022: pallina 3
+    2100024: pallina 4
+    2100026: pallina 10
+    2100028: pallina 1
+    2100030: metal
+    2100032: crome
+    2100034: wood legs
+    2100036: etichetta menabr
+    2100038: beer bottle
+    2100040: Default Hardwood
+    2100042: 'Material #1'
+    2100044: 'Material #2'
+    2100046: 'Material #14'
+    2100048: green table
+    2100050: table wood
+    2100052: upper table blac
+    2100054: plastica nera ju
+    2300000: ball n_1
+    2300002: ball n_10
+    2300004: ball n_11
+    2300006: ball n_12
+    2300008: ball n_13
+    2300010: ball n_14
+    2300012: ball n_15
+    2300014: ball n_2
+    2300016: ball n_3
+    2300018: ball n_4
+    2300020: ball n_5
+    2300022: ball n_6
+    2300024: ball n_7
+    2300026: ball n_8
+    2300028: beer bott0
+    2300030: beer bottl
+    2300032: beer labe0
+    2300034: beer label
+    2300036: bottom tab
+    2300038: cue1
+    2300040: cue2
+    2300042: limbo
+    2300044: Line001
+    2300046: Line002
+    2300048: Line003
+    2300050: Line004
+    2300052: Line005
+    2300054: Line006
+    2300056: Line007
+    2300058: Line008
+    2300060: metal corn
+    2300062: Object003
+    2300064: OilTank001
+    2300066: OilTank002
+    2300068: OilTank003
+    2300070: OilTank005
+    2300072: OilTank006
+    2300074: OilTank007
+    2300076: OilTank008
+    2300078: OilTank009
+    2300080: OilTank010
+    2300082: OilTank011
+    2300084: OilTank012
+    2300086: OilTank013
+    2300088: OilTank016
+    2300090: OilTank017
+    2300092: OilTank018
+    2300094: OilTank019
+    2300096: OilTank020
+    2300098: OilTank021
+    2300100: OilTank022
+    2300102: OilTank023
+    2300104: table body
+    2300106: table cor0
+    2300108: table cor1
+    2300110: table cor2
+    2300112: table corn
+    2300114: upper bee0
+    2300116: upper beer
+    2300118: upper tabl
+    3300000: ball n_1
+    3300002: ball n_10
+    3300004: ball n_11
+    3300006: ball n_12
+    3300008: ball n_13
+    3300010: ball n_14
+    3300012: ball n_15
+    3300014: ball n_2
+    3300016: ball n_3
+    3300018: ball n_4
+    3300020: ball n_5
+    3300022: ball n_6
+    3300024: ball n_7
+    3300026: ball n_8
+    3300028: beer bott0
+    3300030: beer bottl
+    3300032: beer labe0
+    3300034: beer label
+    3300036: bottom tab
+    3300038: cue1
+    3300040: cue2
+    3300042: limbo
+    3300044: Line001
+    3300046: Line002
+    3300048: Line003
+    3300050: Line004
+    3300052: Line005
+    3300054: Line006
+    3300056: Line007
+    3300058: Line008
+    3300060: metal corn
+    3300062: Object003
+    3300064: OilTank001
+    3300066: OilTank002
+    3300068: OilTank003
+    3300070: OilTank005
+    3300072: OilTank006
+    3300074: OilTank007
+    3300076: OilTank008
+    3300078: OilTank009
+    3300080: OilTank010
+    3300082: OilTank011
+    3300084: OilTank012
+    3300086: OilTank013
+    3300088: OilTank016
+    3300090: OilTank017
+    3300092: OilTank018
+    3300094: OilTank019
+    3300096: OilTank020
+    3300098: OilTank021
+    3300100: OilTank022
+    3300102: OilTank023
+    3300104: table body
+    3300106: table cor0
+    3300108: table cor1
+    3300110: table cor2
+    3300112: table corn
+    3300114: upper bee0
+    3300116: upper beer
+    3300118: upper tabl
+    4300000: limbo
+    4300002: ball n_11
+    4300004: ball n_12
+    4300006: ball n_15
+    4300008: ball n_5
+    4300010: ball n_7
+    4300012: ball n_13
+    4300014: ball n_6
+    4300016: ball n_2
+    4300018: ball n_8
+    4300020: ball n_14
+    4300022: ball n_3
+    4300024: ball n_4
+    4300026: ball n_10
+    4300028: ball n_1
+    4300030: table corn
+    4300032: Line007
+    4300034: Line008
+    4300036: Line006
+    4300038: Line005
+    4300040: Line003
+    4300042: Line001
+    4300044: Line002
+    4300046: Line004
+    4300048: OilTank020
+    4300050: OilTank012
+    4300052: OilTank016
+    4300054: OilTank001
+    4300056: table cor0
+    4300058: upper beer
+    4300060: beer bottl
+    4300062: beer label
+    4300064: cue2
+    4300066: cue1
+    4300068: metal corn
+    4300070: Object003
+    4300072: table body
+    4300074: upper tabl
+    4300076: table cor1
+    4300078: table cor2
+    4300080: bottom tab
+    4300082: beer labe0
+    4300084: upper bee0
+    4300086: beer bott0
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
