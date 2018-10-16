@@ -18,22 +18,22 @@ public class ElevatorController : MonoBehaviour {
 
     public void GroundButton()
     {
-        CheckVisit(BadgeType.NEW_PLAYER);
+        CheckVisit(BadgeType.NewPlayer);
     }
 
     public void LevelOne()
     {
-        CheckVisit(BadgeType.GRADUATE);
+        CheckVisit(BadgeType.Graduate);
     }
 
     public void LevelTwo()
     {
-        CheckVisit(BadgeType.TEAM_LEAD);
+        CheckVisit(BadgeType.TeamLeader);
     }
 
     public void LevelThree()
     {
-        CheckVisit(BadgeType.MANAGER);
+        CheckVisit(BadgeType.Manager);
     }
 
     public void WinGame()
@@ -47,10 +47,10 @@ public class ElevatorController : MonoBehaviour {
         {
             LevelManager.Instance.currentLevel = (int)requiredBadge;
             GameLogicManager.Instance.PrepareForRevisit();
-        } else if (PlayerManager.Instance.badge == BadgeType.NEW_PLAYER
-            && requiredBadge == BadgeType.GRADUATE)
+        } else if (PlayerManager.Instance.badge == BadgeType.NewPlayer
+            && requiredBadge == BadgeType.Graduate)
         {
-            PlayerManager.Instance.badge = BadgeType.GRADUATE;
+            PlayerManager.Instance.badge = BadgeType.Graduate;
             LevelManager.Instance.currentLevel = (int)requiredBadge;
             PlayerManager.Instance.Refresh();
             PlayerManager.Instance.RecordVisited(requiredBadge.GetAssociatedScene());

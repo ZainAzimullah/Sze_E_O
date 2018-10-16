@@ -6,7 +6,7 @@ using UnityEngine;
 // the duration of the game.
 // NB:  THIS CLASS MUST BE IN THE PRELOAD SCENE
 public class PlayerManager:Singleton<PlayerManager> {
-    public BadgeType badge = BadgeType.NEW_PLAYER; // The current badge used for level access
+    public BadgeType badge = BadgeType.NewPlayer; // The current badge used for level access
     private List<Tracker> trackers; // Tracking the position of the player
     public int money; // Money the player has collected
 
@@ -134,9 +134,9 @@ public enum PlayerMode
 // Place in order of job ranking
 // The ordinal (index) must match the level number
 public enum BadgeType {
-    NEW_PLAYER, // Level 0
-    GRADUATE,   // Level 1
-    TEAM_LEAD,  // Level 2
-    MANAGER,    // Level 3
+    NewPlayer, // Level 0
+    Graduate,   // Level 1
+    TeamLeader,  // Level 2
+    Manager,    // Level 3
     CEO         // Game Over
 }
