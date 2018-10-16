@@ -109,7 +109,7 @@ public static class BadgeTypeExtension
                 return SceneName.Level0;
             case BadgeType.GRADUATE:
                 return SceneName.Level1;
-            case BadgeType.TEAM_LEAD:
+            case BadgeType.TeamLeader:
                 return SceneName.Level2;
             case BadgeType.MANAGER:
                 return SceneName.Level3;

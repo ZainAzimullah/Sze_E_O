@@ -28,7 +28,7 @@ public class ElevatorController : MonoBehaviour {
 
     public void LevelTwo()
     {
-        CheckVisit(BadgeType.TEAM_LEAD);
+        CheckVisit(BadgeType.TeamLeader);
     }
 
     public void LevelThree()

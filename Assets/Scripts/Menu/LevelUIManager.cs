@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelUIManager : Singleton<LevelUIManager> {
     public GameObject dialogPanel;
     public GameObject badgePanel;
+    public GameObject badgeIndicator;
 
     private bool isESCPressed;
 
@@ -43,7 +45,8 @@ public class LevelUIManager : Singleton<LevelUIManager> {
         if (GameLogicManager.Instance.readyToShowBadgePopUp)
         {
             GameLogicManager.Instance.readyToShowBadgePopUp = false;
-            ShowBadgePanel();
+            
+            ShowBadgePanel(PlayerManager.Instance.badge.ToString());
         }
     }
 
@@ -56,11 +59,13 @@ public class LevelUIManager : Singleton<LevelUIManager> {
     }
 
     //The method you need to call when you wanna show the badge panel(The panel that appears when you achieve something)
-    public void ShowBadgePanel()
+    public void ShowBadgePanel(string badge)
     {
-        Debug.Log("hello");
+        
         //Make the Badge fade in fade out working. The input of the funcition is the number of seconds the badge panels stays before it fades out
         StartCoroutine(BadgePanelTransition(2));
+        badgeIndicator.GetComponentInChildren<Text>().text=badge;
+        
     }
 
     //A helper method to do the fade in and fade out transition
