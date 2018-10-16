@@ -145,10 +145,29 @@ public class DiffGame : MonoBehaviour, IMinigame {
         EnableButtons();
     }
 
-    //=========================================================================================================
-    // Check answer code
 
-    public void CheckDiffGame1() {
+    //==========================================================================================================
+
+    public void CheckDiffGame1()
+    {
+        //Line 3, 4, 7, 8
+        if (line1Answer == false && line4Answer == true && line7Answer == true
+            && line2Answer == false && line3Answer == true && line5Answer == false
+            && line6Answer == false && line8Answer == true)
+        {
+
+            CorrectAnswer();
+        }
+        else
+        {
+            Debug.Log("before activating false");
+            IncorrectAnswer();
+        }
+
+    }
+    //=========================================================================================================
+
+    public void CheckDiffGame2() {
         //Line 1, 4, 7
         if (line1Answer == true && line4Answer == true && line7Answer == true 
             && line2Answer == false && line3Answer == false && line5Answer == false 
@@ -163,17 +182,36 @@ public class DiffGame : MonoBehaviour, IMinigame {
         }
 
     }
-	
+
+
     //==========================================================================================================
-    // BUTTON TOGGLING CODE
 
-
-    public void CheckDiffGame2()
+    public void CheckDiffGame3()
     {
-        //Line 3, 4, 7, 8
+        //Line 1, 4, 5, 6
+        if (line1Answer == true && line4Answer == true && line7Answer == false
+            && line2Answer == false && line3Answer == false && line5Answer == true
+            && line6Answer == true && line8Answer == false)
+        {
+
+            CorrectAnswer();
+        }
+        else
+        {
+            Debug.Log("before activating false");
+            IncorrectAnswer();
+        }
+
+    }
+
+    //==========================================================================================================
+
+    public void CheckDiffGame4()
+    {
+        //Line 2,4,6,7,8
         if (line1Answer == false && line4Answer == true && line7Answer == true
-            && line2Answer == false && line3Answer == true && line5Answer == false
-            && line6Answer == false && line8Answer == true)
+            && line2Answer == true && line3Answer == false && line5Answer == false
+            && line6Answer == true && line8Answer == true)
         {
 
             CorrectAnswer();

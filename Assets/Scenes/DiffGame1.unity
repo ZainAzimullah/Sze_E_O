@@ -862,7 +862,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: print(Successful");
+  m_Text: print(mum);
 --- !u!222 &368284674
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -937,8 +937,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "if ((a + b) > (c + (-b))) {\n\tvar = a;\n} else {\n\tvar = b;\n}\nvar =
-    var * c;\n\nprint(\"Successful\");\n\nreturn var;"
+  m_Text: "int[] list = new int[5];\nlist = {1,2,3,4,5};\nint sum = 0;\nfor (int i
+    = 0; i < 5; i++){\n\tsum += list[i];\n}\n\nprint(sum);\n\nreturn 0;"
 --- !u!222 &377227193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1163,7 +1163,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '}'
+  m_Text: "\tsum += list[i];"
 --- !u!222 &575556673
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1888,7 +1888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1038167740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2248,7 +2248,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\tvar = b"
+  m_Text: for (int i = O; i < 5; i++){
 --- !u!222 &1251100575
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2323,7 +2323,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: return var;
+  m_Text: return O;
 --- !u!222 &1271152588
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2521,7 +2521,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: if ((a + b) > (c = (-b)) {
+  m_Text: int[] list = new int[5];
 --- !u!222 &1304336710
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2941,7 +2941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1456567276
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3012,7 +3012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1504039836
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3134,7 +3134,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: var = var * c;
+  m_Text: '}'
 --- !u!222 &1674243860
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3395,7 +3395,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\tvar = a;"
+  m_Text: list = {1,2,3,4,5};
 --- !u!222 &1762657243
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3470,7 +3470,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '} else {'
+  m_Text: int sum = O;
 --- !u!222 &1807856069
 CanvasRenderer:
   m_ObjectHideFlags: 0
