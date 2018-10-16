@@ -66,6 +66,7 @@ public class Dialogue : SimpleDialogue {
         if (answer == CORRECT_ANSWER)
         {
             PlayerManager.Instance.UpdateExperience((PlayerManager.Instance.GetExperience().MaxVal - PlayerManager.Instance.GetExperience().CurrentVal));
+            GameLogicManager.Instance.badgePopUpRequest = true;
         }
 
         // Store information and resume conversation

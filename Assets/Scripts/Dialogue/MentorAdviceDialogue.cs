@@ -9,6 +9,7 @@ public class MentorAdviceDialogue : SimpleDialogue {
         // Clear text and start typing
         ClearText();
         sentences = new string[] { MentorManager.Instance.advice };
+        GameLogicManager.Instance.badgePopUpRequest = true;
         StartCoroutine(Type());
-	}
+    }
 }

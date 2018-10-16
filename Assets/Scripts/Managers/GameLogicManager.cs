@@ -14,6 +14,8 @@ public class GameLogicManager : Singleton<GameLogicManager> {
     // points needed to progress
     public readonly int LEVEL_THRESHOLD = 100;
 
+    public bool badgePopUpRequest { get; set; }
+
     public AbstractMinigameRecorder GetMinigameRecorder()
     {
         return minigameRecorder;
@@ -54,6 +56,16 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         } else
         {
             SceneTransitionManager.Instance.LoadCurrentLevelScene();
+        }
+    }
+
+    public void DialogueDone()
+    {
+        SceneTransitionManager.Instance.LoadCurrentLevelScene();
+        if (badgePopUpRequest)
+        {
+            badgePopUpRequest = false;
+            Debug.Log("Show badge popup");
         }
     }
 

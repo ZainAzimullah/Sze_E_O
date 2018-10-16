@@ -79,7 +79,7 @@ public class SimpleDialogue : MonoBehaviour {
 
     public virtual void Finish()
     {
-        SceneTransitionManager.Instance.LoadCurrentLevelScene();
+        GameLogicManager.Instance.DialogueDone();
     }
 
     public void Skip()
