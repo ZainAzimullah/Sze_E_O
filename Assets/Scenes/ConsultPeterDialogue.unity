@@ -146,7 +146,7 @@ MonoBehaviour:
   - 'Sze:  Any work for me to do, Peter? '
   - "Peter:  Yeah, we\u2019re designing a new large-scale network. "
   - 'Sze:  Wow thats awesome! How can I help? '
-  - 'Peter:  Look at our designs on the whiteboards, and see if you can identify the
+  - 'Peter:  Look at our designs on the computers, and see if you can identify the
     shortest paths on them.'
   szeShader: {fileID: 295546943}
   otherShader: {fileID: 1364860700}
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 54491496}
         m_MethodName: NextSentence
         m_Mode: 1
         m_Arguments:

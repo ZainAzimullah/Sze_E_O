@@ -13,7 +13,7 @@ public class ExitScreen : MonoBehaviour {
 	}
 
 	public void returnToMain() {
-        Application.Quit();
+        SceneTransitionManager.Instance.LoadScene(SceneName.MainMenu);
 	}
 
 }
