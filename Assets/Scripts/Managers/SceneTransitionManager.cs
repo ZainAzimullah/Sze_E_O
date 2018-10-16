@@ -105,13 +105,13 @@ public static class BadgeTypeExtension
     {
         switch (badgeType)
         {
-            case BadgeType.NEW_PLAYER:
+            case BadgeType.NewPlayer:
                 return SceneName.Level0;
-            case BadgeType.GRADUATE:
+            case BadgeType.Graduate:
                 return SceneName.Level1;
             case BadgeType.TeamLeader:
                 return SceneName.Level2;
-            case BadgeType.MANAGER:
+            case BadgeType.Manager:
                 return SceneName.Level3;
             case BadgeType.CEO:
                 return SceneName.ExitScreen;
