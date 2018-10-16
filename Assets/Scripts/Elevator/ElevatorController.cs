@@ -41,34 +41,29 @@ public class ElevatorController : MonoBehaviour {
         CheckVisit(BadgeType.CEO);
     }
 
-    private void CheckVisit(BadgeType badgeType)
+    private void CheckVisit(BadgeType requiredBadge)
     {
-        if (PlayerManager.Instance.badge >= badgeType)
+        if (PlayerManager.Instance.HasVisited(requiredBadge.GetAssociatedScene()))
         {
-            LevelManager.Instance.currentLevel = (int)badgeType;
+            LevelManager.Instance.currentLevel = (int)requiredBadge;
             GameLogicManager.Instance.PrepareForRevisit();
-        } else if (PlayerManager.Instance.badge == BadgeType.NEW_PLAYER && badgeType == BadgeType.GRADUATE)
+        } else if (PlayerManager.Instance.badge == BadgeType.NEW_PLAYER
+            && requiredBadge == BadgeType.GRADUATE)
         {
-            LevelManager.Instance.currentLevel = (int)badgeType;
-            // Promote badge
-            PlayerManager.Instance.badge = badgeType;
-
-            // Check if they won the game
-            if (PlayerManager.Instance.badge == BadgeType.CEO)
-            {
-                PlayerManager.Instance.Refresh();
-                SceneTransitionManager.Instance.LoadScene(SceneName.ExitScreen);
-            }
-
+            PlayerManager.Instance.badge = BadgeType.GRADUATE;
+            LevelManager.Instance.currentLevel = (int)requiredBadge;
             PlayerManager.Instance.Refresh();
+            PlayerManager.Instance.RecordVisited(requiredBadge.GetAssociatedScene());
             GameLogicManager.Instance.PrepareForFirstVisit();
-        } else if (PlayerManager.Instance.GetExperience().CurrentVal == GameLogicManager.Instance.LEVEL_THRESHOLD
-                    && badgeType == PlayerManager.Instance.badge + 1)
+        } else if (PlayerManager.Instance.badge == BadgeType.CEO)
         {
-            LevelManager.Instance.currentLevel = (int)badgeType;
-            // Promote badge
-            PlayerManager.Instance.badge = badgeType;
             PlayerManager.Instance.Refresh();
+            
+        } else if (PlayerManager.Instance.badge == requiredBadge)
+        {
+            LevelManager.Instance.currentLevel = (int)requiredBadge;
+            PlayerManager.Instance.Refresh();
+            PlayerManager.Instance.RecordVisited(requiredBadge.GetAssociatedScene());
             GameLogicManager.Instance.PrepareForFirstVisit();
         } else
         {
@@ -76,7 +71,7 @@ public class ElevatorController : MonoBehaviour {
             return;
         }
 
-        SceneTransitionManager.Instance.LoadScene(badgeType.GetAssociatedScene());
+        SceneTransitionManager.Instance.LoadScene(requiredBadge.GetAssociatedScene());
     }
 
     public void HidePopup()

@@ -65,6 +65,8 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         if (badgePopUpRequest)
         {
             badgePopUpRequest = false;
+            PlayerManager.Instance.badge = (BadgeType) (PlayerManager.Instance.badge + 1);
+            LevelManager.Instance.IncreaseMaxLevel();
             Debug.Log("Show badge popup");
         }
     }

@@ -12,6 +12,7 @@ public class PlayerManager:Singleton<PlayerManager> {
 
     [SerializeField]
     private Stat exp; // Experience points the player has
+    private HashSet<SceneName> visitedLevels;
 
     public PlayerMode mode
     {
@@ -25,6 +26,19 @@ public class PlayerManager:Singleton<PlayerManager> {
         exp.Initialize();
         exp.MaxVal = 100;
         InitializeTracker();
+
+        visitedLevels = new HashSet<SceneName>();
+        visitedLevels.Add(SceneName.Level0);
+    }
+
+    public void RecordVisited(SceneName level)
+    {
+        visitedLevels.Add(level);
+    }
+
+    public bool HasVisited(SceneName level)
+    {
+        return visitedLevels.Contains(level);
     }
 
     public void AddTracker()
@@ -44,6 +58,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         if (Input.GetKeyDown(KeyCode.Return))
         {
             exp.CurrentVal = 100;
+            badge = (BadgeType) (badge + 1);
             LevelManager.Instance.IncreaseMaxLevel();
         }
     }
