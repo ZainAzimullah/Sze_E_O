@@ -245,8 +245,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1250647532}
-        m_MethodName: ExitYes
+      - m_Target: {fileID: 1988342270}
+        m_MethodName: GoBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1064,7 +1064,6 @@ GameObject:
   - component: {fileID: 1250647535}
   - component: {fileID: 1250647534}
   - component: {fileID: 1250647533}
-  - component: {fileID: 1250647532}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1072,30 +1071,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1250647532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1250647531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5e5b62d93b730843a08a0d84d9ddf9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variable1: {fileID: 0}
-  variable2: {fileID: 0}
-  variable3: {fileID: 0}
-  quitButton: {fileID: 1263866732}
-  exitButton: {fileID: 85501884}
-  runButton: {fileID: 0}
-  correctPanel: {fileID: 1894900371}
-  gamePanel: {fileID: 174986850}
-  tryAgainPanel: {fileID: 207828918}
-  areYouSurePanel: {fileID: 1979532257}
-  earnedText: {fileID: 0}
-  moneyEarned: 100
-  experienceEarned: 10
 --- !u!81 &1250647533
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1231,7 +1206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1250647532}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -2142,6 +2117,46 @@ RectTransform:
   m_AnchoredPosition: {x: 36, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1988342269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1988342271}
+  - component: {fileID: 1988342270}
+  m_Layer: 0
+  m_Name: GoBack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1988342270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988342269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d4feb02de0a9d46912f438fcdd9db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1988342271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988342269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 956.2089, y: 599.52246, z: -24.872417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032315329
 GameObject:
   m_ObjectHideFlags: 0

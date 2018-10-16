@@ -47,7 +47,8 @@ public class DiffGame : MonoBehaviour, IMinigame {
 
 
     public void Progress() {
-		throw new System.NotImplementedException();
+        SceneName sceneName = (SceneName) Enum.Parse(typeof(SceneName), SceneManager.GetActiveScene().name, true);
+        GameLogicManager.Instance.MinigameDone(sceneName);
 	}
 
 	// Use this for initialization

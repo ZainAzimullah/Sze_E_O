@@ -65,4 +65,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 4fd8ac87d96785949ad8832a74ecbf87
+  - enabled: 1
+    path: Assets/Scenes/DiffGame1.unity
+    guid: 9616a0d8eec664a489048a7020725387
+  - enabled: 1
+    path: Assets/Scenes/DiffGame2.unity
+    guid: 2b92f72260f8745dba9a0fcbd49af8a2
+  - enabled: 1
+    path: Assets/Scenes/DiffGame3.unity
+    guid: 3a1f41daa57414253b564a453a603ea8
+  - enabled: 1
+    path: Assets/Scenes/DiffGame4.unity
+    guid: 6014dd323cbce4f2e95cde8f91380655
+  - enabled: 1
+    path: Assets/Scenes/ShortestPathGame1.unity
+    guid: daa41226dd92ed942b5464aa73b87610
+  - enabled: 1
+    path: Assets/Scenes/ShortestPathGame2.unity
+    guid: fedfeabb52a964841b9301ac3b1a9ace
+  - enabled: 1
+    path: Assets/Scenes/ShortestPathGame3.unity
+    guid: bc03802076a711b438400941c23b050c
+  - enabled: 1
+    path: Assets/Scenes/ShortestPathGame4.unity
+    guid: 9c82fe8e7bec22743ad84692e2aa5406
+  - enabled: 1
+    path: Assets/Scenes/PeterDialogueAfterMinigame.unity
+    guid: 91b70e992128ddb41b1c3fc78875f126
+  - enabled: 1
+    path: Assets/Scenes/BruceDialogueAfterMinigame.unity
+    guid: 68cdbbe400761bd48b64b7f2f85aa321
+  - enabled: 1
+    path: Assets/Scenes/ConsultBruceDialogue.unity
+    guid: 58ebc333a395b0b4cbf0f81100223eef
+  - enabled: 1
+    path: Assets/Scenes/ConsultPeterDialogue.unity
+    guid: 53331d79049423547a7d4a9df1294603
   m_configObjects: {}

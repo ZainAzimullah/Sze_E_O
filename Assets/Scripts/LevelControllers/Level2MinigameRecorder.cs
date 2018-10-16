@@ -11,7 +11,10 @@ internal class Level2MinigameRecorder : AbstractMinigameRecorder
     {
         allMinigames = new HashSet<SceneName>()
         {
-            // PUT MINIGAMES HERE
+            SceneName.DiffGame1,
+            SceneName.DiffGame2,
+            SceneName.DiffGame3,
+            SceneName.DiffGame4
         };
         requiredMinigamesForDialogue = 3;
     }

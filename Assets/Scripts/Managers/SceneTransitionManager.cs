@@ -94,7 +94,19 @@ public enum SceneName
     ExitScreen,
     NoBugsComputerScene,
     IntroAtComputerDialog,
-    IntroDialogue
+    IntroDialogue,
+    DiffGame1,
+    DiffGame2,
+    DiffGame3,
+    DiffGame4,
+    ShortestPathGame1,
+    ShortestPathGame2,
+    ShortestPathGame3,
+    ShortestPathGame4,
+    ConsultBruceDialogue,
+    ConsultPeterDialogue,
+    BruceDialogueAfterMinigame,
+    PeterDialogueAfterMinigame
 }
 
 // Extension methods for the BadgeType enum
