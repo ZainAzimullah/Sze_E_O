@@ -43,33 +43,40 @@ public class ElevatorController : MonoBehaviour {
 
     private void CheckVisit(BadgeType badgeType)
     {
-        if ((PlayerManager.Instance.GetExperience().CurrentVal == GameLogicManager.Instance.LEVEL_THRESHOLD) 
-            || (PlayerManager.Instance.badge >= badgeType) 
-            || (PlayerManager.Instance.mode == PlayerMode.TUTORIAL))
+        if (PlayerManager.Instance.badge >= badgeType)
         {
-            LevelManager.Instance.currentLevel = (int) badgeType;
-            if (PlayerManager.Instance.badge == (BadgeType) (((int) badgeType) - 1))
+            LevelManager.Instance.currentLevel = (int)badgeType;
+            GameLogicManager.Instance.PrepareForRevisit();
+        } else if (PlayerManager.Instance.badge == BadgeType.NEW_PLAYER && badgeType == BadgeType.GRADUATE)
+        {
+            LevelManager.Instance.currentLevel = (int)badgeType;
+            // Promote badge
+            PlayerManager.Instance.badge = badgeType;
+
+            // Check if they won the game
+            if (PlayerManager.Instance.badge == BadgeType.CEO)
             {
-                PlayerManager.Instance.badge = badgeType;
                 PlayerManager.Instance.Refresh();
-                PlayerManager.Instance.mode = PlayerMode.NORMAL;
-                GameLogicManager.Instance.PrepareForFirstVisit();
-            }
-            else if (PlayerManager.Instance.badge >= badgeType)
-            {
-                GameLogicManager.Instance.PrepareForRevisit();
-            } else
-            {
-                PopupPanel.SetActive(true);
-                return;
+                SceneTransitionManager.Instance.LoadScene(SceneName.ExitScreen);
             }
 
-            SceneTransitionManager.Instance.LoadScene(badgeType.GetAssociatedScene());
-        }
-        else
+            PlayerManager.Instance.Refresh();
+            GameLogicManager.Instance.PrepareForFirstVisit();
+        } else if (PlayerManager.Instance.GetExperience().CurrentVal == GameLogicManager.Instance.LEVEL_THRESHOLD
+                    && badgeType == PlayerManager.Instance.badge + 1)
+        {
+            LevelManager.Instance.currentLevel = (int)badgeType;
+            // Promote badge
+            PlayerManager.Instance.badge = badgeType;
+            PlayerManager.Instance.Refresh();
+            GameLogicManager.Instance.PrepareForFirstVisit();
+        } else
         {
             PopupPanel.SetActive(true);
+            return;
         }
+
+        SceneTransitionManager.Instance.LoadScene(badgeType.GetAssociatedScene());
     }
 
     public void HidePopup()
