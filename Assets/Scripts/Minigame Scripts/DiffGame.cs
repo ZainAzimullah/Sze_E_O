@@ -167,6 +167,28 @@ public class DiffGame : MonoBehaviour, IMinigame {
     //==========================================================================================================
     // BUTTON TOGGLING CODE
 
+
+    public void CheckDiffGame2()
+    {
+        //Line 3, 4, 7, 8
+        if (line1Answer == false && line4Answer == true && line7Answer == true
+            && line2Answer == false && line3Answer == true && line5Answer == false
+            && line6Answer == false && line8Answer == true)
+        {
+
+            CorrectAnswer();
+        }
+        else
+        {
+            Debug.Log("before activating false");
+            IncorrectAnswer();
+        }
+
+    }
+
+    //==========================================================================================================
+    // BUTTON TOGGLING CODE
+
     public void OnLine1Click (){ 
         if (line1Answer)
         {
