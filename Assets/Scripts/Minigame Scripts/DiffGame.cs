@@ -42,8 +42,11 @@ public class DiffGame : MonoBehaviour, IMinigame {
 	public int moneyEarned = 100;
 	public int experienceEarned = 25;
 
+    // color variable
+    public Color bgColor = new Color((float)0.3, (float)0.29, (float)0.3);
 
-	public void Progress() {
+
+    public void Progress() {
 		throw new System.NotImplementedException();
 	}
 
@@ -71,10 +74,13 @@ public class DiffGame : MonoBehaviour, IMinigame {
     {
         DisableButtons();
         tryAgainPanel.gameObject.SetActive(true);
+        Debug.Log("Got In");
         // cannot lose money from minigame
         if (moneyEarned >= 20)
         {
+            Debug.Log("Money Before: " + moneyEarned);
             moneyEarned -= 20;
+            Debug.Log("Money After: " + moneyEarned);
         }
     }
 
@@ -109,14 +115,33 @@ public class DiffGame : MonoBehaviour, IMinigame {
         line7Button.enabled = true;
         line8Button.enabled = true;
 
+        line1Button.GetComponent<Image>().color = bgColor;
+        line2Button.GetComponent<Image>().color = bgColor;
+        line3Button.GetComponent<Image>().color = bgColor;
+        line4Button.GetComponent<Image>().color = bgColor;
+        line5Button.GetComponent<Image>().color = bgColor;
+        line6Button.GetComponent<Image>().color = bgColor;
+        line7Button.GetComponent<Image>().color = bgColor;
+        line8Button.GetComponent<Image>().color = bgColor;
 
+        line1Answer = false;
+        line2Answer = false;
+        line3Answer = false;
+        line4Answer = false;
+        line5Answer = false;
+        line6Answer = false;
+        line7Answer = false;
+        line8Answer = false;
+        
     }
 
     //this method is also used for when user presses no on the exit prompt
     public void TryAgain()
     {
+        
         areYouSurePanel.gameObject.SetActive(false);
         tryAgainPanel.gameObject.SetActive(false);
+        Debug.Log("after activating false");
         EnableButtons();
     }
 
@@ -126,11 +151,14 @@ public class DiffGame : MonoBehaviour, IMinigame {
     public void CheckDiffGame1() {
         //Line 1, 4, 7
         if (line1Answer == true && line4Answer == true && line7Answer == true 
-            && line2Answer == false && line3Answer == false && line5Answer == false && line6Answer == false && line8Answer == false)
+            && line2Answer == false && line3Answer == false && line5Answer == false 
+            && line6Answer == false && line8Answer == false)
         {
+
             CorrectAnswer();
         } else
         {
+            Debug.Log("before activating false");
             IncorrectAnswer();
         }
 

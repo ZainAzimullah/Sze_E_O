@@ -264,8 +264,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 762882830}
-        m_MethodName: 
+      - m_Target: {fileID: 762882831}
+        m_MethodName: TryAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -644,8 +644,8 @@ RectTransform:
   m_Children:
   - {fileID: 1109746324}
   - {fileID: 1038167740}
-  - {fileID: 1504039836}
   - {fileID: 1456567276}
+  - {fileID: 1504039836}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -938,7 +938,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "if ((a + b) > (c + (-b))) {\n\tvar = a;\n} else {\n\tvar = b;\n}\nvar =
-    var*c;\n\nprint(\"Successful\");\n\nreturn var;"
+    var * c;\n\nprint(\"Successful\");\n\nreturn var;"
 --- !u!222 &377227193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1451,7 +1451,7 @@ MonoBehaviour:
   gamePanel: {fileID: 1109746323}
   tryAgainPanel: {fileID: 1504039835}
   areYouSurePanel: {fileID: 1456567275}
-  earnedText: {fileID: 0}
+  earnedText: {fileID: 1864575996}
   line1Button: {fileID: 1318904665}
   line2Button: {fileID: 592254034}
   line3Button: {fileID: 828771537}
@@ -1462,6 +1462,7 @@ MonoBehaviour:
   line8Button: {fileID: 138939445}
   moneyEarned: 100
   experienceEarned: 25
+  bgColor: {r: 0.3, g: 0.29, b: 0.3, a: 1}
 --- !u!4 &762882832
 Transform:
   m_ObjectHideFlags: 0
@@ -2954,7 +2955,7 @@ RectTransform:
   - {fileID: 1080808337}
   - {fileID: 1706838216}
   m_Father: {fileID: 178060453}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3025,7 +3026,7 @@ RectTransform:
   - {fileID: 79079118}
   - {fileID: 1361896327}
   m_Father: {fileID: 178060453}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
