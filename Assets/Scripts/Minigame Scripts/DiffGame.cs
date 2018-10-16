@@ -340,4 +340,10 @@ public class DiffGame : MonoBehaviour, IMinigame {
         }
     }
     //=========================================================================================================
+
+    public void ExitYes()
+    {
+        SceneTransitionManager.Instance.LoadScene(SceneName.Level2);
+    }
+
 }

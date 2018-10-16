@@ -12,6 +12,8 @@ public class LevelControllerFactory
                 return new Level1Controller();
             case 2:
                 return new Level2Controller();
+            case 3:
+                return new Level3Controller();
         }
 
         throw new NoInteractionControllerForThisLevelException();

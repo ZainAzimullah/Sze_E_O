@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -106,8 +107,8 @@ public class ShortestPathGame : MonoBehaviour, IMinigame {
 	}
 
 	public void Progress() {
-		//SceneName minigame = (SceneName)Enum.Parse(typeof(SceneName), SceneManager.GetActiveScene().name, true);
-		//GameLogicManager.Instance.MinigameDone(minigame);
+		SceneName minigame = (SceneName)Enum.Parse(typeof(SceneName), SceneManager.GetActiveScene().name, true);
+		GameLogicManager.Instance.MinigameDone(minigame);
 	}
 
 	public void ExitGame() {
@@ -116,7 +117,7 @@ public class ShortestPathGame : MonoBehaviour, IMinigame {
 	}
 
 	public void ExitYes() {
-		//SceneTransitionManager.Instance.LoadScene(SceneName.Level1);
+		SceneTransitionManager.Instance.LoadScene(SceneName.Level3);
 	}
 
 }

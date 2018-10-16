@@ -20,6 +20,8 @@ public class MinigameRecorderFactory
                 return new Level1MinigameRecorder();
             case 2:
                 return new Level2MinigameRecorder();
+            case 3:
+                return new Level3MinigameRecorder();
             default:
                 throw new NoMinigameRecorderForThisLevel();
         }
