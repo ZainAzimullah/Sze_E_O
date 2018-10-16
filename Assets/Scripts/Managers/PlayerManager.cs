@@ -60,6 +60,7 @@ public class PlayerManager:Singleton<PlayerManager> {
             exp.CurrentVal = 100;
             badge = (BadgeType) (badge + 1);
             LevelManager.Instance.IncreaseMaxLevel();
+            GameLogicManager.Instance.readyToShowBadgePopUp = true;
         }
     }
 

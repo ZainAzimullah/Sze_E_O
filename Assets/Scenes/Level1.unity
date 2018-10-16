@@ -648,7 +648,6 @@ RectTransform:
   - {fileID: 1872187148}
   - {fileID: 79835245}
   - {fileID: 2063022118}
-  - {fileID: 560824359}
   - {fileID: 1512442736}
   m_Father: {fileID: 0}
   m_RootOrder: 19
