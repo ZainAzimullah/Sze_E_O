@@ -1554,7 +1554,7 @@ GameObject:
   - component: {fileID: 355106654}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: L2Computer3
+  m_TagString: L3Computer3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10389,6 +10389,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f9a1234ed0ff2914fa1a18cbda82a2aa, type: 2}
+    - target: {fileID: 100154, guid: 69e0bf832ba8212478b45616cc569f75, type: 3}
+      propertyPath: m_TagString
+      value: Peter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e0bf832ba8212478b45616cc569f75, type: 3}
   m_IsPrefabAsset: 0
