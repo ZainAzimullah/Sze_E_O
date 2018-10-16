@@ -47,6 +47,12 @@ public class GameLogicManager : Singleton<GameLogicManager> {
     {
         minigameRecorder.RegisterMinigameComplete(minigame);
 
+        if (LevelManager.Instance.GetMaxLevel() != LevelManager.Instance.currentLevel)
+        {
+            SceneTransitionManager.Instance.LoadCurrentLevelScene();
+            return;
+        }
+
         if (minigameRecorder.CanShowDialogueWithColleague())
         {
             levelController.ColleagueConfrontation();
