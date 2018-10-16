@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelUIManager : Singleton<LevelUIManager> {
     public GameObject dialogPanel;
+    public GameObject badgePanel;
 
     private bool isESCPressed;
 
@@ -36,10 +37,7 @@ public class LevelUIManager : Singleton<LevelUIManager> {
                 //do the same behaviour 
                 //as the resume button is clicked
                 OnResumeButtonClicked();
-            }
-            
-
-            
+            }            
         }
 	}
 
@@ -49,6 +47,31 @@ public class LevelUIManager : Singleton<LevelUIManager> {
         dialogPanel.SetActive(false);
         Time.timeScale = 1;
         isCamFreeze = false;
+    }
+
+    public void ShowBadgePanel()
+    {
+
+    }
+
+    private IEnumerator FadeCanvasGroup(CanvasGroup cg,float start,float end,float lerpTime=0.5f)
+    {
+        float timeStartedLerping = Time.time;
+        float timeSinceStarted = Time.time - timeStartedLerping;
+        float percentageComplete = timeSinceStarted / lerpTime;
+        while (true)
+        {
+            timeSinceStarted = Time.time - timeStartedLerping;
+            percentageComplete = timeSinceStarted / lerpTime;
+
+            float currentValue = Mathf.Lerp(start, end, percentageComplete);
+
+            if(percentageComplete >= 1)
+            {
+                break;
+            }
+            yield return new WaitForEndOfFrame();
+        }
     }
 
 
