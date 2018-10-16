@@ -140,12 +140,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e613f0da6331a4facc9555827402b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDisplay: {fileID: 0}
-  typingSpeed: 0
-  sentences: []
-  szeShader: {fileID: 0}
-  otherShader: {fileID: 0}
-  continueButton: {fileID: 0}
+  textDisplay: {fileID: 1434190890}
+  typingSpeed: 0.02
+  sentences:
+  - 'Sze:  Any work for me to do, Peter? '
+  - "Peter:  Yeah, we\u2019re designing a new large-scale network. "
+  - 'Sze:  Wow thats awesome! How can I help? '
+  - 'Peter:  Look at our designs on the whiteboards, and see if you can identify the
+    shortest paths on them.'
+  szeShader: {fileID: 295546943}
+  otherShader: {fileID: 1364860700}
+  continueButton: {fileID: 900284411}
 --- !u!4 &54491497
 Transform:
   m_ObjectHideFlags: 0

@@ -189,7 +189,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1406457890}
         m_MethodName: ButtonB
         m_Mode: 1
         m_Arguments:
@@ -303,7 +303,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '*Say nothing*'
+  m_Text: "No, I\u2019m fully confident in my abilities\n"
 --- !u!222 &98690206
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -919,7 +919,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gender doesn't affect coding ability
+  m_Text: "Bruce doesn\u2019t know his stuff\n"
 --- !u!222 &685963491
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1406457890}
         m_MethodName: ButtonA
         m_Mode: 1
         m_Arguments:
@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1406457890}
         m_MethodName: NextSentence
         m_Mode: 1
         m_Arguments:
@@ -1470,7 +1470,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Haha thank you
+  m_Text: "Yeah, it\u2019s kind of scary\n"
 --- !u!222 &1064187961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1664,20 +1664,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7429ec6859a3a7249a819ca5123bc70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDisplay: {fileID: 0}
-  typingSpeed: 0
-  sentences: []
-  szeShader: {fileID: 0}
-  otherShader: {fileID: 0}
-  continueButton: {fileID: 0}
-  CORRECT_ANSWER: 0
-  colleagueReactions: []
-  mentorAdvice: []
-  prompt: {fileID: 0}
-  buttonA: {fileID: 0}
-  buttonB: {fileID: 0}
-  buttonC: {fileID: 0}
-  buttonD: {fileID: 0}
+  textDisplay: {fileID: 491927099}
+  typingSpeed: 0.02
+  sentences:
+  - 'Peter:  Damn, that was some fast pathfinding. '
+  - 'Sze:  Thanks, yeah it was pretty easy. '
+  - "Sze:  I\u2019ve noticed that the current CEO is leaving.  Who are you thinking
+    of replacing him with? "
+  - 'Peter:  Oh we were thinking of replacing the CEO with Bruce. '
+  - 'Sze:  Would you consider me, given my long history and experience with the company? '
+  - 'Peter:  Well, I just think that Bruce fits better with our work culture. '
+  - "Sze:  What\u2019s that supposed to mean? "
+  - "Peter:  Well you know how it is.  Won\u2019t you feel intimidated being in such
+    a high position? "
+  szeShader: {fileID: 595447704}
+  otherShader: {fileID: 1315840935}
+  continueButton: {fileID: 984095161}
+  CORRECT_ANSWER: 1
+  colleagueReactions:
+  - "Peter:  Why don\u2019t you just stick around and try to gain more experience.
+    \ There\u2019s one more path that needs solving."
+  - 'Peter:  Wow you sound pretty confident.  Fair enough, maybe you should be the
+    CEO!  Go to the elevator to become CEO. '
+  - "Peter:  Bruce is way better than you.  How rude.  The last whiteboard was for
+    him, but instead I\u2019d like you to do it. "
+  - 'Peter:  As a mother, kids should come first before your work. '
+  mentorAdvice:
+  - "Margaret:  You have worked long and hard enough in this company.  You deserve
+    to become CEO as much as Bruce.  I hope you\u2019ve learned a bit about calling
+    out your colleagues in this process.  Continue to the elevator and proceed to
+    level 4. "
+  - 'Margaret:  Good job!'
+  - 'Margaret:  Remember, in the workforce, rather than trash talk your colleagues,
+    you should stand by your hard work and be proud of it.  Your work should speak
+    for yourself, and you deserve to become CEO.  Continue to level 4. '
+  - "Margaret:  Every gender should care about their kids, and similarly, every gender
+    should be given equal work opportunities.  Even if you are a mother, there\u2019s
+    no reason why you can\u2019t be a great CEO.  Continue to level 4."
+  prompt: {fileID: 370957828}
+  buttonA: {fileID: 820508162}
+  buttonB: {fileID: 7664928}
+  buttonC: {fileID: 1559916422}
+  buttonD: {fileID: 1687953814}
 --- !u!1 &1540379216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,7 +1773,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Girls are way better coders
+  m_Text: "I\u2019ve got my kids to think about.\n"
 --- !u!222 &1540379219
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1891,7 +1919,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1406457890}
         m_MethodName: ButtonC
         m_Mode: 1
         m_Arguments:
@@ -2045,7 +2073,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1406457890}
         m_MethodName: ButtonD
         m_Mode: 1
         m_Arguments:
