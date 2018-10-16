@@ -40,7 +40,7 @@ public class ShortestPathGame : MonoBehaviour, IMinigame {
 	}
 
 	public void CheckShortestPath2() {
-		if (answer.text == "15") {
+		if (answer.text == "12") {
 			CorrectAnswer();
 		} else {
 			IncorrectAnswer();
@@ -48,7 +48,7 @@ public class ShortestPathGame : MonoBehaviour, IMinigame {
 	}
 
 	public void CheckShortestPath3() {
-		if (answer.text == "15") {
+		if (answer.text == "33") {
 			CorrectAnswer();
 		} else {
 			IncorrectAnswer();
@@ -56,7 +56,7 @@ public class ShortestPathGame : MonoBehaviour, IMinigame {
 	}
 
 	public void CheckShortestPath4() {
-		if (answer.text == "15") {
+		if (answer.text == "21") {
 			CorrectAnswer();
 		} else {
 			IncorrectAnswer();
