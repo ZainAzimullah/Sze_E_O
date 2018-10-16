@@ -39,7 +39,7 @@ public class LevelUIManager : Singleton<LevelUIManager> {
                 OnResumeButtonClicked();
             }            
         }
-
+        //Test 
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             ShowBadgePanel();
@@ -57,6 +57,7 @@ public class LevelUIManager : Singleton<LevelUIManager> {
     //The method you need to call when you wanna show the badge panel(The panel that appears when you achieve something)
     public void ShowBadgePanel()
     {
+        //Make the Badge fade in fade out working. The input of the funcition is the number of seconds the badge panels stays before it fades out
         StartCoroutine(BadgePanelTransition(2));
     }
 
@@ -81,7 +82,6 @@ public class LevelUIManager : Singleton<LevelUIManager> {
             }
             yield return new WaitForEndOfFrame();
         }
-        print("done");
     }
 
     //A helper method to wait in seconds
