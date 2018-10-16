@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DiffGame : MonoBehaviour, IMinigame {
 
@@ -15,24 +18,24 @@ public class DiffGame : MonoBehaviour, IMinigame {
 	public Text earnedText;
 
 	// Code line buttons
-	public Button Line1Button;
-	public Button Line2Button;
-	public Button Line3Button;
-	public Button Line4Button;
-	public Button Line5Button;
-	public Button Line6Button;
-	public Button Line7Button;
-	public Button Line8Button;
+	public Button line1Button;
+	public Button line2Button;
+	public Button line3Button;
+	public Button line4Button;
+	public Button line5Button;
+	public Button line6Button;
+	public Button line7Button;
+	public Button line8Button;
 
 	// booleans to check if the 
-	private boolean Line1Answer;
-	private boolean Line2Answer;
-	private boolean Line3Answer;
-	private boolean Line4Answer;
-	private boolean Line5Answer;
-	private boolean Line6Answer;
-	private boolean Line7Answer;
-	private boolean Line8Answer;
+	private bool line1Answer = false;
+	private bool line2Answer = false;
+	private bool line3Answer = false;
+	private bool line4Answer = false;
+	private bool line5Answer = false;
+	private bool line6Answer = false;
+	private bool line7Answer = false;
+	private bool line8Answer = false;
 
 
 	// game money and experience variables
@@ -50,5 +53,189 @@ public class DiffGame : MonoBehaviour, IMinigame {
 		tryAgainPanel.SetActive(false);
 		areYouSurePanel.SetActive(false);
 	}
+
+    // Correct answer prompt
+    private void CorrectAnswer()
+    {
+        DisableButtons();
+        correctPanel.gameObject.SetActive(true);
+        earnedText.text = "You earned $" + moneyEarned + " and " + experienceEarned + " experience";
+        // Updates the global experience of the player
+        Debug.Log("Before update: " + PlayerManager.Instance.GetExperience().CurrentVal);
+        PlayerManager.Instance.UpdateExperience(experienceEarned);
+        Debug.Log("After update: " + PlayerManager.Instance.GetExperience().CurrentVal);
+    }
+
+    // Incorrect answer prompt
+    private void IncorrectAnswer()
+    {
+        DisableButtons();
+        tryAgainPanel.gameObject.SetActive(true);
+        // cannot lose money from minigame
+        if (moneyEarned >= 20)
+        {
+            moneyEarned -= 20;
+        }
+    }
+
+    public void DisableButtons()
+    {
+        //quitButton.enabled = false;
+        //exitButton.enabled = false;
+        runButton.enabled = false;
+        line1Button.enabled = false;
+        line2Button.enabled = false;
+        line3Button.enabled = false;
+        line4Button.enabled = false;
+        line5Button.enabled = false;
+        line6Button.enabled = false;
+        line7Button.enabled = false;
+        line8Button.enabled = false;
+    }
+
+    public void EnableButtons()
+    {
+        //quitButton.enabled = true;
+        //exitButton.enabled = true;
+        runButton.enabled = true;
+        line1Button.enabled = true;
+        line2Button.enabled = true;
+        line3Button.enabled = true;
+        line4Button.enabled = true;
+        line5Button.enabled = true;
+        line6Button.enabled = true;
+        line7Button.enabled = true;
+        line8Button.enabled = true;
+    }
+
+    //=========================================================================================================
+    // Check answer code
+
+    public void CheckDiffGame1() {
+        //Line 1, 4, 7
+        if (line1Answer == true && line4Answer == true && line7Answer == true 
+            && line2Answer == false && line3Answer == false && line5Answer == false && line6Answer == false && line8Answer == false)
+        {
+            CorrectAnswer();
+        } else
+        {
+            IncorrectAnswer();
+        }
+
+    }
 	
+    //==========================================================================================================
+    // BUTTON TOGGLING CODE
+
+    public void OnLine1Click (){ 
+        if (line1Answer)
+        {
+            line1Answer = false;
+            line1Button.GetComponent<Image>().color = new Color(77, 76, 77);
+        }
+        else {
+            line1Answer = true;
+            line1Button.GetComponent<Image>().color = Color.gray;
+        }
+    }
+
+    public void OnLine2Click()
+    {
+        if (line2Answer)
+        {
+            line2Answer = false;
+            line2Button.GetComponent<Image>().color = new Color(77, 76, 77);
+        }
+        else
+        {
+            line2Answer = true;
+            line2Button.GetComponent<Image>().color = Color.gray;
+        }
+    }
+
+    public void OnLine3Click()
+    {
+        if (line3Answer)
+        {
+            line3Answer = false;
+            line3Button.GetComponent<Image>().color = new Color(77, 76, 77);
+        }
+        else
+        {
+            line3Answer = true;
+            line3Button.GetComponent<Image>().color = Color.gray;
+        }
+    }
+
+
+    public void OnLine4Click()
+    {
+        if (line4Answer)
+        {
+            line4Answer = false;
+            line4Button.GetComponent<Image>().color = new Color(77, 76, 77);
+        }
+        else
+        {
+            line4Answer = true;
+            line4Button.GetComponent<Image>().color = Color.gray;
+        }
+    }
+
+    public void OnLine5Click()
+    {
+        if (line5Answer)
+        {
+            line5Answer = false;
+            line5Button.GetComponent<Image>().color = new Color(77, 76, 77);
+        }
+        else
+        {
+            line5Answer = true;
+            line5Button.GetComponent<Image>().color = Color.gray;
+        }
+    }
+
+    public void OnLine6Click()
+    {
+        if (line6Answer)
+        {
+            line6Answer = false;
+            line6Button.GetComponent<Image>().color = new Color(77, 76, 77);
+        }
+        else
+        {
+            line6Answer = true;
+            line6Button.GetComponent<Image>().color = Color.gray;
+        }
+    }
+
+    public void OnLine7Click()
+    {
+        if (line7Answer)
+        {
+            line7Answer = false;
+            line7Button.GetComponent<Image>().color = new Color(77, 76, 77);
+        }
+        else
+        {
+            line7Answer = true;
+            line7Button.GetComponent<Image>().color = Color.gray;
+        }
+    }
+
+    public void OnLine8Click()
+    {
+        if (line8Answer)
+        {
+            line8Answer = false;
+            line8Button.GetComponent<Image>().color = new Color(77, 76, 77);
+        }
+        else
+        {
+            line8Answer = true;
+            line8Button.GetComponent<Image>().color = Color.gray;
+        }
+    }
+    //=========================================================================================================
 }

@@ -369,8 +369,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_HighlightedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
-    m_PressedColor: {r: 0.8113208, g: 0.16456035, b: 0.16456035, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
+    m_DisabledColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -386,7 +386,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 138939446}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762882831}
+        m_MethodName: OnLine8Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &138939446
@@ -400,8 +411,8 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 5815ff8747d2c9440a7deff4cd652631, type: 2}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -481,8 +492,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_HighlightedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
-    m_PressedColor: {r: 0.8113208, g: 0.16456035, b: 0.16456035, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
+    m_DisabledColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -498,7 +509,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 152740751}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762882831}
+        m_MethodName: OnLine7Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &152740751
@@ -512,8 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 5815ff8747d2c9440a7deff4cd652631, type: 2}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -625,7 +647,7 @@ RectTransform:
   - {fileID: 1504039836}
   - {fileID: 1456567276}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -771,7 +793,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &368284671
 GameObject:
@@ -840,7 +862,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: print("Successful");
+  m_Text: print(Successful");
 --- !u!222 &368284674
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1207,8 +1229,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_HighlightedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
-    m_PressedColor: {r: 0.8113208, g: 0.16456035, b: 0.16456035, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
+    m_DisabledColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1224,7 +1246,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 592254035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762882831}
+        m_MethodName: OnLine2Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &592254035
@@ -1238,8 +1271,8 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 5815ff8747d2c9440a7deff4cd652631, type: 2}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1319,8 +1352,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_HighlightedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
-    m_PressedColor: {r: 0.8113208, g: 0.16456035, b: 0.16456035, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
+    m_DisabledColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1336,7 +1369,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 724258514}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762882831}
+        m_MethodName: OnLine6Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &724258514
@@ -1350,8 +1394,8 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 5815ff8747d2c9440a7deff4cd652631, type: 2}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1373,6 +1417,64 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 724258511}
   m_CullTransparentMesh: 0
+--- !u!1 &762882830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762882832}
+  - component: {fileID: 762882831}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &762882831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 762882830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c36de7d8abb08d4a87af1ccf9d58cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quitButton: {fileID: 0}
+  exitButton: {fileID: 0}
+  runButton: {fileID: 1346996124}
+  correctPanel: {fileID: 1038167739}
+  gamePanel: {fileID: 1109746323}
+  tryAgainPanel: {fileID: 1504039835}
+  areYouSurePanel: {fileID: 1456567275}
+  earnedText: {fileID: 0}
+  line1Button: {fileID: 1318904665}
+  line2Button: {fileID: 592254034}
+  line3Button: {fileID: 828771537}
+  line4Button: {fileID: 1002317113}
+  line5Button: {fileID: 2123664698}
+  line6Button: {fileID: 724258513}
+  line7Button: {fileID: 152740750}
+  line8Button: {fileID: 138939445}
+  moneyEarned: 100
+  experienceEarned: 25
+--- !u!4 &762882832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 762882830}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &828771535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,8 +1533,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_HighlightedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
-    m_PressedColor: {r: 0.8113208, g: 0.16456035, b: 0.16456035, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
+    m_DisabledColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1448,7 +1550,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 828771538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762882831}
+        m_MethodName: OnLine3Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &828771538
@@ -1462,8 +1575,8 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 5815ff8747d2c9440a7deff4cd652631, type: 2}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1618,8 +1731,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_HighlightedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
-    m_PressedColor: {r: 0.8113208, g: 0.16456035, b: 0.16456035, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
+    m_DisabledColor: {r: 0.32156864, g: 0.31764707, b: 0.32156864, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1635,7 +1748,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1002317114}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762882831}
+        m_MethodName: OnLine4Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1002317114
@@ -1649,8 +1773,8 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 5815ff8747d2c9440a7deff4cd652631, type: 2}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2024,7 +2148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1164246619}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: LineButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2123,7 +2247,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\tvar = b;"
+  m_Text: "\tvar = b"
 --- !u!222 &1251100575
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2396,7 +2520,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: if ((a + b) > (c = (-b))) {
+  m_Text: if ((a + b) > (c = (-b)) {
 --- !u!222 &1304336710
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2537,8 +2661,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_HighlightedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
-    m_PressedColor: {r: 0.8113208, g: 0.16456035, b: 0.16456035, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
+    m_DisabledColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2554,7 +2678,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1318904666}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762882831}
+        m_MethodName: OnLine1Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1318904666
@@ -2568,8 +2703,8 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 5815ff8747d2c9440a7deff4cd652631, type: 2}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2666,7 +2801,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1346996125}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762882831}
+        m_MethodName: CheckDiffGame1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1346996125
@@ -3055,7 +3201,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1706838215
 GameObject:
@@ -3595,8 +3741,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 44}
-  m_SizeDelta: {x: 750, y: 50}
+  m_AnchoredPosition: {x: -20, y: 45}
+  m_SizeDelta: {x: 750, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123664698
 MonoBehaviour:
@@ -3619,8 +3765,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_HighlightedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
-    m_PressedColor: {r: 0.8113208, g: 0.16456035, b: 0.16456035, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
+    m_DisabledColor: {r: 0.3019608, g: 0.29803923, b: 0.3019608, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3636,7 +3782,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2123664699}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762882831}
+        m_MethodName: OnLine5Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2123664699
@@ -3650,8 +3807,8 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 5815ff8747d2c9440a7deff4cd652631, type: 2}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
