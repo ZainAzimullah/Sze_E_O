@@ -16,7 +16,7 @@ public class LevelUIManager : Singleton<LevelUIManager> {
 	// Use this for initialization
 	void Start () {
         dialogPanel.SetActive(false);
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,6 +39,11 @@ public class LevelUIManager : Singleton<LevelUIManager> {
                 OnResumeButtonClicked();
             }            
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            ShowBadgePanel();
+        }
 	}
 
     public void OnResumeButtonClicked()
@@ -49,12 +54,14 @@ public class LevelUIManager : Singleton<LevelUIManager> {
         isCamFreeze = false;
     }
 
+    //The method you need to call when you wanna show the badge panel(The panel that appears when you achieve something)
     public void ShowBadgePanel()
     {
-
+        StartCoroutine(BadgePanelTransition(2));
     }
 
-    private IEnumerator FadeCanvasGroup(CanvasGroup cg,float start,float end,float lerpTime=0.5f)
+    //A helper method to do the fade in and fade out transition
+    private IEnumerator FadeCanvasGroup(CanvasGroup cg,float start,float end,float lerpTime=1f)
     {
         float timeStartedLerping = Time.time;
         float timeSinceStarted = Time.time - timeStartedLerping;
@@ -66,12 +73,26 @@ public class LevelUIManager : Singleton<LevelUIManager> {
 
             float currentValue = Mathf.Lerp(start, end, percentageComplete);
 
+            cg.alpha = currentValue;
+
             if(percentageComplete >= 1)
             {
                 break;
             }
             yield return new WaitForEndOfFrame();
         }
+        print("done");
+    }
+
+    //A helper method to wait in seconds
+    private IEnumerator BadgePanelTransition(float seconds)
+    {
+        CanvasGroup uiElement = badgePanel.GetComponent<CanvasGroup>();
+        //Fade in the badgePanel
+        StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 1, .5f));
+        yield return new WaitForSeconds(seconds);
+        //Fade out the badgePanel
+        StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 0, .5f));
     }
 
 

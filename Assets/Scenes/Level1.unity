@@ -614,11 +614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a39f3b72526744791d83a15c6777b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  badge: 0
-  money: 0
-  exp:
-    maxVal: 0
-    currentVal: 0
 --- !u!223 &173901810
 Canvas:
   m_ObjectHideFlags: 0
@@ -2215,7 +2210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2244,7 +2239,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 560824358}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -5738,7 +5733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogPanel: {fileID: 79835244}
-  badgePanel: {fileID: 0}
+  badgePanel: {fileID: 560824358}
 --- !u!1001 &1442884966
 Prefab:
   m_ObjectHideFlags: 0
