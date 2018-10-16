@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 38911643}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: LV2Computer6
+  m_TagString: Computer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,7 +516,7 @@ Transform:
   - {fileID: 1884906170}
   - {fileID: 3069568}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &76049965
 Prefab:
@@ -617,13 +617,13 @@ Transform:
   - {fileID: 766993634}
   - {fileID: 76049966}
   - {fileID: 1431984490}
-  - {fileID: 1559685090}
   - {fileID: 1029026445}
   - {fileID: 1223356443}
   - {fileID: 533996062}
+  - {fileID: 1559685090}
   - {fileID: 1185083306}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &103192899
 Prefab:
@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 147440361}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: LV2Computer1
+  m_TagString: Computer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1312,7 +1312,7 @@ Transform:
   - {fileID: 783784069}
   - {fileID: 1546638491}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &454027503
 Prefab:
@@ -1417,38 +1417,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &466296187
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 466296188}
-  m_Layer: 0
-  m_Name: Work_Tables
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &466296188
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 466296187}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 20.64, y: -4.340106, z: -5.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1134328222}
-  - {fileID: 904764840}
-  - {fileID: 1768146324}
-  - {fileID: 1495266871}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500129972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,7 +1428,7 @@ GameObject:
   - component: {fileID: 500129974}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: LV2Computer3
+  m_TagString: Computer2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2975,7 +2943,7 @@ GameObject:
   - component: {fileID: 899940985}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: LV2Computer7
+  m_TagString: Computer3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3026,8 +2994,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 904764839}
-  m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2500005, y: 0, z: -0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 20.64, y: -4.340106, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1036974558}
@@ -3036,8 +3004,8 @@ Transform:
   - {fileID: 1179216283}
   - {fileID: 576746822}
   - {fileID: 521280204}
-  m_Father: {fileID: 466296188}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1026767343
 Prefab:
@@ -3866,8 +3834,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1134328221}
-  m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 20.64, y: -4.340106, z: -5.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1026767344}
@@ -3876,8 +3844,8 @@ Transform:
   - {fileID: 454027504}
   - {fileID: 32383623}
   - {fileID: 1089009116}
-  m_Father: {fileID: 466296188}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1168175530
 Prefab:
@@ -4051,7 +4019,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b616c5a8c62794d8da1c1680e586e7c0, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b616c5a8c62794d8da1c1680e586e7c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -5117,8 +5085,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1495266870}
-  m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.250001, y: 0, z: 4.5400004}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 25.18, y: -4.340106, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1253162650}
@@ -5127,8 +5095,8 @@ Transform:
   - {fileID: 623313353}
   - {fileID: 2101816178}
   - {fileID: 297000942}
-  m_Father: {fileID: 466296188}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1537238344
 Prefab:
@@ -5287,7 +5255,7 @@ Transform:
   - {fileID: 2045059709}
   - {fileID: 1593137690}
   m_Father: {fileID: 82520098}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1561112254
 GameObject:
@@ -5456,7 +5424,7 @@ GameObject:
   - component: {fileID: 1694344361}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: LV2Computer5
+  m_TagString: Computer1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5695,8 +5663,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768146323}
-  m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 4.5400014}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 25.18, y: -4.340106, z: -5.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2137220551}
@@ -5705,8 +5673,8 @@ Transform:
   - {fileID: 40458874}
   - {fileID: 1433733063}
   - {fileID: 1274491314}
-  m_Father: {fileID: 466296188}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1826031237
 Prefab:
@@ -6053,7 +6021,7 @@ GameObject:
   - component: {fileID: 1945480969}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: LV2Computer4
+  m_TagString: Computer3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6691,7 +6659,7 @@ GameObject:
   - component: {fileID: 2051333073}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: LV2Computer2
+  m_TagString: Computer1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6753,7 +6721,7 @@ Transform:
   - {fileID: 103788391}
   - {fileID: 1537238345}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2092283601
 Prefab:
@@ -6870,7 +6838,7 @@ GameObject:
   - component: {fileID: 2093074376}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: LV2Computer
+  m_TagString: Computer2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
