@@ -5391,7 +5391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1022489092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11459,7 +11459,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Congratulations!
 
-    You have earned the Team Lead Badge'
+    You have earned the CEO Badge'
 --- !u!222 &2070227506
 CanvasRenderer:
   m_ObjectHideFlags: 0
