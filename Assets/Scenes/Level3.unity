@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.496413, b: 0.5748175, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2730,7 +2730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogPanel: {fileID: 1022489091}
-  badgePanel: {fileID: 0}
+  badgePanel: {fileID: 1531983051}
 --- !u!114 &683539032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8477,6 +8477,7 @@ GameObject:
   - component: {fileID: 1531983052}
   - component: {fileID: 1531983054}
   - component: {fileID: 1531983053}
+  - component: {fileID: 1531983055}
   m_Layer: 5
   m_Name: BadgePanel
   m_TagString: Untagged
@@ -8538,6 +8539,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1531983051}
   m_CullTransparentMesh: 0
+--- !u!225 &1531983055
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1531983051}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1541949123
 GameObject:
   m_ObjectHideFlags: 0
