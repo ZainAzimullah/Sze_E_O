@@ -2,21 +2,21 @@
 using System.Runtime.Serialization;
 
 [Serializable]
-internal class NoMiniGameForThisLevelException : Exception
+internal class NoMinigameRecorderForThisLevel : Exception
 {
-    public NoMiniGameForThisLevelException()
+    public NoMinigameRecorderForThisLevel()
     {
     }
 
-    public NoMiniGameForThisLevelException(string message) : base(message)
+    public NoMinigameRecorderForThisLevel(string message) : base(message)
     {
     }
 
-    public NoMiniGameForThisLevelException(string message, Exception innerException) : base(message, innerException)
+    public NoMinigameRecorderForThisLevel(string message, Exception innerException) : base(message, innerException)
     {
     }
 
-    protected NoMiniGameForThisLevelException(SerializationInfo info, StreamingContext context) : base(info, context)
+    protected NoMinigameRecorderForThisLevel(SerializationInfo info, StreamingContext context) : base(info, context)
     {
     }
 }

@@ -21,7 +21,7 @@ public class MinigameRecorderFactory
             case 2:
                 return new Level2MinigameRecorder();
             default:
-                throw new NoMiniGameForThisLevelException();
+                throw new NoMinigameRecorderForThisLevel();
         }
     }
 }
