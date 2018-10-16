@@ -101,4 +101,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ConsultPeterDialogue.unity
     guid: 53331d79049423547a7d4a9df1294603
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: f768a595a1902154698aad0c6b1d92a0
   m_configObjects: {}
