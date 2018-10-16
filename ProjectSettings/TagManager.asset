@@ -27,6 +27,14 @@ TagManager:
   - L2Computer6
   - L2Computer7
   - LevelUIManager
+  - L3Computer
+  - L3Computer1
+  - L3Computer2
+  - L3Computer3
+  - L3Computer4
+  - L3Computer5
+  - L3Computer6
+  - L3Computer7
   layers:
   - Default
   - TransparentFX
