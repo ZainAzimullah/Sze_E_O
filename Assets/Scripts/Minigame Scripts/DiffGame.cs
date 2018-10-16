@@ -91,6 +91,8 @@ public class DiffGame : MonoBehaviour, IMinigame {
         line6Button.enabled = false;
         line7Button.enabled = false;
         line8Button.enabled = false;
+
+
     }
 
     public void EnableButtons()
@@ -106,6 +108,16 @@ public class DiffGame : MonoBehaviour, IMinigame {
         line6Button.enabled = true;
         line7Button.enabled = true;
         line8Button.enabled = true;
+
+
+    }
+
+    //this method is also used for when user presses no on the exit prompt
+    public void TryAgain()
+    {
+        areYouSurePanel.gameObject.SetActive(false);
+        tryAgainPanel.gameObject.SetActive(false);
+        EnableButtons();
     }
 
     //=========================================================================================================
@@ -131,7 +143,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
         if (line1Answer)
         {
             line1Answer = false;
-            line1Button.GetComponent<Image>().color = new Color(77, 76, 77);
+            line1Button.GetComponent<Image>().color = new Color((float)0.3, (float)0.29, (float)0.3);
         }
         else {
             line1Answer = true;
@@ -144,7 +156,8 @@ public class DiffGame : MonoBehaviour, IMinigame {
         if (line2Answer)
         {
             line2Answer = false;
-            line2Button.GetComponent<Image>().color = new Color(77, 76, 77);
+            line2Button.GetComponent<Image>().color = new Color((float)0.3,(float)0.29,(float)0.3);
+
         }
         else
         {
@@ -158,7 +171,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
         if (line3Answer)
         {
             line3Answer = false;
-            line3Button.GetComponent<Image>().color = new Color(77, 76, 77);
+            line3Button.GetComponent<Image>().color = new Color((float)0.3, (float)0.29, (float)0.3);
         }
         else
         {
@@ -173,7 +186,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
         if (line4Answer)
         {
             line4Answer = false;
-            line4Button.GetComponent<Image>().color = new Color(77, 76, 77);
+            line4Button.GetComponent<Image>().color = new Color((float)0.3, (float)0.29, (float)0.3);
         }
         else
         {
@@ -187,7 +200,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
         if (line5Answer)
         {
             line5Answer = false;
-            line5Button.GetComponent<Image>().color = new Color(77, 76, 77);
+            line5Button.GetComponent<Image>().color = new Color((float)0.3, (float)0.29, (float)0.3);
         }
         else
         {
@@ -201,7 +214,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
         if (line6Answer)
         {
             line6Answer = false;
-            line6Button.GetComponent<Image>().color = new Color(77, 76, 77);
+            line6Button.GetComponent<Image>().color = new Color((float)0.3, (float)0.29, (float)0.3);
         }
         else
         {
@@ -215,7 +228,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
         if (line7Answer)
         {
             line7Answer = false;
-            line7Button.GetComponent<Image>().color = new Color(77, 76, 77);
+            line7Button.GetComponent<Image>().color = new Color((float)0.3, (float)0.29, (float)0.3);
         }
         else
         {
@@ -229,7 +242,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
         if (line8Answer)
         {
             line8Answer = false;
-            line8Button.GetComponent<Image>().color = new Color(77, 76, 77);
+            line8Button.GetComponent<Image>().color = new Color((float)0.3, (float)0.29, (float)0.3);
         }
         else
         {
