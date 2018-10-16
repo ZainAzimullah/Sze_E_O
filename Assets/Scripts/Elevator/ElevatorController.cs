@@ -61,6 +61,7 @@ public class ElevatorController : MonoBehaviour {
             } else
             {
                 PopupPanel.SetActive(true);
+                return;
             }
 
             SceneTransitionManager.Instance.LoadScene(badgeType.GetAssociatedScene());
