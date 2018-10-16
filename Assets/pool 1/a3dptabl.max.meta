@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: 9a5d11fef057ad44c85283d3913fba32
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Box01
+    100004: Box02
+    100006: Box03
+    100008: mr Area Omni01
+    100010: poolball1
+    100012: poolball10
+    100014: poolball11
+    100016: poolball12
+    100018: poolball13
+    100020: poolball14
+    100022: poolball15
+    100024: poolball2
+    100026: poolball3
+    100028: poolball4
+    100030: poolball5
+    100032: poolball6
+    100034: poolball7
+    100036: poolball8
+    100038: poolball9
+    100040: poolballq
+    100042: poolstick
+    100044: pooltable
+    100046: triangle
+    400000: //RootNode
+    400002: Box01
+    400004: Box02
+    400006: Box03
+    400008: mr Area Omni01
+    400010: poolball1
+    400012: poolball10
+    400014: poolball11
+    400016: poolball12
+    400018: poolball13
+    400020: poolball14
+    400022: poolball15
+    400024: poolball2
+    400026: poolball3
+    400028: poolball4
+    400030: poolball5
+    400032: poolball6
+    400034: poolball7
+    400036: poolball8
+    400038: poolball9
+    400040: poolballq
+    400042: poolstick
+    400044: pooltable
+    400046: triangle
+    2100000: triangle_cue
+    2100002: pool stick pattern
+    2100004: wood_
+    2100006: poolball5
+    2100008: poolball15
+    2100010: poolball14
+    2100012: poolball13
+    2100014: poolball12
+    2100016: poolball11
+    2100018: poolball10
+    2100020: poolball9
+    2100022: poolball8
+    2100024: poolball7
+    2100026: poolball6
+    2100028: poolball4
+    2100030: poolball3
+    2100032: poolball2
+    2100034: poolball1
+    2100036: wood 2
+    2100038: wood leg
+    2100040: top board
+    2100042: dot
+    2100044: green felt
+    2100046: pocket
+    2100048: No Name
+    2300000: Box01
+    2300002: Box02
+    2300004: Box03
+    2300006: poolball1
+    2300008: poolball10
+    2300010: poolball11
+    2300012: poolball12
+    2300014: poolball13
+    2300016: poolball14
+    2300018: poolball15
+    2300020: poolball2
+    2300022: poolball3
+    2300024: poolball4
+    2300026: poolball5
+    2300028: poolball6
+    2300030: poolball7
+    2300032: poolball8
+    2300034: poolball9
+    2300036: poolballq
+    2300038: poolstick
+    2300040: pooltable
+    2300042: triangle
+    3300000: Box01
+    3300002: Box02
+    3300004: Box03
+    3300006: poolball1
+    3300008: poolball10
+    3300010: poolball11
+    3300012: poolball12
+    3300014: poolball13
+    3300016: poolball14
+    3300018: poolball15
+    3300020: poolball2
+    3300022: poolball3
+    3300024: poolball4
+    3300026: poolball5
+    3300028: poolball6
+    3300030: poolball7
+    3300032: poolball8
+    3300034: poolball9
+    3300036: poolballq
+    3300038: poolstick
+    3300040: pooltable
+    3300042: triangle
+    4300000: poolballq
+    4300002: poolstick
+    4300004: triangle
+    4300006: poolball15
+    4300008: poolball14
+    4300010: poolball13
+    4300012: poolball12
+    4300014: poolball11
+    4300016: poolball10
+    4300018: poolball9
+    4300020: poolball8
+    4300022: poolball7
+    4300024: poolball6
+    4300026: poolball5
+    4300028: poolball4
+    4300030: poolball3
+    4300032: poolball2
+    4300034: poolball1
+    4300036: pooltable
+    4300038: Box01
+    4300040: Box02
+    4300042: Box03
+    9500000: //RootNode
+    10800000: mr Area Omni01
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
