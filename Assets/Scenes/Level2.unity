@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 38911643}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Computer
+  m_TagString: L2Computer1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -858,7 +858,7 @@ GameObject:
   - component: {fileID: 147440361}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Computer
+  m_TagString: L2Computer5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2078,7 +2078,7 @@ GameObject:
   - component: {fileID: 500129974}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Computer2
+  m_TagString: L2Computer2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3800,7 +3800,7 @@ GameObject:
   - component: {fileID: 899940985}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Computer3
+  m_TagString: L2Computer7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7001,7 +7001,7 @@ GameObject:
   - component: {fileID: 1694344361}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Computer1
+  m_TagString: L2Computer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7837,7 +7837,7 @@ GameObject:
   - component: {fileID: 1945480969}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Computer3
+  m_TagString: L2Computer3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8598,7 +8598,7 @@ GameObject:
   - component: {fileID: 2051333073}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Computer1
+  m_TagString: L2Computer4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8777,7 +8777,7 @@ GameObject:
   - component: {fileID: 2093074376}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Computer2
+  m_TagString: L2Computer6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

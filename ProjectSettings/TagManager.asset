@@ -18,6 +18,14 @@ TagManager:
   - Computer7
   - Mentor
   - Bruce
+  - L2Computer
+  - L2Computer1
+  - L2Computer2
+  - L2Computer3
+  - L2Computer4
+  - L2Computer5
+  - L2Computer6
+  - L2Computer7
   layers:
   - Default
   - TransparentFX
