@@ -39,12 +39,13 @@ public class LevelUIManager : Singleton<LevelUIManager> {
                 OnResumeButtonClicked();
             }            
         }
-        //Test 
-        if (Input.GetKeyDown(KeyCode.LeftAlt))
+
+        if (GameLogicManager.Instance.readyToShowBadgePopUp)
         {
+            GameLogicManager.Instance.readyToShowBadgePopUp = false;
             ShowBadgePanel();
         }
-	}
+    }
 
     public void OnResumeButtonClicked()
     {
@@ -57,6 +58,7 @@ public class LevelUIManager : Singleton<LevelUIManager> {
     //The method you need to call when you wanna show the badge panel(The panel that appears when you achieve something)
     public void ShowBadgePanel()
     {
+        Debug.Log("hello");
         //Make the Badge fade in fade out working. The input of the funcition is the number of seconds the badge panels stays before it fades out
         StartCoroutine(BadgePanelTransition(2));
     }

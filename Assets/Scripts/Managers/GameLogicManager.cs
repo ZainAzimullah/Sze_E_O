@@ -15,6 +15,7 @@ public class GameLogicManager : Singleton<GameLogicManager> {
     public readonly int LEVEL_THRESHOLD = 100;
 
     public bool badgePopUpRequest { get; set; }
+    public bool readyToShowBadgePopUp { get; set; }
 
     public AbstractMinigameRecorder GetMinigameRecorder()
     {
@@ -65,9 +66,10 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         if (badgePopUpRequest)
         {
             badgePopUpRequest = false;
+            readyToShowBadgePopUp = true;
             PlayerManager.Instance.badge = (BadgeType) (PlayerManager.Instance.badge + 1);
             LevelManager.Instance.IncreaseMaxLevel();
-            Debug.Log("Show badge popup");
+
         }
     }
 
