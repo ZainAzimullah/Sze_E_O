@@ -48,6 +48,8 @@ public class LevelUIManager : Singleton<LevelUIManager> {
             
             ShowBadgePanel(PlayerManager.Instance.badge.ToString());
         }
+
+        badgeIndicator.GetComponentInChildren<Text>().text = PlayerManager.Instance.badge.ToString();
     }
 
     public void OnResumeButtonClicked()
