@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/**
+ * A class to control the AI movement so that the AI can move randomly in the scene.
+ */
 public class MoveRandom : MonoBehaviour {
 
     NavMeshAgent agent;
@@ -20,6 +23,7 @@ public class MoveRandom : MonoBehaviour {
 
     void Update()
     {
+        //Stop walking when the AI is too closed to the player.
         if (!(Vector3.Distance(player.transform.position, agent.transform.position) < 1.4f) && !inCoroutine)
         {
             inCoroutine = true;
@@ -33,6 +37,7 @@ public class MoveRandom : MonoBehaviour {
         }
     }
 
+    //Started navigating to the destiney
     private IEnumerator StartNavigation()
     {
         animator.SetBool("isWalking", true);
@@ -49,12 +54,14 @@ public class MoveRandom : MonoBehaviour {
         inCoroutine = false;
     }
 
+    //Stop Navigating to the destiney
     private void StopNavigation()
     {
         animator.SetBool("isWalking", false);
         npc.GetComponent<NavMeshAgent>().isStopped = true;
     }
 
+    //Get a random position
     private Vector3 GetNewRandomPosition()
     {
         float x = Random.Range(-20, 20);
