@@ -152,6 +152,7 @@ MonoBehaviour:
   - 'Margaret:  Use your WASD keys to move around, while moving your mouse to change
     the camera angle.  If you walk up to a person or object and press the space bar,
     you can interact with it.  To get between levels, interact with the elevator.'
+  - 'Margaret:  To pause the game at any time, press the Esc key.'
   - 'Margaret: Using your WASD keys, walk to the computer and press space bar.'
   szeShader: {fileID: 1995170511}
   otherShader: {fileID: 1137215561}
