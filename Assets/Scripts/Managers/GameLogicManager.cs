@@ -13,7 +13,7 @@ public class GameLogicManager : Singleton<GameLogicManager> {
     private AbstractLevelController levelController;
 
     // Remember which levels were hacked so that we don't hack them again
-    private readonly IDictionary<int, bool> hackedLevels = new Dictionary<int, bool>()
+    private IDictionary<int, bool> hackedLevels = new Dictionary<int, bool>()
     {
         {1, false},
         {2, false},
@@ -84,6 +84,14 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         } else
         {
             SceneTransitionManager.Instance.LoadCurrentLevelScene();
+        }
+    }
+
+    internal void ResetHack()
+    {
+        for (int i = 1; i <= hackedLevels.Count; i++)
+        {
+            hackedLevels[i] = false;
         }
     }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,5 +41,10 @@ public class LevelManager : Singleton<LevelManager> {
     {
         return maxLevel;
     }
-    
+
+    public void Reset()
+    {
+        maxLevel = 1;
+        currentLevel = 0;
+    }
 }

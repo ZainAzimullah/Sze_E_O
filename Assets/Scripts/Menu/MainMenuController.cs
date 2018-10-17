@@ -7,6 +7,12 @@ public class MainMenuController : MonoBehaviour {
 	public void StartGame() {
         LevelManager.Instance.currentLevel = 0;
         PlayerManager.Instance.mode = PlayerMode.TUTORIAL;
+
+        // Restart if they finished the game last time
+        if (PlayerManager.Instance.badge == BadgeType.CEO)
+        {
+            PlayerManager.Instance.Reset();
+        }
         GameLogicManager.Instance.PrepareForFirstVisit();
         SceneTransitionManager.Instance.LoadScene(SceneName.IntroDialogue);
     }

@@ -124,6 +124,15 @@ public class PlayerManager:Singleton<PlayerManager> {
         exp.CurrentVal = 0;
     }
 
+    public void Reset()
+    {
+        exp.CurrentVal = 0;
+        money = 0;
+        badge = BadgeType.NewPlayer;
+        visitedLevels.Clear();
+        GameLogicManager.Instance.ResetHack();
+        LevelManager.Instance.Reset();
+    }
 }
 
 public enum PlayerMode
