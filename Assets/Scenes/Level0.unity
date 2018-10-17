@@ -5181,7 +5181,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: df36cbd814f55694e83de631785d3dc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 233
+      value: 259.3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: df36cbd814f55694e83de631785d3dc1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5221,7 +5221,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: df36cbd814f55694e83de631785d3dc1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 36.3565
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: df36cbd814f55694e83de631785d3dc1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
