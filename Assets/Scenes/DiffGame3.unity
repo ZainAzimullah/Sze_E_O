@@ -1642,8 +1642,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c36de7d8abb08d4a87af1ccf9d58cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quitButton: {fileID: 0}
-  exitButton: {fileID: 0}
+  quitButton: {fileID: 1398966000}
+  exitButton: {fileID: 393683713}
   runButton: {fileID: 1346996124}
   correctPanel: {fileID: 1038167739}
   gamePanel: {fileID: 1109746323}

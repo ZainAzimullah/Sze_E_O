@@ -1567,8 +1567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c36de7d8abb08d4a87af1ccf9d58cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quitButton: {fileID: 0}
-  exitButton: {fileID: 0}
+  quitButton: {fileID: 1460383073}
+  exitButton: {fileID: 242931750}
   runButton: {fileID: 1346996124}
   correctPanel: {fileID: 1038167739}
   gamePanel: {fileID: 1109746323}
@@ -3603,7 +3603,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 762882831}
         m_MethodName: TryAgain
         m_Mode: 1
         m_Arguments:
