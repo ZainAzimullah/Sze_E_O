@@ -48,12 +48,6 @@ public class PlayerManager:Singleton<PlayerManager> {
 
     void Update()
     {
-        // Exit on Esc key
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
         // Hack for testing (press Enter)
         if (Input.GetKeyDown(KeyCode.H))
         {
