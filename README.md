@@ -73,7 +73,7 @@ experience of the game.
 </tr>
 </table>
 
-<h1>References</h1>
+<h1>References for Assets</h1>
 <ul>
 <li>https://www.cgtrader.com/free-3d-models/character</li>
 <li>https://www.cgtrader.com/free-3d-models/character/woman/mei-001-woman-office-clothes</li>
@@ -88,4 +88,6 @@ experience of the game.
 <li>http://www.cadnav.com/3d-models/model-20624.html</li>
 <li>https://assetstore.unity.com/packages/3d/props/electronics/modern-vending-machine-pbr-127874</li>
 <li>https://assetstore.unity.com/packages/3d/props/interior/yughues-free-decorative-plants-13283</li>
+<li>https://assetstore.unity.com/packages/3d/props/electronics/flatscreen-tv-9721</li>
+<li>https://assetstore.unity.com/packages/3d/props/electronics/fridge-old-and-new-24196</li>
 </ul>
