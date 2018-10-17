@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,14 @@ public class GameLogicManager : Singleton<GameLogicManager> {
 
     // The controller for the current level
     private AbstractLevelController levelController;
+
+    // Remember which levels were hacked so that we don't hack them again
+    private readonly IDictionary<int, bool> hackedLevels = new Dictionary<int, bool>()
+    {
+        {1, false},
+        {2, false},
+        {3, false}
+    };
 
     // points needed to progress
     public readonly int LEVEL_THRESHOLD = 100;
@@ -38,6 +47,18 @@ public class GameLogicManager : Singleton<GameLogicManager> {
     public void PrepareForRevisit()
     {
         levelController = LevelControllerFactory.GetInteractionController(LevelManager.Instance.currentLevel);
+    }
+
+    internal void Hack()
+    {
+        if (LevelManager.Instance.currentLevel != 0 && !hackedLevels[LevelManager.Instance.currentLevel])
+        {
+            PlayerManager.Instance.UpdateExperience(100);
+            PlayerManager.Instance.badge = (BadgeType)(PlayerManager.Instance.badge + 1);
+            LevelManager.Instance.IncreaseMaxLevel();
+            GameLogicManager.Instance.readyToShowBadgePopUp = true;
+            hackedLevels[LevelManager.Instance.currentLevel] = true;
+        }
     }
 
     // This is called when a minigame has been completed
@@ -75,7 +96,6 @@ public class GameLogicManager : Singleton<GameLogicManager> {
             readyToShowBadgePopUp = true;
             PlayerManager.Instance.badge = (BadgeType) (PlayerManager.Instance.badge + 1);
             LevelManager.Instance.IncreaseMaxLevel();
-
         }
     }
 

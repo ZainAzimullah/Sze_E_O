@@ -57,10 +57,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         // Hack for testing (press Enter)
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            exp.CurrentVal = 100;
-            badge = (BadgeType) (badge + 1);
-            LevelManager.Instance.IncreaseMaxLevel();
-            GameLogicManager.Instance.readyToShowBadgePopUp = true;
+            GameLogicManager.Instance.Hack();
         }
     }
 
@@ -71,6 +68,10 @@ public class PlayerManager:Singleton<PlayerManager> {
 
 	public void UpdateExperience(float gainedExperience) {
         exp.CurrentVal += gainedExperience;
+        if (exp.CurrentVal > 100)
+        {
+            exp.CurrentVal = 100;
+        }
 	}
 
 	public int GetMoney() {
