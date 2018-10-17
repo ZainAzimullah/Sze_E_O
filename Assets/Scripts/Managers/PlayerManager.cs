@@ -55,7 +55,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         }
 
         // Hack for testing (press Enter)
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             GameLogicManager.Instance.Hack();
         }
