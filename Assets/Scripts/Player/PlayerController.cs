@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour {
             if (collision.gameObject.tag != "Untagged")
             {
                 // Fix for unknown camera bug in level 1
-                if (LevelManager.Instance.currentLevel != 1)
+                if ((LevelManager.Instance.currentLevel != 1) && (LevelManager.Instance.currentLevel != 0))
                 {
                     tracker.playerPos = gb.transform.position;
                     tracker.playerAngle = gb.transform.eulerAngles;
@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour {
         {
             Tracker tracker = PlayerManager.Instance.GetTracker(LevelManager.Instance.currentLevel);
             // Fix for unknown camera bug in level 1
-            if (LevelManager.Instance.currentLevel != 1)
+            if ((LevelManager.Instance.currentLevel != 1) && (LevelManager.Instance.currentLevel != 0))
             {
                 SetTracker(tracker);
             }
