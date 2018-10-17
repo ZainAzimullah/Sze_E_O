@@ -63,7 +63,7 @@ public class ElevatorController : MonoBehaviour {
 
     public void LevelTwo()
     {
-        CheckVisit(BadgeType.TeamLeader);
+        CheckVisit(BadgeType.TeamLead);
     }
 
     public void LevelThree()

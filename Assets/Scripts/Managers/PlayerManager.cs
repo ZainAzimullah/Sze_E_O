@@ -139,7 +139,7 @@ public enum PlayerMode
 public enum BadgeType {
     NewPlayer, // Level 0
     Graduate,   // Level 1
-    TeamLeader,  // Level 2
+    TeamLead,  // Level 2
     Manager,    // Level 3
     CEO         // Game Over
 }
