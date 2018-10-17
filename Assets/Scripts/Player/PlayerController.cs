@@ -124,10 +124,10 @@ public class PlayerController : MonoBehaviour {
                 // Fix for unknown camera bug in level 1
                 if ((LevelManager.Instance.currentLevel != 1) && (LevelManager.Instance.currentLevel != 0))
                 {
-                    tracker.playerPos = gb.transform.position;
-                    tracker.playerAngle = gb.transform.eulerAngles;
-                    tracker.camAngle = cam.eulerAngles;
-                    tracker.camPos = cam.position;
+                    SetTracker(tracker);
+                } else
+                {
+                    SetTrackerSpecial(tracker);
                 }
                 GameLogicManager.Instance.Interaction(collision.collider);
             }
@@ -145,6 +145,14 @@ public class PlayerController : MonoBehaviour {
         tracker.camPos = cam.position;
     }
 
+    // Set the trackers for only the player position
+    // (needed for level 0 and 1 otherwise camera stuffs up
+    void SetTrackerSpecial(Tracker tracker)
+    {
+        tracker.playerPos = gb.transform.position;
+        tracker.playerAngle = gb.transform.eulerAngles;
+    }
+
     //When player enters the trigger
     private void OnTriggerStay(Collider collision)
     {
@@ -156,6 +164,9 @@ public class PlayerController : MonoBehaviour {
             if ((LevelManager.Instance.currentLevel != 1) && (LevelManager.Instance.currentLevel != 0))
             {
                 SetTracker(tracker);
+            } else
+            {
+                SetTrackerSpecial(tracker);
             }
             GameLogicManager.Instance.Interaction(collision);
         }
