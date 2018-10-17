@@ -1,11 +1,27 @@
 <h1>Execution Instructions</h1>
-
 <p>
 Download the zip file "Run_Sze_E_O.zip" from "releases" on GitHub.
 Extract it and run the .exe file (the other files need to be in the same directory).
 When you run the exe file, you will have to choose your resolution.  Uncheck "Windowed"
 Choose the resolution closest to 1920x1200.
 If running from within Unity you need to run it from the _preload scene.
+</p>
+
+<h1>Playing the Game</h1>
+<p>
+Use the W, A, S, D keys to move around.  Move the mouse to change the camera angle.
+Press the Space bar to interact with objects or other characters.  Not all characters and objects
+are interactable.
+</p>
+
+<h1>Level Hack</h1>
+<p>
+When you on level 1, level 2, or level 3, you can press the Enter key to immediately boost your
+EXP bar to 100% and attain the badge required to go to the level above.  This means that you do not have to play any
+of the minigames of the level you are on.  If you want to skip multiple levels, you cannot press Enter twice - you must
+go to each level in order and press the Enter key.  We put this hack in to allow easy testing and to make the game easier to mark -
+but bear in mind, the levels don't really take that long.  We recommend not using the hack if you want to enjoy the full
+experience of the game.
 </p>
 
 <table style="width: 100%; border: 1px solid black">
