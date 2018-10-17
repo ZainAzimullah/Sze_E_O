@@ -69,8 +69,9 @@ public class BooleanMinigame : MonoBehaviour, IMinigame {
 			earnedText.text = "You earned $" + moneyEarned + " and " + experienceEarned + " experience";
 			// Updates the global experience of the player
 			PlayerManager.Instance.UpdateExperience(experienceEarned);
-
-		} else {
+            PlayerManager.Instance.UpdateMoney(moneyEarned);
+        }
+        else {
 
 			quitButton.enabled = false;
 			exitButton.enabled = false;
@@ -111,10 +112,8 @@ public class BooleanMinigame : MonoBehaviour, IMinigame {
 		DisableButtons();
 		correctPanel.gameObject.SetActive(true);
 		earnedText.text = "You earned $"+ moneyEarned + " and " + experienceEarned +" experience";
-        // Updates the global experience of the player
-        Debug.Log("Before update: " + PlayerManager.Instance.GetExperience().CurrentVal);
+        PlayerManager.Instance.UpdateMoney(moneyEarned);
 		PlayerManager.Instance.UpdateExperience(experienceEarned);
-        Debug.Log("After update: " + PlayerManager.Instance.GetExperience().CurrentVal);
     }
 
     // Incorrect answer prompt

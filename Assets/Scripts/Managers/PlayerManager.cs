@@ -79,6 +79,7 @@ public class PlayerManager:Singleton<PlayerManager> {
 
 	public void UpdateMoney(int moneyEarned) {
 		money += moneyEarned;
+        Debug.Log(money);
 	}
 
     public List<Tracker> GetTrackers()

@@ -73,6 +73,7 @@ public class ShortestPathGame : MonoBehaviour, IMinigame {
 		earnedText.text = "You earned $" + moneyEarned + " and " + experienceEarned + " experience";
 		// Updates the global experience of the player
 		PlayerManager.Instance.UpdateExperience(experienceEarned);
+        PlayerManager.Instance.UpdateExperience(moneyEarned);
 	}
 
 	// Incorrect answer prompt

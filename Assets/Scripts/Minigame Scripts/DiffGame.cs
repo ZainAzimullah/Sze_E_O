@@ -67,6 +67,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
         // Updates the global experience of the player
         Debug.Log("Before update: " + PlayerManager.Instance.GetExperience().CurrentVal);
         PlayerManager.Instance.UpdateExperience(experienceEarned);
+        PlayerManager.Instance.UpdateMoney(moneyEarned);
         Debug.Log("After update: " + PlayerManager.Instance.GetExperience().CurrentVal);
     }
 
