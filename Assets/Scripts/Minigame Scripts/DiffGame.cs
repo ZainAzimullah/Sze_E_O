@@ -88,8 +88,8 @@ public class DiffGame : MonoBehaviour, IMinigame {
 
     public void DisableButtons()
     {
-        //quitButton.enabled = false;
-        //exitButton.enabled = false;
+        quitButton.enabled = false;
+        exitButton.enabled = false;
         runButton.enabled = false;
         line1Button.enabled = false;
         line2Button.enabled = false;
@@ -105,8 +105,8 @@ public class DiffGame : MonoBehaviour, IMinigame {
 
     public void EnableButtons()
     {
-        //quitButton.enabled = true;
-        //exitButton.enabled = true;
+        quitButton.enabled = true;
+        exitButton.enabled = true;
         runButton.enabled = true;
         line1Button.enabled = true;
         line2Button.enabled = true;
@@ -340,9 +340,14 @@ public class DiffGame : MonoBehaviour, IMinigame {
             line8Button.GetComponent<Image>().color = Color.gray;
         }
     }
-    //=========================================================================================================
+	//=========================================================================================================
 
-    public void ExitYes()
+	public void ExitGame() {
+		DisableButtons();
+		areYouSurePanel.SetActive(true);
+	}
+
+	public void ExitYes()
     {
         SceneTransitionManager.Instance.LoadScene(SceneName.Level2);
     }
