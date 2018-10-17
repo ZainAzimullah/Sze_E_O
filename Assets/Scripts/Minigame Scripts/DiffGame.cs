@@ -45,13 +45,14 @@ public class DiffGame : MonoBehaviour, IMinigame {
     // color variable (grey)
     public Color bgColor = new Color((float)0.3, (float)0.29, (float)0.3);
 
-
+	// Indicates user has completed the minigame succefully and moves on to the scene
     public void Progress() {
         SceneName sceneName = (SceneName) Enum.Parse(typeof(SceneName), SceneManager.GetActiveScene().name, true);
         GameLogicManager.Instance.MinigameDone(sceneName);
 	}
 
 	// Use this for initialization
+	// makes sure the other prompts are hidden
 	void Start () {
 		correctPanel.SetActive(false);
 		tryAgainPanel.SetActive(false);
