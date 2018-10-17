@@ -14,12 +14,12 @@ Press the Space bar to interact with objects or other characters.  Not all chara
 are interactable.
 </p>
 
-<h1>Level Hack</h1>
+<h1>Level Hack (H Key)</h1>
 <p>
 When you on level 1, level 2, or level 3, you can press the Enter key to immediately boost your
 EXP bar to 100% and attain the badge required to go to the level above.  This means that you do not have to play any
 of the minigames of the level you are on.  If you want to skip multiple levels, you cannot press Enter twice - you must
-go to each level in order and press the Enter key.  We put this hack in to allow easy testing and to make the game easier to mark -
+go to each level in order and press the H key.  We put this hack in to allow easy testing and to make the game easier to mark -
 but bear in mind, the levels don't really take that long.  We recommend not using the hack if you want to enjoy the full
 experience of the game.
 </p>
