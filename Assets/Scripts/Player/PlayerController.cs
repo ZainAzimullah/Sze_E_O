@@ -115,10 +115,14 @@ public class PlayerController : MonoBehaviour {
             Tracker tracker = PlayerManager.Instance.GetTracker(currentLevel);
             if (collision.gameObject.tag != "Untagged")
             {
-                tracker.playerPos = gb.transform.position;
-                tracker.playerAngle = gb.transform.eulerAngles;
-                tracker.camAngle = cam.eulerAngles;
-                tracker.camPos = cam.position;
+                // Fix for unknown camera bug in level 1
+                if (LevelManager.Instance.currentLevel != 1)
+                {
+                    tracker.playerPos = gb.transform.position;
+                    tracker.playerAngle = gb.transform.eulerAngles;
+                    tracker.camAngle = cam.eulerAngles;
+                    tracker.camPos = cam.position;
+                }
                 GameLogicManager.Instance.Interaction(collision.collider);
             }
         }
@@ -140,7 +144,11 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Tracker tracker = PlayerManager.Instance.GetTracker(LevelManager.Instance.currentLevel);
-            SetTracker(tracker);
+            // Fix for unknown camera bug in level 1
+            if (LevelManager.Instance.currentLevel != 1)
+            {
+                SetTracker(tracker);
+            }
             GameLogicManager.Instance.Interaction(collision);
         }
     }
