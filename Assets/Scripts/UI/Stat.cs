@@ -10,6 +10,7 @@ public class Stat
     [SerializeField]
     private float currentVal;
 
+	// property for the amount of experience
     public float CurrentVal
     {
         get 
@@ -23,6 +24,8 @@ public class Stat
         }
     }
 
+	// property to set the max exp a user can get, which will be 100 in the player manager
+	// singleton class
     public float MaxVal 
     {
         get 
@@ -35,6 +38,7 @@ public class Stat
         }
     }
 
+	// set the exp annd maximum value
     public void Initialize () 
     {
         this.MaxVal = maxVal;

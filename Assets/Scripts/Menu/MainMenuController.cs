@@ -4,27 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour {
+
 	public void StartGame() {
+		// start at level 0
         LevelManager.Instance.currentLevel = 0;
+		// goes to dialog to teach user game.
         PlayerManager.Instance.mode = PlayerMode.TUTORIAL;
 
         // Restart if they finished the game last time
         if (PlayerManager.Instance.badge == BadgeType.CEO)
         {
+			// reset game progress.
             PlayerManager.Instance.Reset();
         }
         GameLogicManager.Instance.PrepareForFirstVisit();
         SceneTransitionManager.Instance.LoadScene(SceneName.IntroDialogue);
     }
 
-	public void ResumeGame() {
-        SceneTransitionManager.Instance.LoadScene(SceneName.Level1);
-	}
-
-	public void Options() {
-        SceneTransitionManager.Instance.LoadScene(SceneName.Options);
-	}
-
+	// closes the application
 	public void Quit() {
 		Application.Quit();
 	}
