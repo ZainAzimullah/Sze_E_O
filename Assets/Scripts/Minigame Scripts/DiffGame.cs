@@ -42,7 +42,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
 	public int moneyEarned = 100;
 	public int experienceEarned = 25;
 
-    // color variable
+    // color variable (grey)
     public Color bgColor = new Color((float)0.3, (float)0.29, (float)0.3);
 
 
@@ -61,31 +61,34 @@ public class DiffGame : MonoBehaviour, IMinigame {
     // Correct answer prompt
     private void CorrectAnswer()
     {
+		// first diable the minigame buttons to stop user action
         DisableButtons();
+		// display the prompt indicating the user is correct
         correctPanel.gameObject.SetActive(true);
+		// set text of the prompt based on how much money and exp is earned
         earnedText.text = "You earned $" + moneyEarned + " and " + experienceEarned + " experience";
-        // Updates the global experience of the player
-        Debug.Log("Before update: " + PlayerManager.Instance.GetExperience().CurrentVal);
+        // Updates the global experience and money of the player
         PlayerManager.Instance.UpdateExperience(experienceEarned);
         PlayerManager.Instance.UpdateMoney(moneyEarned);
-        Debug.Log("After update: " + PlayerManager.Instance.GetExperience().CurrentVal);
     }
 
     // Incorrect answer prompt
     private void IncorrectAnswer()
     {
-        DisableButtons();
+		// first diable the minigame buttons to stop user action
+		DisableButtons();
+		// display prompty indication user was wrong, gives option to try again.
         tryAgainPanel.gameObject.SetActive(true);
-        Debug.Log("Got In");
-        // cannot lose money from minigame
+        // cannot lose money from minigame, thus must be atleast $20
         if (moneyEarned >= 20)
         {
-            Debug.Log("Money Before: " + moneyEarned);
+			// lose 20 dollars each time the player gets the task wrong
             moneyEarned -= 20;
-            Debug.Log("Money After: " + moneyEarned);
         }
     }
 
+	// Disables all minigame buttons to stop users from pressing it while
+	// dealing with prompts.
     public void DisableButtons()
     {
         quitButton.enabled = false;
@@ -103,6 +106,8 @@ public class DiffGame : MonoBehaviour, IMinigame {
 
     }
 
+	// reenables the buttons if user chooses to try again
+	// or decides not to quit the minigame
     public void EnableButtons()
     {
         quitButton.enabled = true;
@@ -117,6 +122,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
         line7Button.enabled = true;
         line8Button.enabled = true;
 
+		// set color of the buttons
         line1Button.GetComponent<Image>().color = bgColor;
         line2Button.GetComponent<Image>().color = bgColor;
         line3Button.GetComponent<Image>().color = bgColor;
@@ -126,6 +132,7 @@ public class DiffGame : MonoBehaviour, IMinigame {
         line7Button.GetComponent<Image>().color = bgColor;
         line8Button.GetComponent<Image>().color = bgColor;
 
+		// reset all answers
         line1Answer = false;
         line2Answer = false;
         line3Answer = false;
@@ -140,15 +147,17 @@ public class DiffGame : MonoBehaviour, IMinigame {
     //this method is also used for when user presses no on the exit prompt
     public void TryAgain()
     {
-        
+		// hides confirmation prompts after user decides to return to minigame
         areYouSurePanel.gameObject.SetActive(false);
         tryAgainPanel.gameObject.SetActive(false);
-        Debug.Log("after activating false");
         EnableButtons();
     }
 
 
     //==========================================================================================================
+	// checkDiffGame methods all check the user selected lines and checks the boolean flags against them
+	// to see if the user answer was correct. If correct, displays calls the correct answer method
+	// otherwise the incorrect answer method is called.
 
     public void CheckDiffGame1()
     {
@@ -157,17 +166,14 @@ public class DiffGame : MonoBehaviour, IMinigame {
             && line2Answer == false && line3Answer == true && line5Answer == false
             && line6Answer == false && line8Answer == true)
         {
-
             CorrectAnswer();
         }
         else
         {
-            Debug.Log("before activating false");
             IncorrectAnswer();
         }
 
     }
-    //=========================================================================================================
 
     public void CheckDiffGame2() {
         //Line 1, 4, 7
@@ -184,9 +190,6 @@ public class DiffGame : MonoBehaviour, IMinigame {
         }
 
     }
-
-
-    //==========================================================================================================
 
     public void CheckDiffGame3()
     {
@@ -205,8 +208,6 @@ public class DiffGame : MonoBehaviour, IMinigame {
         }
 
     }
-
-    //==========================================================================================================
 
     public void CheckDiffGame4()
     {
@@ -228,6 +229,8 @@ public class DiffGame : MonoBehaviour, IMinigame {
 
     //==========================================================================================================
     // BUTTON TOGGLING CODE
+	// These check the 8 lines of code to toggle both the boolean flags associated with them 
+	// and also sets the color based on user selection.
 
     public void OnLine1Click (){ 
         if (line1Answer)
@@ -342,11 +345,13 @@ public class DiffGame : MonoBehaviour, IMinigame {
     }
 	//=========================================================================================================
 
+	// diplays the are you sure prompt, to confirm user action.
 	public void ExitGame() {
 		DisableButtons();
 		areYouSurePanel.SetActive(true);
 	}
 
+	// if user confirms they want to quit, they return to level 2
 	public void ExitYes()
     {
         SceneTransitionManager.Instance.LoadScene(SceneName.Level2);
