@@ -10,6 +10,7 @@ public class ExitScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        // Show how much money they made
         money.text = "$" + PlayerManager.Instance.money.ToString();
 	}
 

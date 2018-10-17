@@ -10,6 +10,7 @@ public abstract class AbstractLevelController
         Elevator
     } 
 
+    // Template Method used here
     // This method is called upon interacting with an object (space bar)
     public void Interact(Collider collision)
     {
@@ -33,6 +34,7 @@ public abstract class AbstractLevelController
         }
     }
 
+    // Hook method
     // Each level controller that subclasses this class will have
     // their own items that they will want to handle interactions for
     protected abstract void InteractHook(Collider collision);

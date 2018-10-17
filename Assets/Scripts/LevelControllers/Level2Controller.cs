@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Level2Controller : AbstractLevelController
 {
+    // Tags for items that can be interacted with go here
     private enum Level2Tag
     {
         Bruce,
@@ -20,6 +21,7 @@ public class Level2Controller : AbstractLevelController
 
     private readonly IDictionary<Level2Tag, SceneName> tagToScene = new Dictionary<Level2Tag, SceneName>()
     {
+        // The appropraite scene to load when interacting with that item goes here
         {Level2Tag.Bruce, SceneName.ConsultBruceDialogue},
         {Level2Tag.L2Computer, SceneName.DiffGame1},
         {Level2Tag.L2Computer1, SceneName.NoBugsComputerScene},
@@ -40,6 +42,7 @@ public class Level2Controller : AbstractLevelController
     {
         Level2Tag tag = (Level2Tag)Enum.Parse(typeof(Level2Tag), collision.gameObject.tag);
 
+        // Load scene based on collision tag
         switch (tag)
         {
             case Level2Tag.Bruce:

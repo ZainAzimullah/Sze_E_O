@@ -14,6 +14,7 @@ public class Level0Controller : AbstractLevelController
     {
         Level0Tag tag = (Level0Tag) Enum.Parse(typeof(Level0Tag), collision.gameObject.tag);
 
+        // Check collision tag and load corresponding scene
         switch (tag)
         {
             case Level0Tag.TutorialComputer:
@@ -25,6 +26,7 @@ public class Level0Controller : AbstractLevelController
         }
     }
 
+    // We don't need this for this controller
     public override void ColleagueConfrontation()
     {
         throw new ColleageConfrontationOnFoyerException();

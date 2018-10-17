@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Template class for all dialogue scenes.
 public class SimpleDialogue : MonoBehaviour {
     // Text
     public TextMeshProUGUI textDisplay;

@@ -9,6 +9,7 @@ internal class Level2MinigameRecorder : AbstractMinigameRecorder
 
     protected override void Initialise()
     {
+        // Register all the minigames
         allMinigames = new HashSet<SceneName>()
         {
             SceneName.DiffGame1,

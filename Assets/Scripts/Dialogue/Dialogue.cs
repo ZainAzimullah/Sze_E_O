@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-/*
+/* Adapter Pattern (class inheritance style) has been used here.
+ * 
  * Special subclass of SimpleDialogue used for a conversation
  * followed by questions with multiple answers the player must choose from.
  * Upon choosing an answer, the colleague reacts in a certain way (and the mentor
@@ -79,6 +80,7 @@ public class Dialogue : SimpleDialogue {
         StartCoroutine(Type());
     }
 
+    // Show the multichoice answers the user can select
     private void ShowReplyOptions()
     {
         continueButton.SetActive(false);
@@ -89,6 +91,7 @@ public class Dialogue : SimpleDialogue {
         buttonD.SetActive(true);
     }
 
+    // Hide the multichoice answers so that speech can be displayed
     private void HideReplyOptions()
     {
         continueButton.SetActive(true);
@@ -99,11 +102,13 @@ public class Dialogue : SimpleDialogue {
         buttonD.SetActive(false);
     }
 
+    // Determine whether the dialogue is finished
     public override bool IsFinished()
     {
         return answered && IsLastSentence() && IsTypedOut();
     }
 
+    // Call this when done with the dialogue
     public override void Finish()
     {
         base.Finish();

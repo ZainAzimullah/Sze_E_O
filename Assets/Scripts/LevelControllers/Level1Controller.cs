@@ -39,6 +39,7 @@ public class Level1Controller : AbstractLevelController
     {
         Level1Tag tag = (Level1Tag)Enum.Parse(typeof(Level1Tag), collision.gameObject.tag);
 
+        // Load scene based on collision tag
         switch (tag)
         {
             case Level1Tag.Dialog:

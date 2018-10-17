@@ -1,5 +1,7 @@
 ﻿using System;
 
+// Factory Pattern used here
+// Get the right LevelController for a given level
 public class LevelControllerFactory
 {
     public static AbstractLevelController GetInteractionController(int currentLevel)

@@ -23,6 +23,7 @@ public class GameLogicManager : Singleton<GameLogicManager> {
     // points needed to progress
     public readonly int LEVEL_THRESHOLD = 100;
 
+    // remember if we need to show a popup or if a request to show the popup has been made
     public bool badgePopUpRequest { get; set; }
     public bool readyToShowBadgePopUp { get; set; }
 
@@ -49,14 +50,21 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         levelController = LevelControllerFactory.GetInteractionController(LevelManager.Instance.currentLevel);
     }
 
+    // Press 'H' key.  Used for testing/marking
     internal void Hack()
     {
+        // Only let hack work if we're not in the foyer and the next level hasn't already been hacked.
         if (LevelManager.Instance.currentLevel != 0 && !hackedLevels[LevelManager.Instance.currentLevel])
         {
+            // Update experience and badge, increment max level
             PlayerManager.Instance.UpdateExperience(100);
             PlayerManager.Instance.badge = (BadgeType)(PlayerManager.Instance.badge + 1);
             LevelManager.Instance.IncreaseMaxLevel();
+
+            // Send signal to show popup
             GameLogicManager.Instance.readyToShowBadgePopUp = true;
+
+            // Record that the level has been hacked
             hackedLevels[LevelManager.Instance.currentLevel] = true;
         }
     }
@@ -68,25 +76,32 @@ public class GameLogicManager : Singleton<GameLogicManager> {
     {
         minigameRecorder.RegisterMinigameComplete(minigame);
 
+        // If they are playing the minigame unncessarily (they have access to higher levels)
+        // then don't do anything
         if (LevelManager.Instance.GetMaxLevel() != LevelManager.Instance.currentLevel)
         {
             SceneTransitionManager.Instance.LoadCurrentLevelScene();
             return;
         }
 
+        // If they have played enough minigames for dialogue, then show the confrontation
         if (minigameRecorder.CanShowDialogueWithColleague())
         {
             levelController.ColleagueConfrontation();
         }
         else if (minigameRecorder.CanShowDialogueWithMentor())
         {
+            // They failed the confrontational dialogue earlier, so show the mentor
             SceneTransitionManager.Instance.LoadScene(SceneName.MentorAdviceDialogue);
         } else
         {
+            // They haven't done enough minigames, return to the level
             SceneTransitionManager.Instance.LoadCurrentLevelScene();
+
         }
     }
 
+    // Forget which levels we hacked
     internal void ResetHack()
     {
         for (int i = 1; i <= hackedLevels.Count; i++)
@@ -95,9 +110,12 @@ public class GameLogicManager : Singleton<GameLogicManager> {
         }
     }
 
+    // Call this when dialogue has been finished and we will decide what t do next
     public void DialogueDone()
     {
         SceneTransitionManager.Instance.LoadCurrentLevelScene();
+
+        // Show the badge popup if we have been asked to
         if (badgePopUpRequest)
         {
             badgePopUpRequest = false;

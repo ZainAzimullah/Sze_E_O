@@ -11,6 +11,7 @@ public class Level3MinigameRecorder : AbstractMinigameRecorder
 
     protected override void Initialise()
     {
+        // Register all the minigames
         allMinigames = new HashSet<SceneName>()
         {
             SceneName.ShortestPathGame1,

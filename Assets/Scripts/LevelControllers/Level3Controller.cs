@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class Level3Controller : AbstractLevelController
 {
+    // Tags for items that can be interacted with go here
     private enum Level3Tag
     {
         Peter,
@@ -18,6 +19,7 @@ public class Level3Controller : AbstractLevelController
 
     private readonly IDictionary<Level3Tag, SceneName> tagToScene = new Dictionary<Level3Tag, SceneName>()
     {
+        // The appropraite scene to load when interacting with that item goes here
         {Level3Tag.Peter, SceneName.ConsultPeterDialogue},
         {Level3Tag.L3Computer, SceneName.NoBugsComputerScene},
         {Level3Tag.L3Computer1, SceneName.ShortestPathGame1},
@@ -35,6 +37,7 @@ public class Level3Controller : AbstractLevelController
     {
         Level3Tag tag = (Level3Tag)Enum.Parse(typeof(Level3Tag), collision.gameObject.tag);
 
+        // Load scene based on collision tag
         switch (tag)
         {
             case Level3Tag.Peter:

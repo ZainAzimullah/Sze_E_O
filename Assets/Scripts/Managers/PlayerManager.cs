@@ -48,7 +48,7 @@ public class PlayerManager:Singleton<PlayerManager> {
 
     void Update()
     {
-        // Hack for testing (press Enter)
+        // Hack for testing (press H)
         if (Input.GetKeyDown(KeyCode.H))
         {
             GameLogicManager.Instance.Hack();
@@ -118,6 +118,7 @@ public class PlayerManager:Singleton<PlayerManager> {
         exp.CurrentVal = 0;
     }
 
+    // Reset player info for new game
     public void Reset()
     {
         exp.CurrentVal = 0;
